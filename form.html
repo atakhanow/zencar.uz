@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zencar</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#fdc900",
+              graylight: "#838383",
+              primary: "#69b99d",
+              secondary: "#0f241d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <header
+      class="sticky top-0 z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/">
+          <img
+            src="./images/zencar.uz logo-1.png"
+            alt="Zencar Logo"
+            class="h-10"
+          />
+        </a>
+        <nav class="hidden lg:flex items-center gap-10 text-white">
+          <a
+            href="/index.html"
+            class="hover:text-main transition-all duration-300"
+            >Asosiy</a
+          >
+          <a href="#about" class="hover:text-main transition-all duration-300"
+            >Xizmatlar</a
+          >
+          <a
+            href="#services"
+            class="hover:text-main transition-all duration-300"
+            >Narxlar</a
+          >
+          <a href="#clients" class="hover:text-main transition-all duration-300"
+            >Kontaktlar</a
+          >
+          <a href="#contact" class="hover:text-main transition-all duration-300"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <div class="lg:hidden cursor-pointer text-primary text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <a href="tel:+998901234567"
+          >Qo‘ng‘iroq qilish
+
+          <button class="text-main font-bold">+998 90 000 00 00</button></a
+        >
+      </div>
+    </header>
+
+    <section class="py-20">
+      <div class="container">
+        <div
+          class="flex flex-col justify-center items-center text-center text-white"
+        >
+          <h3 class="text-5xl">
+            Avtomobilni detallashtirish narxini bilib oling
+          </h3>
+          <p>
+            So'rov qoldiring va biz sizning mashinangizni detallashtirish
+            narxini hisoblab chiqamiz
+          </p>
+        </div>
+
+        <form
+          id="contactForm"
+          class="flex flex-col items-center justify-center mt-10"
+        >
+          <div class="flex flex-col items-center justify-center mt-10">
+           <input type="text" id="name" required  class="w-full max-w-xs p-2 mb-4 text-gray-900 rounded-lg focus:outline-none border-none" placeholder="Ismingiz" />
+
+            <input type="text" id="name" required  class="w-full max-w-xs p-2 mb-4 text-gray-900 rounded-lg focus:outline-none border-none"  placeholder="Avtomobilingiz Markasi"/>
+
+            <!-- Avtomobil turi uchun variantlar -->
+            <select
+              class="w-full max-w-xs p-2 mb-4 text-gray-900 rounded-lg focus:outline-none border-none"
+            >
+              <option value="" disabled selected id="carType">
+                Sizga kerak bo'lgan xizmat turi
+              </option>
+              <option value="polirovka">Polirovka</option>
+              <option value="keramika">Keramika</option>
+              <option value="bronirovaniya">Bronirovaniya</option>
+              <option value="shumka">Shumka</option>
+            </select>
+
+           
+
+              <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="+000 00 000 00 00"
+                required
+                class="p-2 border rounded w-full focus:outline-none focus:ring-2 focus:ring-main focus:border-transparent"
+              />
+            </div>
+
+            <p class="text-white">
+              <i class="fa-solid fa-exclamation text-main"></i>
+              <i class="fa-solid fa-exclamation text-main"></i>
+              <i class="fa-solid fa-exclamation text-main"></i> Siz Tasdiqlash
+              tugmasini bosib
+              <a class="text-main" href="/policy.html">Maxfiylik Siyosati</a>
+              ga Roziligingizni bildirasiz
+            </p>
+
+           <button type="submit" onclick="showAlert()"
+              class="border-[1px] border-solid border-main text-main px-20 py-2 rounded-3xl mt-4 hover:bg-[#fdc2005f] hover:text-[#fdc200] transition duration-300">Yuborish</button>
+          </div>
+        </form>
+      </div>
+    </section>
+<!-- Footer starts -->
+    <footer class="py-20 bg-black">
+      <div class="container flex gap-5 justify-around items-start">
+        <div class="flex flex-col gap-5">
+          <a href="#"
+            ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
+          >
+
+          <div class="flex gap-2">
+            <a href="https://t.me/zencar_uz">
+              <i
+                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+            <a href="https://instagram.com/zencar_uz">
+              <i
+                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+
+            <a href="https://youtube.com/zencar_uz">
+              <i
+                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+
+            <a href="https://tiktok.com/zencar_uz">
+              <i
+                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+          </div>
+          <p class="text-graylight">
+            © 2025 Zencar. Barcha huquqlar himoyalangan.
+          </p>
+
+          <p class="text-graylight opacity-50">
+            Websayt
+            <span class="cursor-pointer hover:text-main">
+              <a href="https://t.me/atakhanov"> Atakhanov</a></span
+            >
+            tomonidan ishlab chiqilgan
+          </p>
+        </div>
+
+        <!-- - -->
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Kontaktlar</h4>
+            <li>
+              <a
+                href="tel:+998990000000 "
+                class="text-graylight hover:text-main"
+              >
+                +998 99 000 00 00</a
+              >
+            </li>
+            <li>
+              <a href="zencar@zencar.uz" class="text-graylight hover:text-main"
+                >zencar@zencar.uz</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- - -->
+
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Menu</h4>
+            <li>
+              <a href="#main" class="text-graylight hover:text-main">Asosiy</a>
+            </li>
+            <li>
+              <a href="#services" class="text-graylight hover:text-main"
+                >Xizmatlar</a
+              >
+            </li>
+            <li>
+              <a href="#prices" class="text-graylight hover:text-main"
+                >Narxlar</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-graylight hover:text-main"
+                >Kontaktlar</a
+              >
+            </li>
+            <li>
+              <a href="#shop" class="text-graylight hover:text-main"
+                >Do'kon ZC</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- - -->
+
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Boshqalar</h4>
+            <li>
+              <a href="/policy.html" class="text-graylight hover:text-main"
+                >Maxfiylik Siyosati</a
+              >
+            </li>
+            <li>
+              <a href="form.html" class="text-graylight hover:text-main">
+                Navbatga Yozilish
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+    <script src="/JS/script.js"></script>
+  </body>
+</html>

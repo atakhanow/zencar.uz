@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zencar</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/images/zencar-logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#fdc900",
+              graylight: "#838383",
+              primary: "#69b99d",
+              secondary: "#0f241d",
+            },
+
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              scroll: "scroll 30s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #main {
+        background-image: url(./images/car-stock.jfif);
+        background-color: #00000082;
+        background-size: cover;
+        background-position: center;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header starts -->
+    <header
+      class="sticky left-0 w-ful bg-trl ansparentsticky top-0 z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/">
+          <img
+            src="./images/zencar-secondary-logo.png"
+            alt="Zencar Logo"
+            class="h-10"
+          />
+        </a>
+        <nav class="hidden lg:flex items-center gap-10 text-white">
+          <a href="#main" class="hover:text-main transition-all duration-300"
+            >Asosiy</a
+          >
+          <a
+            href="#services"
+            class="hover:text-main transition-all duration-300"
+            >Xizmatlar</a
+          >
+          <a
+            href="#services"
+            class="hover:text-main transition-all duration-300"
+            >Narxlar</a
+          >
+          <a href="#contact" class="hover:text-main transition-all duration-300"
+            >Kontaktlar</a
+          >
+          <a href="#shop" class="hover:text-main transition-all duration-300"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <div class="lg:hidden cursor-pointer text-primary text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <a href="tel:+998901234567">
+          <button class="text-main font-bold">
+            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
+          </button></a
+        >
+      </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- Main Section Starts -->
+    <section id="main">
+      <div class="container">
+        <div
+          class="mx-auto flex flex-col h-screen text-white text-center w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-start ml-8"
+        >
+          <h1 class="font-bold mb-5 text-7xl">
+            ZENCAR <span class="text-main"> DETAILING </span>
+          </h1>
+          <p class="text-graylight text-2xl font-normal mt-5 text-left">
+            Biz <span class="text-white">shaffof</span>, halol va
+            <span class="text-white">oldindan to'lovsiz</span> ishlaymiz. Biz
+            xizmatlarni yuklamaymiz va har bir qadam uchun
+            <span class="text-white">javobgarmiz</span>. Biz batafsil
+            <span class="text-white">foto va video </span>hisobotlarni taqdim
+            etamiz. Biz har bir bosqichda jarayonni va qanday natijalarni kutish
+            kerakligini <span class="text-white"> tushuntiramiz</span>. Bizda
+            doim <span class="text-white"> do'stona muhit</span> hukm suradi.
+          </p>
+          <div class="flex justify-center items-center gap-5 mt-10 font-normal">
+            <a href="/form.html"
+              ><button
+                class="bg-main text-white py-2 px-4 rounded-lg shadow-lg hover:bg-opacity-80 transition duration-300"
+              >
+                Biz bilan bog'laning
+              </button></a
+            >
+
+            <a href="tel:+998901234567">
+              <button class="text-main font-bold">
+                <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000
+                00 00
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Main Section Ends -->
+
+    <!-- Animation -->
+    <section id="animation">
+      <div class="container">
+        <div
+          class="overflow-hidden py-10 bg-black bg-opacity-70 backdrop-blur-lg"
+        >
+          <h3 class="text-main text-center">Biz Ishlaydigan Kompaniyalar</h3>
+          <div class="flex w-[200%] animate-scroll">
+            <!-- Logos block (1) -->
+            <div class="flex space-x-16 w-1/2 justify-around items-center">
+              <img src="/images/logo.png" class="h-20" alt="Logo 1" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 2" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 3" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 4" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 5" />
+            </div>
+
+            <!-- Logos block (2) - repeat for seamless scroll -->
+            <div class="flex space-x-16 w-1/2 justify-around items-center">
+              <img src="/images/logo.png" class="h-20" alt="Logo 1" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 2" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 3" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 4" />
+              <img src="/images/logo.png" class="h-20" alt="Logo 5" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation Ends -->
+
+    <!-- Footer starts -->
+    <footer class="py-20 bg-black">
+      <div class="container flex gap-5 justify-around items-start">
+        <div class="flex flex-col gap-5">
+          <a href="#"
+            ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
+          >
+
+          <div class="flex gap-2">
+            <a href="https://t.me/zencar_uz">
+              <i
+                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+            <a href="https://instagram.com/zencar_uz">
+              <i
+                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+
+            <a href="https://youtube.com/zencar_uz">
+              <i
+                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+
+            <a href="https://tiktok.com/zencar_uz">
+              <i
+                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
+              ></i>
+            </a>
+          </div>
+          <p class="text-graylight">
+            © 2025 Zencar. Barcha huquqlar himoyalangan.
+          </p>
+
+          <p class="text-graylight opacity-50">
+            Websayt
+            <span class="cursor-pointer hover:text-main">
+              <a href="https://t.me/atakhanov"> Atakhanov</a></span
+            >
+            tomonidan ishlab chiqilgan
+          </p>
+        </div>
+
+        <!-- - -->
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Kontaktlar</h4>
+            <li>
+              <a
+                href="tel:+998990000000 "
+                class="text-graylight hover:text-main"
+              >
+                +998 99 000 00 00</a
+              >
+            </li>
+            <li>
+              <a href="zencar@zencar.uz" class="text-graylight hover:text-main"
+                >zencar@zencar.uz</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- - -->
+
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Menu</h4>
+            <li>
+              <a href="#main" class="text-graylight hover:text-main">Asosiy</a>
+            </li>
+            <li>
+              <a href="#services" class="text-graylight hover:text-main"
+                >Xizmatlar</a
+              >
+            </li>
+            <li>
+              <a href="#prices" class="text-graylight hover:text-main"
+                >Narxlar</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-graylight hover:text-main"
+                >Kontaktlar</a
+              >
+            </li>
+            <li>
+              <a href="#shop" class="text-graylight hover:text-main"
+                >Do'kon ZC</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- - -->
+
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Boshqalar</h4>
+            <li>
+              <a href="/policy.html" class="text-graylight hover:text-main"
+                >Maxfiylik Siyosati</a
+              >
+            </li>
+            <li>
+              <a href="form.html" class="text-graylight hover:text-main">
+                Navbatga Yozilish
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- js -->
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
