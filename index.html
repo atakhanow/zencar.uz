@@ -22,6 +22,21 @@
     <meta property="og:image" content="/images/zencar-logo.png" />
     <title>Zencar - Professional Car Detailing Services</title>
 
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/zencar-logo.png" as="image" />
+    <link rel="preload" href="/images/car-stock.jfif" as="image" />
+    <link rel="preload" href="/images/zencar-secondary-logo.png" as="image" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+    />
+
     <!-- Favicon -->
     <link
       rel="shortcut icon"
@@ -29,9 +44,6 @@
       type="image/x-icon"
     />
     <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
-
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <!-- Google Fonts -->
     <link
@@ -78,6 +90,18 @@
     </script>
 
     <style>
+      :root {
+        --font-heading: "Unbounded", sans-serif;
+        --font-body: "DM Sans", sans-serif;
+        --color-main: #fdc900;
+        --color-graylight: #838383;
+        --color-primary: #69b99d;
+        --color-secondary: #0f241d;
+        --color-orangedark: #23250e;
+        --color-blue: #2a63ff;
+        --color-bluedark: #1e3a8a;
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -96,11 +120,11 @@
       h4,
       h5,
       h6 {
-        font-family: "Unbounded", sans-serif;
+        font-family: var(--font-heading);
       }
 
       p {
-        font-family: "DM Sans", sans-serif;
+        font-family: var(--font-body);
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -166,6 +190,9 @@
               src="/images/zencar-secondary-logo.png"
               alt="Zencar Logo"
               class="h-10"
+              width="40"
+              height="40"
+              loading="eager"
             />
           </a>
 
@@ -308,6 +335,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -316,6 +344,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -324,6 +353,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -332,6 +362,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -340,6 +371,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -354,6 +386,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -362,6 +395,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -370,6 +404,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -378,6 +413,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src="/images/logo.png"
@@ -386,6 +422,7 @@
                   width="80"
                   height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -698,6 +735,7 @@
               class="w-[50px]"
               width="50"
               height="50"
+              loading="eager"
             />
           </a>
 
@@ -849,6 +887,7 @@
     <!-- Footer ends -->
 
     <!-- JavaScript -->
-    <script src="/JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="/JS/script.js" defer></script>
   </body>
 </html>
