@@ -1241,7 +1241,7 @@
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#main"
+                  href="/index.html"
                   class="text-graylight hover:text-main transition-colors"
                 >
                   Asosiy
@@ -1249,7 +1249,7 @@
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/index.html#services"
                   class="text-graylight hover:text-main transition-colors"
                 >
                   Xizmatlar
@@ -1257,7 +1257,7 @@
               </li>
               <li>
                 <a
-                  href="#prices"
+                  href="/services/price.html"
                   class="text-graylight hover:text-main transition-colors"
                 >
                   Narxlar
@@ -1265,7 +1265,7 @@
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="/index.html#contact"
                   class="text-graylight hover:text-main transition-colors"
                 >
                   Kontaktlar
@@ -1273,7 +1273,7 @@
               </li>
               <li>
                 <a
-                  href="#shop"
+                  href="/services/shop.html"
                   class="text-graylight hover:text-main transition-colors"
                 >
                   Do'kon ZC
@@ -1310,20 +1310,6 @@
     <!-- Footer ends -->
 
     <!-- JavaScript -->
-    <script>
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener("click", () => {
-          const isExpanded =
-            menuToggle.getAttribute("aria-expanded") === "true";
-          menuToggle.setAttribute("aria-expanded", !isExpanded);
-          mobileMenu.classList.toggle("hidden");
-          document.body.classList.toggle("overflow-hidden");
-        });
-      }
-    </script>
+    <script src="/JS/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zencar - Professional car polishing and ceramic coating services in Uzbekistan"
+    />
+    <meta
+      name="keywords"
+      content="car polishing, ceramic coating, auto detailing, Uzbekistan, Zencar"
+    />
+    <meta
+      property="og:title"
+      content="Zencar - Professional Car Polishing Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional car polishing and ceramic coating services in Uzbekistan"
+    />
+    <meta property="og:image" content="/images/zencar-logo.png" />
+    <title>Zencar - Professional Car Polishing Services</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/images/zencar-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#fdc900",
+              graylight: "#838383",
+              primary: "#69b99d",
+              secondary: "#0f241d",
+              orangedark: "#23250e",
+              blue: "#2a63ff",
+              bluedark: "#1e3a8a",
+            },
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              scroll: "scroll 30s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #main {
+        background-image: url(/images/car-stock.jfif);
+        background-size: cover;
+        background-position: center;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Responsive Typography */
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 2rem);
+      }
+
+      p {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+      }
+
+      /* Responsive Spacing */
+      .container {
+        padding-left: clamp(1rem, 5vw, 2rem);
+        padding-right: clamp(1rem, 5vw, 2rem);
+      }
+
+      /* Responsive Grid */
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      }
+
+      /* Responsive Images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Mobile Menu Improvements */
+      @media (max-width: 768px) {
+        .mobile-menu {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Cards */
+      .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Fluid Container */
+      .fluid-container {
+        width: min(100% - 2rem, 1200px);
+        margin-inline: auto;
+      }
+
+      /* Responsive Buttons */
+      .btn {
+        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+      }
+
+      /* Responsive Navigation */
+      @media (max-width: 1024px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+        }
+      }
+
+      /* Responsive Pricing Tables */
+      .pricing-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      /* Responsive Hero Section */
+      .hero {
+        min-height: clamp(300px, 50vh, 600px);
+        padding: clamp(2rem, 5vw, 4rem);
+      }
+
+      /* Responsive Footer */
+      .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Header starts -->
+    <header
+      class="sticky left-0 w-full top-4 z-50 p-5 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-auto max-w-7xl rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
+          <img
+            src="/images/zencar-secondary-logo.png"
+            alt="Zencar Logo"
+            class="h-8 md:h-10"
+          />
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
+          aria-label="Main navigation"
+        >
+          <a
+            href="/index.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            aria-current="page"
+            >Asosiy</a
+          >
+          <a
+            href="/index.html#services"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Xizmatlar</a
+          >
+          <a
+            href="/services/price.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Narxlar</a
+          >
+          <a
+            href="/index.html#contact"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Kontaktlar</a
+          >
+          <a
+            href="/services/shop.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <button
+          class="lg:hidden text-primary text-2xl"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          id="menuToggle"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a
+          href="tel:+998901234567"
+          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+          aria-label="Call us at +998 90 000 00 00"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+998 90 000 00 00</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
+        aria-label="Mobile navigation"
+      >
+        <div class="container mx-auto px-4 py-8">
+          <nav class="flex flex-col gap-6 text-white text-xl">
+            <a href="#main" class="hover:text-main">Asosiy</a>
+            <a href="#services" class="hover:text-main">Xizmatlar</a>
+            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
+            <a href="#contact" class="hover:text-main">Kontaktlar</a>
+            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- main section starts -->
+    <main class="fluid-container">
+      <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
+        <!-- Promotion Section -->
+        <div
+          class="bg-orangedark rounded-lg p-6 md:p-8 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-8"
+          lang="ru"
+        >
+          <!-- Left Content -->
+          <div class="md:w-1/2 mb-6 md:mb-0">
+            <span class="text-main mb-2 inline-block text-sm md:text-base"
+              >Оклейка</span
+            >
+            <h1
+              class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2"
+            >
+              Пакет лайт
+            </h1>
+            <div
+              class="text-main text-2xl md:text-3xl lg:text-5xl font-bold mb-6 md:mb-8"
+            >
+              ОТ 49.000 ₽
+            </div>
+            <a
+              href="/"
+              class="inline-block border border-main text-main px-20 py-2 my-5 rounded-3xl hover:bg-main/20 transition duration-300"
+            >
+              Batafsil
+            </a>
+
+            <ul class="space-y-3 text-white">
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Фары
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Капот
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Передняя часть крыши
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Стойки вдоль лобового
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Зеркала
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Под ручками
+              </li>
+            </ul>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href="./form.html"
+                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none"
+              >
+                <span class="relative z-10 block px-10 py-3">
+                  Navbatga Yozilish
+                </span>
+                <span
+                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                ></span>
+              </a>
+
+              <a
+                href="tel:+998901234567"
+                class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+                aria-label="Call us at +998 90 000 00 00"
+              >
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>+998 90 000 00 00</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Car Image -->
+          <div class="md:w-1/2">
+            <div class="relative h-80 md:h-full rounded-lg overflow-hidden">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Dv9sPZ2U2wctraeBrOdVuG0KwcsGk6.png"
+                alt="Полированный автомобиль после обработки"
+                class="w-full h-full object-cover object-center rounded-lg"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main section ends -->
+
+    <!-- Footer starts -->
+    <footer class="py-12 md:py-20 bg-black">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+      >
+        <!-- Company Info -->
+        <div class="flex flex-col gap-5">
+          <a href="/" aria-label="Go to homepage">
+            <img
+              src="/images/zencar-logo.png"
+              alt="Zencar Logo"
+              class="w-[50px]"
+              width="50"
+              height="50"
+            />
+          </a>
+
+          <div class="flex gap-4" aria-label="Social media links">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Follow us on Telegram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
+            </a>
+            <a
+              href="https://instagram.com/zencar_uz"
+              aria-label="Follow us on Instagram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
+            </a>
+            <a
+              href="https://youtube.com/zencar_uz"
+              aria-label="Subscribe to our YouTube channel"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
+            </a>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              aria-label="Follow us on TikTok"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
+            </a>
+          </div>
+
+          <p class="text-graylight">
+            © 2025 Zencar. Barcha huquqlar himoyalangan.
+          </p>
+
+          <p class="text-graylight/50">
+            Websayt
+            <a
+              href="https://atakhanov.uz"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Atakhanov.uz
+            </a>
+            tomonidan ishlab chiqilgan
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Kontaktlar</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="tel:+998990000000"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                +998 99 000 00 00
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                zencar@zencar.uz
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Menu</h2>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Asosiy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#services"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Xizmatlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/price.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Narxlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#contact"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Kontaktlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/shop.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Do'kon ZC
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Others -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Boshqalar</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Maxfiylik Siyosati
+              </a>
+            </li>
+            <li>
+              <a
+                href="/form.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Navbatga Yozilish
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- JavaScript -->
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
