@@ -3,32 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zencar</title>
+    <meta
+      name="description"
+      content="Zencar - Professional car detailing services in Uzbekistan. Polishing, ceramic coating, and more."
+    />
+    <meta
+      name="keywords"
+      content="car detailing, car polishing, ceramic coating, Uzbekistan, Zencar"
+    />
+    <meta
+      property="og:title"
+      content="Zencar - Professional Car Detailing Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional car detailing services in Uzbekistan. Polishing, ceramic coating, and more."
+    />
+    <meta property="og:image" content="/images/zencar-logo.png" />
+    <title>Zencar - Professional Car Detailing Services</title>
+
     <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="/images/zencar-logo.png"
       type="image/x-icon"
     />
+    <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
 
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
       rel="stylesheet"
     />
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -44,8 +59,10 @@
               graylight: "#838383",
               primary: "#69b99d",
               secondary: "#0f241d",
+              orangedark: "#23250e",
+              blue: "#2a63ff",
+              bluedark: "#1e3a8a",
             },
-
             keyframes: {
               scroll: {
                 "0%": { transform: "translateX(0)" },
@@ -66,10 +83,10 @@
       }
 
       #main {
-        background-image: url(./images/car-stock.jfif);
-        background-color: #00000082;
+        background-image: url(/images/car-stock.jfif);
         background-size: cover;
         background-position: center;
+        min-height: 100vh;
       }
 
       header,
@@ -85,234 +102,743 @@
       p {
         font-family: "DM Sans", sans-serif;
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .animate-scroll {
+          animation: none;
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #main h1 {
+          font-size: 2.5rem;
+          line-height: 1.2;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .contact-section {
+          padding: 2rem 1rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .mobile-menu {
+          width: 100%;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
     </style>
   </head>
-  <body>
-    <!-- Header starts -->
-    <header
-      class="sticky left-0 w-ful bg-trl ansparentsticky top-0 z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
-    >
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="/">
-          <img
-            src="./images/zencar-secondary-logo.png"
-            alt="Zencar Logo"
-            class="h-10"
-          />
-        </a>
-        <nav class="hidden lg:flex items-center gap-10 text-white">
-          <a href="#main" class="hover:text-main transition-all duration-300"
-            >Asosiy</a
-          >
-          <a
-            href="#services"
-            class="hover:text-main transition-all duration-300"
-            >Xizmatlar</a
-          >
-          <a
-            href="#services"
-            class="hover:text-main transition-all duration-300"
-            >Narxlar</a
-          >
-          <a href="#contact" class="hover:text-main transition-all duration-300"
-            >Kontaktlar</a
-          >
-          <a href="#shop" class="hover:text-main transition-all duration-300"
-            >Do'kon ZC</a
-          >
-        </nav>
-
-        <div class="lg:hidden cursor-pointer text-primary text-2xl">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <a href="tel:+998901234567">
-          <button class="text-main font-bold">
-            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
-          </button></a
-        >
-      </div>
-    </header>
-    <!-- Header Ends -->
-
+  <body class="bg-black">
     <!-- Main Section Starts -->
-    <section id="main">
-      <div class="container">
+    <main>
+      <!-- Header starts -->
+      <header
+        class="sticky left-0 w-full top-4 z-50 p-5 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-auto max-w-7xl rounded-xl"
+      >
         <div
-          class="mx-auto flex flex-col h-screen text-white text-center w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-start ml-8"
+          class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4"
         >
-          <h1 class="font-bold mb-5 text-7xl">
-            ZENCAR <span class="text-main"> DETAILING </span>
-          </h1>
-          <p class="text-graylight text-2xl font-normal mt-5 text-left">
-            Biz <span class="text-white">shaffof</span>, halol va
-            <span class="text-white">oldindan to'lovsiz</span> ishlaymiz. Biz
-            xizmatlarni yuklamaymiz va har bir qadam uchun
-            <span class="text-white">javobgarmiz</span>. Biz batafsil
-            <span class="text-white">foto va video </span>hisobotlarni taqdim
-            etamiz. Biz har bir bosqichda jarayonni va qanday natijalarni kutish
-            kerakligini <span class="text-white"> tushuntiramiz</span>. Bizda
-            doim <span class="text-white"> do'stona muhit</span> hukm suradi.
-          </p>
-          <div class="flex justify-center items-center gap-5 mt-10 font-normal">
-            <a href="/form.html"
-              ><button
-                class="bg-main text-white py-2 px-4 rounded-lg shadow-lg hover:bg-opacity-80 transition duration-300"
+          <a href="/" class="flex items-center" aria-label="Zencar Home">
+            <img
+              src="/images/zencar-secondary-logo.png"
+              alt="Zencar Logo"
+              class="h-10"
+            />
+          </a>
+
+          <nav
+            class="hidden lg:flex items-center gap-10 text-white"
+            aria-label="Main navigation"
+          >
+            <a
+              href="#main"
+              class="hover:text-main transition-all duration-300"
+              aria-current="page"
+              >Asosiy</a
+            >
+            <a
+              href="#services"
+              class="hover:text-main transition-all duration-300"
+              >Xizmatlar</a
+            >
+            <a
+              href="/services/price.html"
+              class="hover:text-main transition-all duration-300"
+              >Narxlar</a
+            >
+            <a
+              href="#contact"
+              class="hover:text-main transition-all duration-300"
+              >Kontaktlar</a
+            >
+            <a href="#shop" class="hover:text-main transition-all duration-300"
+              >Do'kon ZC</a
+            >
+          </nav>
+
+          <button
+            class="lg:hidden text-primary text-2xl"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            id="menuToggle"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <a
+            href="tel:+998901234567"
+            class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+            aria-label="Call us at +998 90 000 00 00"
+          >
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>+998 90 000 00 00</span>
+          </a>
+        </div>
+
+        <!-- Mobile menu -->
+        <div
+          id="mobileMenu"
+          class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
+          aria-label="Mobile navigation"
+        >
+          <div class="container mx-auto px-4 py-8">
+            <nav class="flex flex-col gap-6 text-white text-xl">
+              <a href="#main" class="hover:text-main">Asosiy</a>
+              <a href="#services" class="hover:text-main">Xizmatlar</a>
+              <a href="/services/price.html" class="hover:text-main">Narxlar</a>
+              <a href="#contact" class="hover:text-main">Kontaktlar</a>
+              <a href="#shop" class="hover:text-main">Do'kon ZC</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- Header Ends -->
+
+      <section id="main" class="relative">
+        <div class="container mx-auto">
+          <div
+            class="mx-auto flex flex-col h-screen text-white text-center w-full max-w-[1000px] justify-center items-start px-4 md:px-8 lg:ml-8"
+          >
+            <h1
+              class="font-bold mb-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+              ZENCAR <span class="text-main"> DETAILING </span>
+            </h1>
+            <p
+              class="text-graylight text-lg sm:text-xl md:text-2xl font-normal mt-5 text-left"
+            >
+              Biz shaffof,<span class="text-white"> halol</span> va
+              <span class="text-white">oldindan to'lovsiz</span> ishlaymiz.
+              Xizmatlarni yuklamaymiz va har bir qadam uchun
+              <span class="text-white">javobgarmiz</span>. Batafsil
+              <span class="text-white">foto va video </span>hisobotlarni taqdim
+              etamiz. Har bir bosqichda jarayonni va qanday natijalarni kutish
+              kerakligini <span class="text-white"> tushuntiramiz</span>. Bizda
+              doim <span class="text-white"> do'stona muhit</span> hukm suradi.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row justify-center items-center gap-5 mt-10 font-normal"
+            >
+              <a
+                href="./form.html"
+                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none w-full sm:w-auto"
               >
-                Biz bilan bog'laning
-              </button></a
-            >
+                <span class="relative z-10 block px-10 py-3">
+                  Navbatga Yozilish
+                </span>
+                <span
+                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                ></span>
+              </a>
 
-            <a href="tel:+998901234567">
-              <button class="text-main font-bold">
-                <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000
-                00 00
-              </button></a
-            >
+              <a
+                href="tel:+998901234567"
+                class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity w-full sm:w-auto justify-center"
+                aria-label="Call us at +998 90 000 00 00"
+              >
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>+998 90 000 00 00</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Main Section Ends -->
+      </section>
 
-    <!-- Animation -->
-    <section id="animation">
-      <div class="container">
+      <!-- Animation -->
+      <section id="animation" class="bg-black/70 backdrop-blur-lg">
+        <div class="container mx-auto">
+          <div class="overflow-hidden py-10">
+            <h3
+              class="text-main text-center text-xl md:text-2xl font-bold mb-8"
+            >
+              Biz Ishlaydigan Kompaniyalar
+            </h3>
+            <div class="flex w-[200%] animate-scroll">
+              <!-- Logos block (1) -->
+              <div
+                class="flex space-x-8 md:space-x-16 w-1/2 justify-around items-center"
+              >
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 1"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 2"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 3"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 4"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 5"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Logos block (2) - repeat for seamless scroll -->
+              <div
+                class="flex space-x-8 md:space-x-16 w-1/2 justify-around items-center"
+              >
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 6"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 7"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 8"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 9"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/logo.png"
+                  class="h-16 md:h-20"
+                  alt="Partner Logo 10"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Services Section Starts -->
+    <section id="services" class="bg-black py-10 sm:py-20">
+      <div class="container mx-auto px-4">
         <div
-          class="overflow-hidden py-10 bg-black bg-opacity-70 backdrop-blur-lg"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
-          <h3 class="text-main text-center">Biz Ishlaydigan Kompaniyalar</h3>
-          <div class="flex w-[200%] animate-scroll">
-            <!-- Logos block (1) -->
-            <div class="flex space-x-16 w-1/2 justify-around items-center">
-              <img src="/images/logo.png" class="h-20" alt="Logo 1" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 2" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 3" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 4" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 5" />
+          <!-- Card 1 -->
+          <a
+            href="/services/polirovka.html"
+            class="group"
+            aria-label="Polishing and Ceramic Coating Service"
+          >
+            <div
+              class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ПОЛИРОВКА & КЕРАМИКА
+              </h2>
+              <p class="text-gray-400 mb-16" lang="ru">
+                Контролируем толщину ЛКП.
+              </p>
+              <div class="flex items-center justify-between">
+                <p class="text-main text-xl font-medium" lang="ru">
+                  От 20.000 ₽
+                </p>
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            href="/services/okleika.html"
+            class="group"
+            aria-label="Car Wrapping Service"
+          >
+            <div
+              class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ОКЛЕЙКА
+              </h2>
+              <p class="text-gray-400 mb-4" lang="ru">Даём гарантию 5 лет.</p>
+              <div class="flex items-center justify-between mt-auto">
+                <p class="text-main text-xl font-medium" lang="ru">
+                  От 20.000 ₽
+                </p>
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a
+            href="/services/ximchistka.html"
+            class="group"
+            aria-label="Chemical Cleaning Service"
+          >
+            <div
+              class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ХИМЧИСТКА
+              </h2>
+              <p class="text-gray-400 mb-4" lang="ru">
+                Отмываем любые загрязнения.
+              </p>
+              <div class="flex items-center justify-between mt-auto">
+                <p class="text-main text-xl font-medium" lang="ru">
+                  От 20.000 ₽
+                </p>
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a
+            href="/services/polirovka-far.html"
+            class="group"
+            aria-label="Headlight Polishing Service"
+          >
+            <div
+              class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ПОЛИРОВКА ФАР
+              </h2>
+              <p class="text-gray-400 mb-4" lang="ru">
+                Восстанавливаем заводское состояние.
+              </p>
+              <div class="flex items-center justify-between mt-auto">
+                <p class="text-main text-xl font-medium" lang="ru">
+                  От 20.000 ₽
+                </p>
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a
+            href="/services/detailing-moyka.html"
+            class="group"
+            aria-label="Detailing Wash Service"
+          >
+            <div
+              class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ДЕТЕЙЛИНГ МОЙКА
+              </h2>
+              <p class="text-gray-400 mb-4" lang="ru">
+                Мойка с соблюдением правильной технологии.
+              </p>
+              <div class="flex items-center justify-between mt-auto">
+                <p class="text-main text-xl font-medium" lang="ru">
+                  От 20.000 ₽
+                </p>
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a
+            href="/services/price.html"
+            class="group"
+            aria-label="View Full Price List"
+          >
+            <div
+              class="bg-[#3e340c] rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full"
+            >
+              <h2 class="text-white text-2xl font-bold mb-4" lang="ru">
+                ОБЩИЙ ПРАЙС
+              </h2>
+              <p class="text-gray-400 mb-16">&nbsp;</p>
+              <div class="flex items-center justify-end">
+                <svg
+                  class="w-12 h-6 text-main transform group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section Ends -->
+
+    <!-- Contact section Starts -->
+    <section id="contact" class="bg-black py-10 sm:py-20">
+      <div class="container mx-auto px-4">
+        <div
+          class="w-full max-w-4xl bg-orangedark rounded-lg p-6 sm:p-8 md:p-12 relative items-center mx-auto"
+        >
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24"
+          >
+            <div>
+              <h1
+                class="text-4xl md:text-5xl font-light text-gray-300 tracking-wide"
+              >
+                Zencar Detailing
+              </h1>
+              <h2 class="text-3xl md:text-4xl font-medium text-main mt-1">
+                Shavat
+              </h2>
             </div>
 
-            <!-- Logos block (2) - repeat for seamless scroll -->
-            <div class="flex space-x-16 w-1/2 justify-around items-center">
-              <img src="/images/logo.png" class="h-20" alt="Logo 1" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 2" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 3" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 4" />
-              <img src="/images/logo.png" class="h-20" alt="Logo 5" />
+            <a
+              href="tel:+998901234567"
+              class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none mt-6 md:mt-0"
+              aria-label="Contact us"
+            >
+              <span class="relative z-10 block px-10 py-3"> Bog'lanish </span>
+              <span
+                class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+              ></span>
+            </a>
+          </div>
+
+          <div class="mt-auto">
+            <a
+              href="tel:+998901234567"
+              class="text-main text-2xl md:text-3xl font-medium mb-8 inline-block hover:opacity-80 transition-opacity"
+              aria-label="Call us at +998 90 000 00 00"
+            >
+              +998 90 000 00 00
+            </a>
+
+            <div
+              class="flex flex-col md:flex-row justify-between text-gray-200"
+            >
+              <div>
+                <p>Shavat,</p>
+                <p>Shovot ko'chasi, 1-uy</p>
+              </div>
+
+              <div class="mt-4 md:mt-0 text-right">
+                <p>Dush - Shan 9:00 dan 19:00</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Animation Ends -->
+    <!-- Contact section ends -->
 
     <!-- Footer starts -->
-    <footer class="py-20 bg-black">
-      <div class="container flex gap-5 justify-around items-start">
+    <footer class="py-10 sm:py-20 bg-black">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+      >
+        <!-- Company Info -->
         <div class="flex flex-col gap-5">
-          <a href="#"
-            ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
-          >
+          <a href="/" aria-label="Go to homepage">
+            <img
+              src="/images/zencar-logo.png"
+              alt="Zencar Logo"
+              class="w-[50px]"
+              width="50"
+              height="50"
+            />
+          </a>
 
-          <div class="flex gap-2">
-            <a href="https://t.me/zencar_uz">
-              <i
-                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
-              ></i>
+          <div class="flex gap-4" aria-label="Social media links">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Follow us on Telegram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
             </a>
-            <a href="https://instagram.com/zencar_uz">
-              <i
-                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://instagram.com/zencar_uz"
+              aria-label="Follow us on Instagram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
             </a>
-
-            <a href="https://youtube.com/zencar_uz">
-              <i
-                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://youtube.com/zencar_uz"
+              aria-label="Subscribe to our YouTube channel"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
             </a>
-
-            <a href="https://tiktok.com/zencar_uz">
-              <i
-                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              aria-label="Follow us on TikTok"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
             </a>
           </div>
+
           <p class="text-graylight">
             © 2025 Zencar. Barcha huquqlar himoyalangan.
           </p>
 
-          <p class="text-graylight opacity-50">
+          <p class="text-graylight/50">
             Websayt
-            <span class="cursor-pointer hover:text-main">
-              <a href="https://t.me/atakhanov"> Atakhanov</a></span
+            <a
+              href="https://atakhanov.uz"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              Atakhanov.uz
+            </a>
             tomonidan ishlab chiqilgan
           </p>
         </div>
 
-        <!-- - -->
+        <!-- Contact Info -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Kontaktlar</h4>
+          <h2 class="text-white text-xl font-bold">Kontaktlar</h2>
+          <ul class="space-y-3">
             <li>
               <a
-                href="tel:+998990000000 "
-                class="text-graylight hover:text-main"
+                href="tel:+998990000000"
+                class="text-graylight hover:text-main transition-colors"
               >
-                +998 99 000 00 00</a
-              >
+                +998 99 000 00 00
+              </a>
             </li>
             <li>
-              <a href="zencar@zencar.uz" class="text-graylight hover:text-main"
-                >zencar@zencar.uz</a
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
               >
-            </li>
-          </ul>
-        </div>
-        <!-- - -->
-
-        <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Menu</h4>
-            <li>
-              <a href="#main" class="text-graylight hover:text-main">Asosiy</a>
-            </li>
-            <li>
-              <a href="#services" class="text-graylight hover:text-main"
-                >Xizmatlar</a
-              >
-            </li>
-            <li>
-              <a href="#prices" class="text-graylight hover:text-main"
-                >Narxlar</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="text-graylight hover:text-main"
-                >Kontaktlar</a
-              >
-            </li>
-            <li>
-              <a href="#shop" class="text-graylight hover:text-main"
-                >Do'kon ZC</a
-              >
+                zencar@zencar.uz
+              </a>
             </li>
           </ul>
         </div>
-        <!-- - -->
 
+        <!-- Menu -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Boshqalar</h4>
+          <h2 class="text-white text-xl font-bold">Menu</h2>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#main"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Asosiy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Xizmatlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#prices"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Narxlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Kontaktlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#shop"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Do'kon ZC
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Others -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Boshqalar</h2>
+          <ul class="space-y-3">
             <li>
-              <a href="/policy.html" class="text-graylight hover:text-main"
-                >Maxfiylik Siyosati</a
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
               >
+                Maxfiylik Siyosati
+              </a>
             </li>
             <li>
-              <a href="form.html" class="text-graylight hover:text-main">
+              <a
+                href="/form.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
                 Navbatga Yozilish
               </a>
             </li>
@@ -322,7 +848,7 @@
     </footer>
     <!-- Footer ends -->
 
-    <!-- js -->
-    <script src="./JS/script.js"></script>
+    <!-- JavaScript -->
+    <script src="/JS/script.js"></script>
   </body>
 </html>
