@@ -109,19 +109,19 @@
 
       /* Responsive Typography */
       h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-size: clamp(1.75rem, 4.5vw, 3rem);
       }
 
       h2 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: clamp(1.25rem, 3.5vw, 2.25rem);
       }
 
       h3 {
-        font-size: clamp(1.25rem, 3vw, 2rem);
+        font-size: clamp(1.125rem, 2.75vw, 1.75rem);
       }
 
       p {
-        font-size: clamp(1rem, 2vw, 1.125rem);
+        font-size: clamp(0.875rem, 1.75vw, 1rem);
       }
 
       /* Responsive Spacing */
@@ -199,6 +199,131 @@
       /* Responsive Footer */
       .footer-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      /* New Responsive Styles */
+      @media (max-width: 768px) {
+        /* Adjust header for mobile */
+        header {
+          padding: 1rem;
+        }
+
+        /* Improve mobile menu button visibility */
+        #menuToggle {
+          padding: 0.5rem;
+        }
+
+        /* Adjust package cards for mobile */
+        .bg-orangedark,
+        .bg-bluedark {
+          padding: 1rem;
+        }
+
+        /* Improve text readability on mobile */
+        .text-6xl {
+          font-size: 2.25rem;
+        }
+
+        .text-4xl {
+          font-size: 1.5rem;
+        }
+
+        .text-3xl {
+          font-size: 1.375rem;
+        }
+
+        .text-2xl {
+          font-size: 1.25rem;
+        }
+
+        .text-xl {
+          font-size: 1.125rem;
+        }
+
+        .text-lg {
+          font-size: 1rem;
+        }
+
+        /* Adjust spacing for mobile */
+        .space-y-4 {
+          gap: 1rem;
+        }
+
+        /* Improve button sizes on mobile */
+        .rounded-3xl {
+          padding: 0.75rem 1.5rem;
+        }
+
+        /* Adjust individual package section for mobile */
+        .flex-col {
+          gap: 1rem;
+        }
+
+        /* Adjust footer spacing for mobile */
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        /* Improve social media icons spacing */
+        .flex.gap-4 {
+          gap: 1rem;
+        }
+      }
+
+      /* Tablet-specific adjustments */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Adjust container padding */
+        .container {
+          padding: 0 2rem;
+        }
+
+        /* Improve package card layouts */
+        .md\:flex-row {
+          flex-direction: column;
+        }
+
+        /* Adjust text sizes for better readability */
+        .text-6xl {
+          font-size: 2.75rem;
+        }
+
+        .text-4xl {
+          font-size: 2rem;
+        }
+
+        .text-3xl {
+          font-size: 1.75rem;
+        }
+
+        .text-2xl {
+          font-size: 1.5rem;
+        }
+
+        .text-xl {
+          font-size: 1.25rem;
+        }
+
+        .text-lg {
+          font-size: 1.125rem;
+        }
+
+        /* Improve spacing between elements */
+        .space-y-6 {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Large screen adjustments */
+      @media (min-width: 1025px) {
+        /* Ensure maximum width for content */
+        .max-w-6xl {
+          max-width: 72rem;
+        }
+
+        /* Improve spacing for large screens */
+        .gap-6 {
+          gap: 2rem;
+        }
       }
     </style>
   </head>
@@ -287,8 +412,8 @@
     <!-- Header Ends -->
 
     <!-- main section starts -->
-    <main class="fluid-container">
-      <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
+    <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
+      <div class="container">
         <h3 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
           Оклейка
         </h3>
@@ -386,11 +511,12 @@
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
     <!-- main section ends -->
 
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto sm:m-5">
       <!-- Light Package -->
       <div
         class="bg-orangedark rounded-lg p-6 mb-8 flex flex-col md:flex-row overflow-hidden"
@@ -448,7 +574,7 @@
         </div>
 
         <div class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between">
-          <ul class="list-none pl-6 text-lg mb-4">
+          <ul class="list-none pl-6 text-lg mb-4 bg-bluedark bg-opacity-25">
             <li class="text-white">
               <i class="fa-solid fa-check fa-lg text-blue px-2"></i>Фары
             </li>
@@ -470,11 +596,11 @@
               <i class="fa-solid fa-check fa-lg text-blue px-2"></i>Под ручками
             </li>
             <li class="text-white">
-              <i class="fa-solid fa-plus fa-lg text-main px-2"></i>Бампер
+              <i class="fa-solid fa-plus fa-lg text-blue px-2"></i>Бампер
             </li>
 
             <li class="text-white">
-              <i class="fa-solid fa-plus fa-lg text-main px-2"></i>Крылья
+              <i class="fa-solid fa-plus fa-lg text-blue px-2"></i>Крылья
             </li>
           </ul>
         </div>
@@ -493,7 +619,9 @@
           <div class="text-6xl font-bold text-main mb-6">от 240.000 ₽</div>
         </div>
 
-        <div class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between">
+        <div
+          class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between bg-orangedark bg-opacity-120 rounded-lg p-4"
+        >
           <ul class="list-none pl-6 text-lg mb-4">
             <li class="text-white">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>Все наружные
@@ -533,7 +661,9 @@
           <div class="text-6xl font-bold text-blue mb-6">от 260.000 ₽</div>
         </div>
 
-        <div class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between">
+        <div
+          class="md:w-1/3 mt-6 md:mt-0 flex flex-col justify-between bg-bluedark bg-opacity-25"
+        >
           <ul class="list-none pl-6 text-lg mb-4">
             <li class="text-white">
               <i class="fa-solid fa-check fa-lg text-blue px-2"></i>Фары
@@ -559,6 +689,160 @@
         </div>
       </div>
     </div>
+
+    <!-- inividual starts -->
+    <section>
+      <div class="container">
+        <div
+          class="max-w-6xl mx-auto rounded-lg overflow-hidden bg-bluedark bg-opacity-50"
+        >
+          <!-- Content container with no gap -->
+          <div class="flex flex-col md:flex-row">
+            <!-- Left Panel -->
+            <div class="bg-dark-red p-6 md:p-10 flex-1">
+              <div class="space-y-6">
+                <h3 class="text-graylight text-xl">Оклейка</h3>
+                <h1
+                  class="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white"
+                >
+                  ПАКЕТ
+                  <span class="block md:inline text-blue">ИНДИВИДУАЛЬНЫЙ</span>
+                </h1>
+                <p class="text-main text-xl md:text-2xl mt-8">
+                  Выберите самостоятельно зоны для защиты
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="bg-dark-gray p-6 md:p-10 flex-1">
+              <div class="mb-6 bg-bluedark bg-opacity-25 rounded-lg p-4">
+                <p class="text-graylight text-lg">
+                  Цены ориентировочные и могут немного отличаться
+                </p>
+              </div>
+
+              <div class="space-y-4 bg-bluedark bg-opacity-25 rounded-lg p-4">
+                <!-- Price list items -->
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Бампер</span>
+                  <span class="text-xl font-bold text-blue">30.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Капот</span>
+                  <span class="text-xl font-bold text-blue">25.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Крылья <span class="text-gray-400">2 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">20.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Внутр. пороги
+                    <span class="text-gray-400">4 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">10.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Расширители крыльев
+                    <span class="text-gray-400">2 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">8.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Фары <span class="text-gray-400">2 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Полоса на крышу</span>
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Стойки вдоль лобового</span>
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Зеркала <span class="text-gray-400">2 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Погрузочная зона</span>
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Кромки дверей
+                    <span class="text-gray-400">4 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">6.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Вставки между дверьми
+                    <span class="text-gray-400">4 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">5.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >Под ручками <span class="text-gray-400">4 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">4.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white"
+                    >ПТФ <span class="text-gray-400">2 шт.</span></span
+                  >
+                  <span class="text-xl font-bold text-blue">2.000 ₽</span>
+                </div>
+                <div
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-lg text-white">Лючок бензобака</span>
+                  <span class="text-xl font-bold text-blue">2.000 ₽</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- individual ends -->
 
     <!-- Footer starts -->
     <footer class="py-12 md:py-20 bg-black">
