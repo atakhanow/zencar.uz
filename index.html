@@ -136,15 +136,146 @@
         }
       }
 
-      /* Responsive adjustments */
+      /* Enhanced Responsive Design */
+      /* Mobile First Base Styles */
+      .container {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0 auto;
+      }
+
+      /* Improved Mobile Navigation */
+      .mobile-menu-button {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 1000;
+        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .mobile-menu a {
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--color-main);
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      /* Improved Touch Targets */
+      button,
+      a[role="button"],
+      .cta-button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1.5rem;
+      }
+
+      /* Enhanced Card Responsiveness */
+      .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Improved Image Loading */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Responsive Typography */
+      :root {
+        --font-size-base: 16px;
+        --font-size-scale: 1.2;
+      }
+
+      @media (max-width: 1280px) {
+        .container {
+          max-width: 90%;
+        }
+
+        #main h1 {
+          font-size: clamp(2.5rem, 5vw, 5rem);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          max-width: 95%;
+        }
+
+        #main h1 {
+          font-size: clamp(2rem, 4vw, 4rem);
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
       @media (max-width: 768px) {
+        .mobile-menu-button {
+          display: block;
+        }
+
+        nav {
+          display: none;
+        }
+
         .container {
           padding-left: 1rem;
           padding-right: 1rem;
         }
 
         #main h1 {
-          font-size: 2.5rem;
+          font-size: clamp(1.75rem, 3vw, 3rem);
           line-height: 1.2;
         }
 
@@ -156,88 +287,222 @@
         .contact-section {
           padding: 2rem 1rem;
         }
-      }
 
-      @media (max-width: 640px) {
+        /* Improved Mobile Header */
         .header-container {
           flex-direction: column;
           gap: 1rem;
+          padding: 1rem;
         }
 
-        .mobile-menu {
+        /* Mobile Animation Adjustments */
+        .animation-section img {
+          height: auto;
+          max-height: 12rem;
+        }
+
+        /* Mobile Contact Section */
+        .contact-info {
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .contact-buttons {
+          flex-direction: column;
+          gap: 1rem;
           width: 100%;
+        }
+
+        .contact-buttons a {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --font-size-base: 14px;
+        }
+
+        #main h1 {
+          font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+        }
+
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
         }
 
         .footer-grid {
           grid-template-columns: 1fr;
           gap: 2rem;
         }
+
+        /* Mobile Button Improvements */
+        .cta-button {
+          width: 100%;
+          text-align: center;
+          padding: 1rem 2rem;
+        }
+
+        /* Mobile Text Adjustments */
+        p {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          line-height: 1.3;
+        }
+      }
+
+      @media (max-width: 480px) {
+        :root {
+          --font-size-base: 13px;
+        }
+
+        #main h1 {
+          font-size: clamp(1.25rem, 2vw, 2rem);
+        }
+
+        .container {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        }
+
+        /* Mobile Card Improvements */
+        .service-card {
+          padding: 1rem;
+          margin: 0.5rem;
+        }
+
+        .service-card h2 {
+          font-size: 1.25rem;
+        }
+
+        /* Mobile Footer Improvements */
+        .footer-section {
+          padding: 1rem 0;
+        }
+
+        .social-links {
+          justify-content: center;
+          gap: 1.5rem;
+        }
+
+        .social-links a {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* Landscape Mode Optimizations */
+      @media (max-height: 600px) and (orientation: landscape) {
+        #main {
+          min-height: auto;
+          padding: 2rem 0;
+        }
+
+        .header-container {
+          padding: 0.5rem;
+        }
+
+        .mobile-menu {
+          padding: 1rem;
+        }
+
+        .mobile-menu nav {
+          gap: 1rem;
+        }
+      }
+
+      /* High DPI Screens */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        img {
+          image-rendering: -webkit-optimize-contrast;
+        }
+      }
+
+      /* Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #000;
+          --text-color: #fff;
+        }
       }
     </style>
   </head>
   <body class="bg-black">
     <!-- Main Section Starts -->
-    <main>
-      <!-- Header starts -->
-      <header
-        class="sticky left-0 w-full top-4 z-50 p-5 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-auto max-w-7xl rounded-xl"
+    <!-- Header starts -->
+    <header
+      class="sticky left-0 w-full top-4 z-50 p-5 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-auto max-w-7xl rounded-xl"
+    >
+      <div
+        class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4"
       >
-        <div
-          class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4"
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
+          <img
+            src="/images/zencar-secondary-logo.png"
+            alt="Zencar Logo"
+            class="h-10"
+            width="40"
+            height="40"
+            loading="eager"
+          />
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center gap-10 text-white"
+          aria-label="Main navigation"
         >
-          <a href="/" class="flex items-center" aria-label="Zencar Home">
-            <img
-              src="/images/zencar-secondary-logo.png"
-              alt="Zencar Logo"
-              class="h-10"
-              width="40"
-              height="40"
-              loading="eager"
-            />
-          </a>
-
-          <nav
-            class="hidden lg:flex items-center gap-10 text-white"
-            aria-label="Main navigation"
-          >
-            <a
-              href="#main"
-              class="hover:text-main transition-all duration-300"
-              aria-current="page"
-              >Asosiy</a
-            >
-            <a
-              href="#services"
-              class="hover:text-main transition-all duration-300"
-              >Xizmatlar</a
-            >
-            <a
-              href="/services/price.html"
-              class="hover:text-main transition-all duration-300"
-              >Narxlar</a
-            >
-            <a
-              href="#contact"
-              class="hover:text-main transition-all duration-300"
-              >Kontaktlar</a
-            >
-            <a href="#shop" class="hover:text-main transition-all duration-300"
-              >Do'kon ZC</a
-            >
-          </nav>
-
           <a
-            href="tel:+998901234567"
-            class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
-            aria-label="Call us at +998 90 000 00 00"
+            href="#main"
+            class="hover:text-main transition-all duration-300"
+            aria-current="page"
+            >Asosiy</a
           >
-            <i class="fa-solid fa-phone-volume"></i>
-            <span>+998 90 000 00 00</span>
-          </a>
-        </div>
-      </header>
-      <!-- Header Ends -->
+          <a
+            href="#services"
+            class="hover:text-main transition-all duration-300"
+            >Xizmatlar</a
+          >
+          <a
+            href="/services/price.html"
+            class="hover:text-main transition-all duration-300"
+            >Narxlar</a
+          >
+          <a href="#contact" class="hover:text-main transition-all duration-300"
+            >Kontaktlar</a
+          >
+          <a href="#shop" class="hover:text-main transition-all duration-300"
+            >Do'kon ZC</a
+          >
+        </nav>
 
+        <a
+          href="tel:+998901234567"
+          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+          aria-label="Call us at +998 90 000 00 00"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+998 90 000 00 00</span>
+        </a>
+      </div>
+    </header>
+    <!-- Header Ends -->
+    <main>
       <section id="main" class="relative">
         <div class="container mx-auto">
           <div
