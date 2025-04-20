@@ -155,7 +155,124 @@
         scroll-behavior: smooth;
       }
 
-      
+      header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        backdrop-filter: blur(20px);
+        padding: 1rem;
+        transition: all 0.3s ease-in-out;
+        border-top: 1px solid rgba(253, 201, 0, 0.1);
+        border-radius: 1rem 1rem 0 0;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          top: 0;
+          bottom: auto;
+          left: 2.5rem;
+          right: 2.5rem;
+          margin: 1.25rem auto;
+          border-radius: 0.75rem;
+          border-top: none;
+          backdrop-filter: blur(20px);
+        }
+      }
+
+      .mobile-menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        transition: bottom 0.3s ease-in-out;
+        z-index: 40;
+      }
+
+      .mobile-menu.active {
+        bottom: 0;
+      }
+
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 39;
+        display: none;
+      }
+
+      .mobile-menu-overlay.active {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        header {
+          left: 0;
+          right: 0;
+          margin: 0;
+          padding: 1rem;
+        }
+
+        #main {
+          padding: 2rem 1rem;
+        }
+
+        #main h1 {
+          font-size: 2.5rem;
+          line-height: 1.2;
+        }
+
+        #main p {
+          font-size: 1.1rem;
+          line-height: 1.5;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .contact-section {
+          padding: 2rem 1rem;
+        }
+
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        footer .container {
+          flex-direction: column;
+          gap: 2rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .container {
+          max-width: 90%;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .container {
+          max-width: 1200px;
+        }
+      }
 
       header,
       h1,
@@ -174,15 +291,13 @@
   </head>
   <body>
     <!-- Header starts -->
-    <header
-      class="fixed left-10 right-10 mx-auto bg-transparent z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl "
-    >
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="/">
+    <header>
+      <div class="container mx-auto flex justify-between items-center sm:justify-between sm:gap-6">
+        <a href="/" class="hidden sm:block">
           <img
             src="./images/zencar-secondary-logo.png"
             alt="Zencar Logo"
-            class="h-10"
+            class="h-10 sm:h-12 md:h-14"
           />
         </a>
         <nav class="hidden lg:flex items-center gap-10 text-white">
@@ -207,11 +322,17 @@
           >
         </nav>
 
-        <div class="lg:hidden cursor-pointer text-primary text-2xl">
-          <i class="fa-solid fa-bars"></i>
+        <div class="lg:hidden cursor-pointer text-2xl text-graylight rounded-xl p-2 flex justify-center items-center gap-6 w-full">
+          <a href="https://www.instagram.com/zencar.uz/" target="_blank"><i class="fa-brands fa-instagram fa-lg active:text-white"></i></a>
+          <a href="https://t.me/zencaruz" target="_blank"><i class="fa-brands fa-telegram fa-lg active:text-white"></i></a>
+          <button id="menu-button" class="flex items-center gap-2 text-white bg-main rounded-full p-5 border-none">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </button>
+          <a href="https://youtube.com/@zencar.uz" target="_blank"><i class="fa-brands fa-youtube fa-lg active:text-white"></i></a>
+          <a href="https://www.tiktok.com/@zencar.uz" target="_blank"><i class="fa-brands fa-tiktok fa-lg active:text-white"></i></a>
         </div>
 
-        <a href="tel:+998901234567">
+        <a href="tel:+998901234567" class="hidden lg:block">
           <button class="text-main font-bold">
             <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
           </button></a
@@ -219,14 +340,27 @@
       </div>
     </header>
 
-    <!-- Header Ends -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="container mx-auto">
+        <div class="flex flex-col gap-6 text-white">
+          <a href="#main" class="text-xl hover:text-main transition-all duration-300">Асосий</a>
+          <a href="#services" class="text-xl hover:text-main transition-all duration-300">Хизматлар</a>
+          <a href="/services/price.html" class="text-xl hover:text-main transition-all duration-300">Нархлар</a>
+          <a href="#contact" class="text-xl hover:text-main transition-all duration-300">Контактлар</a>
+          <a href="#shop" class="text-xl hover:text-main transition-all duration-300">Дўкон ZC</a>
+          <a href="tel:+998901234567" class="text-xl text-main font-bold">
+            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Section Starts -->
-    <section id="main" style="background-image: url(./images/car-stock.jfif); background-size: cover; background-position: center;" >
-      <div class="container">
-        <div
-          class="mx-auto flex flex-col h-screen text-white text-center w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-start ml-8"
-        >
+    <section id="main" style="background-image: url(./images/car-stock.jfif); background-size: cover; background-position: center;" class="min-h-screen flex items-center">
+      <div class="container mx-auto">
+        <div class="flex flex-col text-white text-center md:text-left w-full md:w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-center md:items-start px-4 md:px-8">
           <h1 class="font-bold mb-5 text-7xl">
             ZENCAR <span class="text-main"> DETAILING </span>
           </h1>
@@ -297,10 +431,10 @@
     <!-- Animation Ends -->
 
     <!-- Services Section Starts -->
-    <section id="services" class="bg-black py-20">
-      <div class="container">
+    <section id="services" class="bg-black py-10 md:py-20">
+      <div class="container mx-auto">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 services-grid">
             <!-- Card 1 -->
           <a href="/services/polirovka.html">
             <div
@@ -481,11 +615,9 @@
     <!-- Services Section Ends -->
 
     <!-- Contact section Starts -->
-    <section id="contact" class="bg-black py-20">
-      <div class="container">
-        <div
-          class="w-full max-w-4xl bg-[#23250e] rounded-lg p-8 md:p-12 relative items-center mx-auto"
-        >
+    <section id="contact" class="bg-black py-10 md:py-20">
+      <div class="container mx-auto">
+        <div class="w-full max-w-4xl bg-[#23250e] rounded-lg p-4 md:p-8 lg:p-12 relative items-center mx-auto contact-section">
           <div
             class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24"
           >
@@ -537,8 +669,8 @@
     <!-- Contact section ends -->
 
     <!-- Footer starts -->
-   <footer class="py-20 bg-black">
-      <div class="container flex gap-5 justify-around items-start">
+   <footer class="py-10 md:py-20 bg-black">
+      <div class="container mx-auto flex flex-col md:flex-row gap-8 md:gap-5 justify-around items-start px-4 md:px-0">
         <div class="flex flex-col gap-5">
           <a href="#"
             ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
@@ -654,5 +786,31 @@
 
     <!-- js -->
     <script src="./JS/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          menuOverlay.classList.toggle('active');
+        });
+
+        menuOverlay.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+        });
+
+        // Close menu when clicking on menu items
+        const menuItems = mobileMenu.querySelectorAll('a');
+        menuItems.forEach(item => {
+          item.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>
