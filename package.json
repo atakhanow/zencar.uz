@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "sweetalert2": "^11.19.1",
+    "tailwind-scrollbar": "^4.0.2"
+  }
+}
