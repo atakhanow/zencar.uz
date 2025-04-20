@@ -205,83 +205,53 @@
   <body class="bg-black">
     <!-- Header starts -->
     <header
-      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+      class="fixed left-10 right-10 mx-auto bg-transparent z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
     >
       <div class="container mx-auto flex justify-between items-center">
-        <a href="/" class="flex items-center" aria-label="Zencar Home">
+        <a href="/">
           <img
             src="/images/zencar-secondary-logo.png"
             alt="Zencar Logo"
-            class="h-8 md:h-10"
+            class="h-10"
           />
         </a>
-
-        <nav
-          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
-          aria-label="Main navigation"
-        >
+        <nav class="hidden lg:flex items-center gap-10 text-white">
           <a
-            href="/index.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            aria-current="page"
-            >Asosiy</a
+            href="/index.html#main"
+            class="hover:text-main transition-all duration-300"
+            >Асосий</a
           >
           <a
             href="/index.html#services"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Xizmatlar</a
+            class="hover:text-main transition-all duration-300"
+            >Хизматлар</a
           >
           <a
             href="/services/price.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Narxlar</a
+            class="hover:text-main transition-all duration-300"
+            >Нархлар</a
           >
           <a
             href="/index.html#contact"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Kontaktlar</a
+            class="hover:text-main transition-all duration-300"
+            >Контактлар</a
           >
           <a
             href="/services/shop.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Do'kon ZC</a
+            class="hover:text-main transition-all duration-300"
+            >Дўкон ZC</a
           >
         </nav>
 
-        <button
-          class="lg:hidden text-primary text-2xl"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          id="menuToggle"
-        >
+        <div class="lg:hidden cursor-pointer text-primary text-2xl">
           <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <a
-          href="tel:+998901234567"
-          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
-          aria-label="Call us at +998 90 000 00 00"
-        >
-          <i class="fa-solid fa-phone-volume"></i>
-          <span>+998 90 000 00 00</span>
-        </a>
-      </div>
-
-      <!-- Mobile menu -->
-      <div
-        id="mobileMenu"
-        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
-        aria-label="Mobile navigation"
-      >
-        <div class="container mx-auto px-4 py-8">
-          <nav class="flex flex-col gap-6 text-white text-xl">
-            <a href="#main" class="hover:text-main">Asosiy</a>
-            <a href="#services" class="hover:text-main">Xizmatlar</a>
-            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
-            <a href="#contact" class="hover:text-main">Kontaktlar</a>
-            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
-          </nav>
         </div>
+
+        <a href="tel:+998901234567">
+          <button class="text-main font-bold">
+            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
+          </button></a
+        >
       </div>
     </header>
     <!-- Header Ends -->
@@ -289,51 +259,51 @@
     <main class="fluid-container">
       <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
         <h3 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
-          Полировка и керамика
+          Полировка ва керамика
         </h3>
-        <!-- Promotion Section -->
+        <!-- Акция бўлими -->
         <div
           class="bg-orangedark rounded-lg p-6 md:p-8 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-8"
-          lang="ru"
+          lang="uz"
         >
-          <!-- Left Content -->
+          <!-- Чап контент -->
           <div class="md:w-1/2 mb-6 md:mb-0">
-            <span class="text-main mb-2 inline-block text-sm md:text-base"
-              >Базовый комплекс</span
-            >
+            <span class="text-main mb-2 inline-block text-sm md:text-base">
+              Базавий комплекс
+            </span>
             <h1
               class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2"
             >
-              ЛЁГКАЯ ПОЛИРОВКА + КЕРАМИКА
+              ЕНГИЛ ПОЛИРОВКА + КЕРАМИКА
             </h1>
             <div
               class="text-main text-2xl md:text-3xl lg:text-5xl font-bold mb-6 md:mb-8"
             >
-              ОТ 20.000 ₽
+              20.000 ₽ ДАН
             </div>
             <a
               href="/"
               class="inline-block border border-main text-main px-20 py-2 my-5 rounded-3xl hover:bg-main/20 transition duration-300"
             >
-              Batafsil
+              Батафсил
             </a>
 
             <ul class="space-y-3 text-white">
               <li>
                 <i class="fa-solid fa-check text-main w-6"></i>
-                Подготовительная мойка
+                Тайёрлов мойкаси
               </li>
               <li>
                 <i class="fa-solid fa-check text-main w-6"></i>
-                Лёгкая полировка кузова и фар
+                Кузов ва фараларни енгил полировкалаш
               </li>
               <li>
                 <i class="fa-solid fa-check text-main w-6"></i>
-                Нанесение керамики
+                Керамика қопламасини суртиш
               </li>
               <li>
                 <i class="fa-solid fa-check text-main w-6"></i>
-                Экспресс-уборка салона
+                Салоннинг экспресс тозалиги
               </li>
             </ul>
 
@@ -343,7 +313,7 @@
                 class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none"
               >
                 <span class="relative z-10 block px-10 py-3">
-                  Navbatga Yozilish
+                  Навбатга ёзилиш
                 </span>
                 <span
                   class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
@@ -353,7 +323,7 @@
               <a
                 href="tel:+998901234567"
                 class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
-                aria-label="Call us at +998 90 000 00 00"
+                aria-label="Бизга қўнғироқ қилиш +998 90 000 00 00"
               >
                 <i class="fa-solid fa-phone-volume"></i>
                 <span>+998 90 000 00 00</span>
@@ -361,12 +331,12 @@
             </div>
           </div>
 
-          <!-- Right Content - Car Image -->
+          <!-- Ўнг контент - Машина расми -->
           <div class="md:w-1/2">
             <div class="relative h-80 md:h-full rounded-lg overflow-hidden">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Dv9sPZ2U2wctraeBrOdVuG0KwcsGk6.png"
-                alt="Полированный автомобиль после обработки"
+                alt="Тозаланган автомобил"
                 class="w-full h-full object-cover object-center rounded-lg"
                 width="800"
                 height="600"
@@ -377,54 +347,61 @@
         </div>
       </section>
     </main>
+
     <!-- main section ends -->
 
     <!-- - -->
     <div class="container mx-auto px-4 py-12 max-w-6xl">
-      <!-- Header Section -->
+      <!-- Сарлавҳа бўлими -->
       <header class="mb-16">
         <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white">
-          Контролируем толщину <span class="text-main">ЛКП</span>
+          ЛКП қопламасининг қалинлигини
+          <span class="text-main">назорат қиламиз</span>
         </h1>
         <p class="text-xl text-gray-300 max-w-2xl ml-auto">
-          Любая полировка делает ЛКП тоньше, поэтому мы всегда замеряем толщину
-          ЛКП до и после.
+          Ҳар қандай полировка ЛКП ни ингичкалаштиради, шунинг учун биз ҳар доим
+          полировкадан олдин ва кейин қалинликни ўлчаймиз.
         </p>
       </header>
 
-      <!-- Services Section -->
+      <!-- Хизматлар бўлими -->
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-orangedark rounded-lg p-8 text-white">
           <h2 class="text-4xl font-bold mb-6 text-white">
-            <span class="text-main">ЛЁГКАЯ</span> ПОЛИРОВКА
+            <span class="text-main">ЕНГИЛ</span> ПОЛИРОВКА
           </h2>
           <p class="text-lg mb-8 text-graylight">
-            <span class="text-white"> Восстанавливает яркость и блеск</span>
-            кузова, убирает основную массу мелких царапин.
+            <span class="text-white">
+              Кузовнинг ёрқинлиги ва ёғдулини тиклайди,</span
+            >
+            ҳамда майда тирналишларнинг асосий қисмини олиб ташлайди.
           </p>
           <ul class="space-y-4 mb-8">
             <li class="flex items-center">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>
-              <span>Быстро — <span class="text-main">1 день работы</span></span>
+              <span>Тез — <span class="text-main">1 кунлик иш</span></span>
             </li>
             <li class="flex items-center">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>
               <span
-                >Безопасно —
-                <span class="text-main">удаляем меньше 10% лака</span></span
+                >Хавфсиз —
+                <span class="text-main"
+                  >лакнинг 10% гача олиб ташланади</span
+                ></span
               >
             </li>
             <li class="flex items-center">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>
               <span
-                >Бюджетно — <span class="text-main">от 20.000 руб.</span></span
+                >Арзон —
+                <span class="text-main">20.000 сўмдан бошлаб</span></span
               >
             </li>
           </ul>
           <div class="mt-6">
             <img
               src="/placeholder.svg?height=200&width=400"
-              alt="Пример лёгкой полировки"
+              alt="Енгил полировка намунаси"
               class="w-full h-48 object-cover rounded-lg"
             />
           </div>
@@ -432,159 +409,136 @@
 
         <div class="bg-orangedark rounded-lg p-8 text-white">
           <h2 class="text-4xl font-bold mb-6 text-white">
-            <span class="text-main">ГЛУБОКАЯ</span> ПОЛИРОВКА
+            <span class="text-main">ЧУҚУР</span> ПОЛИРОВКА
           </h2>
           <p class="text-lg mb-8 text-graylight">
-            <span class="text-white"> Удаляет до 99% всех царапин</span>
-            и приводит ЛКП к идеальному состоянию.
+            <span class="text-white">
+              Барча тирналишларнинг 99% гача олиб ташлайди,</span
+            >
+            ва ЛКП ни идеал ҳолатга келтиради.
           </p>
           <ul class="space-y-4 mb-8">
             <li class="flex items-center">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>
+              <span>Иш вақти — <span class="text-main">2–3 кун</span></span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check fa-lg text-main px-2"></i>
               <span
-                >Время исполнения —
-                <span class="text-main">2-3 дня работы</span></span
+                >Олиб ташлаш —
+                <span class="text-main">10% дан 30% гача лак</span></span
               >
             </li>
             <li class="flex items-center">
               <i class="fa-solid fa-check fa-lg text-main px-2"></i>
-              <span>
-                Удаляет — <span class="text-main"> от 10% до 30% лака</span>
-              </span>
-            </li>
-            <li class="flex items-center">
-              <i class="fa-solid fa-check fa-lg text-main px-2"></i>
               <span
-                >Стоимость —
-                <span class="text-main"> от 30.000 руб.</span></span
+                >Нарх —
+                <span class="text-main">30.000 сўмдан бошлаб</span></span
               >
             </li>
           </ul>
           <div class="mt-6">
             <img
               src="/images/polirovka-1.jpg"
-              alt="Пример лёгкой полировки"
+              alt="Енгил полировка намунаси"
               class="w-full h-48 object-cover rounded-lg"
             />
           </div>
         </div>
       </div>
     </div>
+
     <!-- - -->
 
     <div class="container mx-auto px-4 py-12 max-w-6xl">
       <!-- Header Section -->
       <header class="mb-16">
         <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white">
-          Гарантируем <span class="text-main">1 год</span> защиты
+          Кафолат берамиз <span class="text-main">1 йил</span> ҳимоя
         </h1>
         <div class="md:ml-auto md:max-w-xl">
           <p class="text-gray-400 text-lg mb-4">
-            Zencar — ведущий производитель керамических покрытий в UZR.
+            Zencar — ётакчи ишлаб чиқарувчи керамика қопламаларини ишлаб
+            чиқаради.
           </p>
           <p class="text-gray-400 text-lg">
-            Все наши покрытия сделаны на основе полисилазана (OPSZ) — самое
-            высокотехнологичное кремниевое соединение.
+            Ҳамма бизнинг қопламалар полисилазана (OPSZ) асосида тайёрланган —
+            энг юқори технологияли кремнийли бирикма.
           </p>
         </div>
       </header>
 
       <!-- Products Section -->
       <div class="grid md:grid-cols-2 gap-8">
+        <!-- Product 1 -->
         <div class="bg-orangedark bg-opacity-30 rounded-lg p-8 flex flex-col">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
             Quartz Master <span class="text-main">Light</span>
           </h2>
-
           <div class="mb-8">
             <p class="text-graylight text-xl mb-4">OPSZ — 30%</p>
-
-            <div class="mb-2">
-              <p class="text-xl mb-1 text-graylight">
-                Срок службы <span class="font-bold text-main"> ≈ 1 год</span>
-              </p>
-            </div>
-
-            <div class="mb-2">
-              <p class="text-xl mb-1 text-graylight">
-                Блеск <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-regular fa-star text-main"></i>
-              </p>
-              <div class="flex"></div>
-            </div>
-
-            <div>
-              <p class="text-xl mb-1 text-graylight">
-                Гидрофоб <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-solid fa-star text-main"></i>
-                <i class="fa-regular fa-star text-main"></i>
-              </p>
-              <div class="flex"></div>
-            </div>
+            <p class="text-xl mb-2 text-graylight">
+              Хизмат мўддати <span class="font-bold text-main">≈ 1 йил</span>
+            </p>
+            <p class="text-xl mb-2 text-graylight">
+              Ёрқинлик
+              <i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-regular fa-star text-main"></i>
+            </p>
+            <p class="text-xl text-graylight">
+              Гидрофоб
+              <i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-solid fa-star text-main"></i
+              ><i class="fa-regular fa-star text-main"></i>
+            </p>
           </div>
-
-          <div class="mt-auto">
-            <div class="bg-dark-green rounded-lg overflow-hidden">
-              <img
-                src="/images/qm-light.webp"
-                alt="Quartz Master Light"
-                class="w-full h-48 object-contain p-4"
-              />
-            </div>
+          <div class="mt-auto bg-dark-green rounded-lg overflow-hidden">
+            <img
+              src="/images/qm-light.webp"
+              alt="Quartz Master Light"
+              class="w-full h-48 object-contain p-4"
+            />
           </div>
         </div>
 
+        <!-- Product 2 -->
         <div class="bg-bluedark bg-opacity-30 rounded-lg p-8 flex flex-col">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
             Quartz Master <span class="text-blue">One</span>
           </h2>
-
           <div class="mb-8">
             <p class="text-graylight text-xl mb-4">OPSZ — 45%</p>
-
-            <div class="mb-2">
-              <p class="text-xl mb-1 text-graylight">
-                Срок службы
-                <span class="font-bold text-blue"> ≈ 1.5 года;</span>
-              </p>
-            </div>
-
-            <div class="mb-2">
-              <p class="text-xl mb-1 text-graylight">
-                Блеск <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-              </p>
-              <div class="flex"></div>
-            </div>
-
-            <div>
-              <p class="text-xl mb-1 text-graylight">
-                Гидрофоб <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-                <i class="fa-solid fa-star text-blue"></i>
-              </p>
-              <div class="flex"></div>
-            </div>
+            <p class="text-xl mb-2 text-graylight">
+              Хизмат мўддати <span class="font-bold text-blue">≈ 1.5 йил</span>
+            </p>
+            <p class="text-xl mb-2 text-graylight">
+              Ёрқинлик
+              <i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i>
+            </p>
+            <p class="text-xl text-graylight">
+              Гидрофоб
+              <i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i
+              ><i class="fa-solid fa-star text-blue"></i>
+            </p>
           </div>
-
-          <div class="mt-auto">
-            <div class="bg-dark-green rounded-lg overflow-hidden">
-              <img
-                src="/images/qm-light.webp"
-                alt="Quartz Master Light"
-                class="w-full h-48 object-contain p-4"
-              />
-            </div>
+          <div class="mt-auto bg-dark-green rounded-lg overflow-hidden">
+            <img
+              src="/images/qm-one.webp"
+              alt="Quartz Master One"
+              class="w-full h-48 object-contain p-4"
+            />
           </div>
         </div>
       </div>
@@ -1149,161 +1103,120 @@
     <!-- uslugi ends -->
 
     <!-- Footer starts -->
-    <footer class="py-12 md:py-20 bg-black">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
-      >
-        <!-- Company Info -->
+    <footer class="py-20 bg-black">
+      <div class="container flex gap-5 justify-around items-start">
         <div class="flex flex-col gap-5">
-          <a href="/" aria-label="Go to homepage">
-            <img
-              src="/images/zencar-logo.png"
-              alt="Zencar Logo"
-              class="w-[50px]"
-              width="50"
-              height="50"
-            />
-          </a>
+          <a href="#"
+            ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
+          >
 
-          <div class="flex gap-4" aria-label="Social media links">
-            <a
-              href="https://t.me/zencar_uz"
-              aria-label="Follow us on Telegram"
-              class="text-graylight hover:text-main transition-colors"
-            >
-              <i class="fa-brands fa-telegram fa-xl"></i>
+          <div class="flex gap-2">
+            <a href="https://t.me/zencar_uz">
+              <i
+                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
+              ></i>
             </a>
-            <a
-              href="https://instagram.com/zencar_uz"
-              aria-label="Follow us on Instagram"
-              class="text-graylight hover:text-main transition-colors"
-            >
-              <i class="fa-brands fa-square-instagram fa-xl"></i>
+            <a href="https://instagram.com/zencar_uz">
+              <i
+                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
+              ></i>
             </a>
-            <a
-              href="https://youtube.com/zencar_uz"
-              aria-label="Subscribe to our YouTube channel"
-              class="text-graylight hover:text-main transition-colors"
-            >
-              <i class="fa-brands fa-youtube fa-xl"></i>
+
+            <a href="https://youtube.com/zencar_uz">
+              <i
+                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
+              ></i>
             </a>
-            <a
-              href="https://tiktok.com/zencar_uz"
-              aria-label="Follow us on TikTok"
-              class="text-graylight hover:text-main transition-colors"
-            >
-              <i class="fa-brands fa-tiktok fa-xl"></i>
+
+            <a href="https://tiktok.com/zencar_uz">
+              <i
+                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
+              ></i>
             </a>
           </div>
-
           <p class="text-graylight">
             © 2025 Zencar. Barcha huquqlar himoyalangan.
           </p>
 
-          <p class="text-graylight/50">
-            Websayt
-            <a
-              href="https://atakhanov.uz"
-              class="hover:text-main transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
+          <p class="text-graylight opacity-50">
+            Вебсайт
+            <span class="cursor-pointer hover:text-main">
+              <a href="https:atakhanov.uz"> Atakhanov.uz</a></span
             >
-              Atakhanov.uz
-            </a>
-            tomonidan ishlab chiqilgan
+            томонидан ишлаб чиқилган
           </p>
         </div>
 
-        <!-- Contact Info -->
+        <!-- - -->
         <div class="flex flex-col gap-5">
-          <h2 class="text-white text-xl font-bold">Kontaktlar</h2>
-          <ul class="space-y-3">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Контактлар</h4>
             <li>
               <a
-                href="tel:+998990000000"
-                class="text-graylight hover:text-main transition-colors"
+                href="tel:+998990000000 "
+                class="text-graylight hover:text-main"
               >
-                +998 99 000 00 00
-              </a>
+                +998 99 000 00 00</a
+              >
             </li>
             <li>
-              <a
-                href="mailto:zencar@zencar.uz"
-                class="text-graylight hover:text-main transition-colors"
+              <a href="zencar@zencar.uz" class="text-graylight hover:text-main"
+                >zencar@zencar.uz</a
               >
-                zencar@zencar.uz
-              </a>
             </li>
           </ul>
         </div>
+        <!-- - -->
 
-        <!-- Menu -->
         <div class="flex flex-col gap-5">
-          <h2 class="text-white text-xl font-bold">Menu</h2>
-          <nav aria-label="Footer navigation">
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="/index.html"
-                  class="text-graylight hover:text-main transition-colors"
-                >
-                  Asosiy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/index.html#services"
-                  class="text-graylight hover:text-main transition-colors"
-                >
-                  Xizmatlar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/price.html"
-                  class="text-graylight hover:text-main transition-colors"
-                >
-                  Narxlar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/index.html#contact"
-                  class="text-graylight hover:text-main transition-colors"
-                >
-                  Kontaktlar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/shop.html"
-                  class="text-graylight hover:text-main transition-colors"
-                >
-                  Do'kon ZC
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <!-- Others -->
-        <div class="flex flex-col gap-5">
-          <h2 class="text-white text-xl font-bold">Boshqalar</h2>
-          <ul class="space-y-3">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Меню</h4>
             <li>
-              <a
-                href="/policy.html"
-                class="text-graylight hover:text-main transition-colors"
+              <a href="/index.html#main" class="text-graylight hover:text-main"
+                >Асосий</a
               >
-                Maxfiylik Siyosati
-              </a>
             </li>
             <li>
               <a
-                href="/form.html"
-                class="text-graylight hover:text-main transition-colors"
+                href="/index.html#services"
+                class="text-graylight hover:text-main"
+                >Хизматлар</a
               >
-                Navbatga Yozilish
+            </li>
+            <li>
+              <a href="/price.html" class="text-graylight hover:text-main"
+                >Нархлар</a
+              >
+            </li>
+            <li>
+              <a
+                href="/index.html#contact"
+                class="text-graylight hover:text-main"
+                >Контактлар</a
+              >
+            </li>
+            <li>
+              <a
+                href="/services/shop.html"
+                class="text-graylight hover:text-main"
+                >Дўкон ZC</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- - -->
+
+        <div class="flex flex-col gap-5">
+          <ul class="cursor-pointer">
+            <h4 class="text-white">Бошқалар</h4>
+            <li>
+              <a href="/policy.html" class="text-graylight hover:text-main"
+                >Махфийлик Сиёсати</a
+              >
+            </li>
+            <li>
+              <a href="form.html" class="text-graylight hover:text-main">
+                Навбатга Ёзиш
               </a>
             </li>
           </ul>
