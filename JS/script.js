@@ -1,14 +1,24 @@
-// Initialize mobile menu
 document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const menuButton = document.getElementById("menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuOverlay = document.getElementById("menu-overlay");
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", () => {
-      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", !isExpanded);
-      mobileMenu.classList.toggle("hidden");
-      document.body.classList.toggle("overflow-hidden");
+  menuButton.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+    menuOverlay.classList.toggle("active");
+  });
+
+  menuOverlay.addEventListener("click", function () {
+    mobileMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+  });
+
+  // Close menu when clicking on menu items
+  const menuItems = mobileMenu.querySelectorAll("a");
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      mobileMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
     });
-  }
+  });
 });
