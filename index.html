@@ -23,31 +23,6 @@
     <meta name="author" content="Zencar" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Preload critical assets -->
-    <link
-      rel="preload"
-      href="/images/car-stock.webp"
-      as="image"
-      fetchpriority="high"
-    />
-    <link rel="preload" href="/images/zencar-logo.png" as="image" />
-    <link rel="preload" href="/images/zencar-secondary-logo.png" as="image" />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      as="style"
-    />
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://zencar.uz/" />
@@ -123,19 +98,59 @@
       type="image/x-icon"
     />
 
-    <!-- Critical CSS -->
-    <style>
-      /* Critical path CSS */
-      :root {
-        --main: #fdc900;
-        --graylight: #838383;
-        --primary: #69b99d;
-        --secondary: #0f241d;
-        --orangedark: #23250e;
-        --blue: #2a63ff;
-        --bluedark: #1e3a8a;
-      }
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#fdc900",
+              graylight: "#838383",
+              primary: "#69b99d",
+              secondary: "#0f241d",
+              orangedark: "#23250e",
+              blue: "#2a63ff",
+              bluedark: "#1e3a8a",
+            },
+
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              scroll: "scroll 30s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
       html {
         scroll-behavior: smooth;
       }
@@ -145,7 +160,7 @@
         position: absolute;
         top: -40px;
         left: 0;
-        background: var(--main);
+        background: #fdc900;
         color: #000;
         padding: 8px;
         z-index: 100;
@@ -158,7 +173,7 @@
 
       /* Focus styles */
       :focus-visible {
-        outline: 3px solid var(--main);
+        outline: 3px solid #fdc900;
         outline-offset: 2px;
       }
 
@@ -172,7 +187,6 @@
         }
       }
 
-      /* Critical layout styles */
       header {
         position: fixed;
         left: 0;
@@ -199,7 +213,99 @@
         }
       }
 
-      /* Critical typography */
+      .mobile-menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        transition: bottom 0.3s ease-in-out;
+        z-index: 40;
+      }
+
+      .mobile-menu.active {
+        bottom: 0;
+      }
+
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 39;
+        display: none;
+      }
+
+      .mobile-menu-overlay.active {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        header {
+          left: 0;
+          right: 0;
+          margin: 0;
+          padding: 1rem;
+        }
+
+        #main {
+          padding: 2rem 1rem;
+        }
+
+        #main h1 {
+          font-size: 2.5rem;
+          line-height: 1.2;
+        }
+
+        #main p {
+          font-size: 1.1rem;
+          line-height: 1.5;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .contact-section {
+          padding: 2rem 1rem;
+        }
+
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        footer .container {
+          flex-direction: column;
+          gap: 2rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .container {
+          max-width: 90%;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .container {
+          max-width: 1200px;
+        }
+      }
+
       header,
       h1,
       h2,
@@ -214,86 +320,6 @@
         font-family: "DM Sans", sans-serif;
       }
     </style>
-
-    <!-- Non-critical CSS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      media="print"
-      onload="this.media='all'"
-    />
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script>
-      // Defer non-critical Tailwind config
-      document.addEventListener("DOMContentLoaded", function () {
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                main: "#fdc900",
-                graylight: "#838383",
-                primary: "#69b99d",
-                secondary: "#0f241d",
-                orangedark: "#23250e",
-                blue: "#2a63ff",
-                bluedark: "#1e3a8a",
-              },
-              keyframes: {
-                scroll: {
-                  "0%": { transform: "translateX(0)" },
-                  "100%": { transform: "translateX(-50%)" },
-                },
-              },
-              animation: {
-                scroll: "scroll 30s linear infinite",
-              },
-            },
-          },
-        };
-      });
-    </script>
-
-    <!-- Performance monitoring -->
-    <script>
-      // Performance monitoring
-      window.addEventListener("load", function () {
-        // Log performance metrics
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        const domLoadTime = perfData.domComplete - perfData.domLoading;
-        const networkLatency = perfData.responseEnd - perfData.fetchStart;
-
-        console.log("Page Load Time:", pageLoadTime, "ms");
-        console.log("DOM Load Time:", domLoadTime, "ms");
-        console.log("Network Latency:", networkLatency, "ms");
-
-        // Send performance data to analytics
-        if (typeof gtag !== "undefined") {
-          gtag("event", "timing_complete", {
-            name: "page_load",
-            value: pageLoadTime,
-            event_category: "Performance",
-          });
-        }
-      });
-    </script>
   </head>
   <body>
     <!-- Skip link for screen readers -->
@@ -311,8 +337,6 @@
             class="h-10 sm:h-12 md:h-14"
             width="140"
             height="56"
-            loading="eager"
-            fetchpriority="high"
           />
         </a>
         <nav
@@ -510,7 +534,6 @@
                 alt="Partner company logo 1"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -518,7 +541,6 @@
                 alt="Partner company logo 2"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -526,7 +548,6 @@
                 alt="Partner company logo 3"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -534,7 +555,6 @@
                 alt="Partner company logo 4"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -542,7 +562,6 @@
                 alt="Partner company logo 5"
                 width="80"
                 height="80"
-                loading="lazy"
               />
             </div>
 
@@ -554,7 +573,6 @@
                 alt="Partner company logo 1"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -562,7 +580,6 @@
                 alt="Partner company logo 2"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -570,7 +587,6 @@
                 alt="Partner company logo 3"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -578,7 +594,6 @@
                 alt="Partner company logo 4"
                 width="80"
                 height="80"
-                loading="lazy"
               />
               <img
                 src="/images/logo.png"
@@ -586,7 +601,6 @@
                 alt="Partner company logo 5"
                 width="80"
                 height="80"
-                loading="lazy"
               />
             </div>
           </div>
@@ -869,7 +883,6 @@
               class="w-[50px]"
               width="50"
               height="50"
-              loading="lazy"
             />
           </a>
 
@@ -984,8 +997,7 @@
 
     <!-- Footer ends -->
 
-    <!-- Deferred JavaScript -->
-    <script src="./JS/script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <!-- js -->
+    <script src="./JS/script.js"></script>
   </body>
 </html>
