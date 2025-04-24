@@ -1,6 +1,18 @@
 {
+  "name": "zencar",
+  "version": "1.0.0",
+  "description": "Zencar Detailing Website",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
+  },
   "dependencies": {
     "sweetalert2": "^11.19.1",
     "tailwind-scrollbar": "^4.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }
