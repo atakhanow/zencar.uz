@@ -117,7 +117,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Tailwind CSS -->
+    <!-- Local Tailwind CSS -->
     <link href="/dist/styles.css" rel="stylesheet" />
 
     <style>
@@ -164,7 +164,7 @@
         bottom: 0;
         z-index: 50;
         backdrop-filter: blur(20px);
-        padding: 1rem;
+        padding: var(--space-2xs);
         transition: all 0.3s ease-in-out;
         border-top: 1px solid rgba(253, 201, 0, 0.1);
         border-radius: 1rem 1rem 0 0;
@@ -190,7 +190,7 @@
         right: 0;
         background: rgba(0, 0, 0, 0.9);
         backdrop-filter: blur(10px);
-        padding: 1rem;
+        padding: var(--space-2xs);
         transition: bottom 0.3s ease-in-out;
         z-index: 40;
       }
@@ -216,47 +216,47 @@
 
       @media (max-width: 768px) {
         .container {
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: var(--space-2xs);
+          padding-right: var(--space-2xs);
         }
 
         header {
           left: 0;
           right: 0;
           margin: 0;
-          padding: 1rem;
+          padding: var(--space-2xs);
         }
 
         #main {
-          padding: 2rem 1rem;
+          padding: var(--space-3) var(--space-2xs);
         }
 
         #main h1 {
-          font-size: 2.5rem;
+          font-size: var(--text-3xl);
           line-height: 1.2;
         }
 
         #main p {
-          font-size: 1.1rem;
+          font-size: var(--text-base);
           line-height: 1.5;
         }
 
         .services-grid {
           grid-template-columns: 1fr;
-          gap: 1rem;
+          gap: var(--space-2xs);
         }
 
         .contact-section {
-          padding: 2rem 1rem;
+          padding: var(--space-3) var(--space-2xs);
         }
 
         footer {
-          padding: 2rem 1rem;
+          padding: var(--space-3) var(--space-2xs);
         }
 
         footer .container {
           flex-direction: column;
-          gap: 2rem;
+          gap: var(--space-3);
         }
       }
 

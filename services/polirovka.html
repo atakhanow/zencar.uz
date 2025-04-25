@@ -47,98 +47,15 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              main: "#fdc900",
-              graylight: "#838383",
-              primary: "#69b99d",
-              secondary: "#0f241d",
-              orangedark: "#23250e",
-              blue: "#2a63ff",
-              bluedark: "#1e3a8a",
-            },
-            keyframes: {
-              scroll: {
-                "0%": { transform: "translateX(0)" },
-                "100%": { transform: "translateX(-50%)" },
-              },
-            },
-            animation: {
-              scroll: "scroll 30s linear infinite",
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
 
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      #main {
-        background-image: url(/images/car-stock.jfif);
-        background-size: cover;
-        background-position: center;
-      }
-
-      header,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Unbounded", sans-serif;
-      }
-
-      p {
-        font-family: "DM Sans", sans-serif;
-      }
-
+      /* Only keeping necessary custom styles that can't be handled by Tailwind */
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-      }
-
-      /* Responsive Typography */
-      h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-      }
-
-      h2 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-      }
-
-      h3 {
-        font-size: clamp(1.25rem, 3vw, 2rem);
-      }
-
-      p {
-        font-size: clamp(1rem, 2vw, 1.125rem);
-      }
-
-      /* Responsive Spacing */
-      .container {
-        padding-left: clamp(1rem, 5vw, 2rem);
-        padding-right: clamp(1rem, 5vw, 2rem);
-      }
-
-      /* Responsive Grid */
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      }
-
-      /* Responsive Images */
-      img {
-        max-width: 100%;
-        height: auto;
       }
 
       /* Mobile Menu Improvements */
@@ -151,54 +68,6 @@
         .mobile-menu.active {
           transform: translateX(0);
         }
-      }
-
-      /* Responsive Cards */
-      .card {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      /* Fluid Container */
-      .fluid-container {
-        width: min(100% - 2rem, 1200px);
-        margin-inline: auto;
-      }
-
-      /* Responsive Buttons */
-      .btn {
-        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
-        font-size: clamp(0.875rem, 2vw, 1rem);
-      }
-
-      /* Responsive Navigation */
-      @media (max-width: 1024px) {
-        .nav-links {
-          display: none;
-        }
-
-        .mobile-nav {
-          display: block;
-        }
-      }
-
-      /* Responsive Pricing Tables */
-      .pricing-table {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-      }
-
-      /* Responsive Hero Section */
-      .hero {
-        min-height: clamp(300px, 50vh, 600px);
-        padding: clamp(2rem, 5vw, 4rem);
-      }
-
-      /* Responsive Footer */
-      .footer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
     </style>
   </head>

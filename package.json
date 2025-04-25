@@ -11,8 +11,20 @@
     "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
-  }
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  },
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atakhanow/zencar.uz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atakhanow/zencar.uz/issues"
+  },
+  "homepage": "https://github.com/atakhanow/zencar.uz#readme"
 }

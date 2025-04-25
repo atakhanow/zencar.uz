@@ -26,22 +26,8 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              main: "#fdc900",
-              graylight: "#838383",
-              primary: "#69b99d",
-              secondary: "#0f241d",
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
 
     <!-- Preload critical assets -->
     <link
@@ -58,6 +44,173 @@
         scroll-behavior: smooth;
       }
 
+      /* Skip link for screen readers */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #fdc900;
+        color: #000;
+        padding: var(--space-2xs);
+        z-index: 100;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Focus styles */
+      :focus-visible {
+        outline: 3px solid #fdc900;
+        outline-offset: 2px;
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .animate-scroll {
+          animation: none;
+        }
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        backdrop-filter: blur(20px);
+        padding: var(--space-2xs);
+        transition: all 0.3s ease-in-out;
+        border-top: 1px solid rgba(253, 201, 0, 0.1);
+        border-radius: 1rem 1rem 0 0;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          top: 0;
+          bottom: auto;
+          left: 2.5rem;
+          right: 2.5rem;
+          margin: 1.25rem auto;
+          border-radius: 0.75rem;
+          border-top: none;
+          backdrop-filter: blur(20px);
+        }
+      }
+
+      .mobile-menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        padding: var(--space-2xs);
+        transition: bottom 0.3s ease-in-out;
+        z-index: 40;
+      }
+
+      .mobile-menu.active {
+        bottom: 0;
+      }
+
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 39;
+        display: none;
+      }
+
+      .mobile-menu-overlay.active {
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding-left: var(--space-2xs);
+          padding-right: var(--space-2xs);
+        }
+
+        header {
+          left: 0;
+          right: 0;
+          margin: 0;
+          padding: var(--space-2xs);
+        }
+
+        #main {
+          padding: var(--space-3) var(--space-2xs);
+        }
+
+        #main h1 {
+          font-size: var(--text-3xl);
+          line-height: 1.2;
+        }
+
+        #main p {
+          font-size: var(--text-base);
+          line-height: 1.5;
+        }
+
+        .form-container {
+          padding: var(--space-3) var(--space-2xs);
+        }
+
+        .form-group {
+          margin-bottom: var(--space-2xs);
+        }
+
+        .form-group label {
+          font-size: var(--text-base);
+          margin-bottom: var(--space-2xs);
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: var(--space-2xs);
+          font-size: var(--text-base);
+        }
+
+        .form-group textarea {
+          min-height: 150px;
+        }
+
+        .submit-btn {
+          padding: var(--space-2xs) var(--space-3);
+          font-size: var(--text-base);
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .container {
+          max-width: 90%;
+        }
+
+        .form-container {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .container {
+          max-width: 1200px;
+        }
+
+        .form-container {
+          max-width: 700px;
+          margin: 0 auto;
+        }
+      }
+
       header,
       h1,
       h2,
@@ -68,7 +221,11 @@
         font-family: "Unbounded", sans-serif;
       }
 
-      p {
+      p,
+      label,
+      input,
+      textarea,
+      button {
         font-family: "DM Sans", sans-serif;
       }
 
@@ -385,13 +542,6 @@
         }
       }
 
-      /* Advanced Focus Styles */
-      :focus-visible {
-        outline: 2px solid var(--main);
-        outline-offset: 2px;
-        border-radius: var(--space-3xs);
-      }
-
       /* Advanced Selection */
       ::selection {
         background: var(--main);
@@ -418,9 +568,9 @@
       }
     </style>
   </head>
-  <body class="bg-black">
+  <body class="bg-black min-h-screen">
     <header
-      class="fixed left-10 right-10 mx-auto bg-transparent z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+      class="fixed left-10 right-10 mx-auto bg-black/70 backdrop-blur-lg z-50 p-5 transition-all duration-300 my-5 mx-20 rounded-xl"
     >
       <div class="container mx-auto flex justify-between items-center">
         <a href="/">
@@ -465,20 +615,25 @@
         <a href="tel:+998901234567">
           <button class="text-main font-bold">
             <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
-          </button></a
-        >
+          </button>
+        </a>
       </div>
     </header>
 
-    <section class="min-h-screen flex items-center justify-center mt-20">
-      <div class="container mx-auto">
+    <section
+      class="min-h-screen flex items-center justify-center mt-20 bg-[url('/images/car-stock.jfif')] bg-cover bg-center bg-fixed relative"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"
+      ></div>
+      <div class="container mx-auto relative z-10">
         <div
           class="flex flex-col justify-center items-center text-center text-white mb-10"
         >
-          <h3 class="text-5xl">
+          <h3 class="text-5xl font-unbounded">
             Сўров қолдиринг ва навбатга автоматик ёзилинг.
           </h3>
-          <p>Биз сиз билан тез орада алоқага чиқамиз.</p>
+          <p class="font-dm-sans">Биз сиз билан тез орада алоқага чиқамиз.</p>
         </div>
 
         <form
@@ -493,7 +648,7 @@
               id="name"
               name="name"
               required
-              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none border-none"
+              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none focus:ring-2 focus:ring-main focus:ring-offset-2 bg-black/50 border-none"
               placeholder="Исмингиз"
               aria-label="Исмингиз"
             />
@@ -503,7 +658,7 @@
               id="car"
               name="car"
               required
-              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none border-none"
+              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none focus:ring-2 focus:ring-main focus:ring-offset-2 bg-black/50 border-none"
               placeholder="Автомобилингиз Маркаси"
               aria-label="Автомобилингиз Маркаси"
             />
@@ -511,7 +666,7 @@
             <select
               id="service"
               name="service"
-              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none border-none"
+              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none focus:ring-2 focus:ring-main focus:ring-offset-2 bg-black/50 border-none"
               required
               aria-label="Сизга керак бўлган хизмат тури"
             >
@@ -531,12 +686,12 @@
               placeholder="+998 00 000 00 00"
               required
               pattern="[+]{1}[0-9]{3} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}"
-              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none border-none"
+              class="w-full max-w-xs p-2 mb-4 text-graylight rounded-lg focus:outline-none focus:ring-2 focus:ring-main focus:ring-offset-2 bg-black/50 border-none"
               aria-label="Телефон рақамингиз"
             />
           </div>
 
-          <p class="text-white text-center mb-4">
+          <p class="text-white text-center mb-4 font-dm-sans">
             <i class="fa-solid fa-exclamation text-main"></i>
             <i class="fa-solid fa-exclamation text-main"></i>
             <i class="fa-solid fa-exclamation text-main"></i> Сиз Тасдиқлаш
@@ -549,7 +704,7 @@
 
           <button
             type="submit"
-            class="border-[1px] border-solid border-main text-main px-20 py-2 rounded-3xl mt-4 hover:bg-[#fdc2005f] hover:text-[#fdc200] transition duration-300"
+            class="border border-main text-main px-20 py-2 rounded-3xl mt-4 hover:bg-main/20 hover:text-main transition duration-300"
             aria-label="Сўровни юбориш"
           >
             Юбориш
@@ -560,127 +715,141 @@
 
     <!-- Footer starts -->
     <footer class="py-20 bg-black">
-      <div class="container flex gap-5 justify-around items-start">
+      <div
+        class="container mx-auto flex flex-wrap gap-10 justify-around items-start"
+      >
         <div class="flex flex-col gap-5">
-          <a href="#"
-            ><img src="/images/zencar-logo.png" alt="" / class="w-[50px]"></a
-          >
+          <a href="#">
+            <img src="/images/zencar-logo.png" alt="" class="w-[50px]" />
+          </a>
 
           <div class="flex gap-2">
-            <a href="https://t.me/zencar_uz">
-              <i
-                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://t.me/zencar_uz"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
             </a>
-            <a href="https://instagram.com/zencar_uz">
-              <i
-                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://instagram.com/zencar_uz"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
             </a>
-
-            <a href="https://youtube.com/zencar_uz">
-              <i
-                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://youtube.com/zencar_uz"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
             </a>
-
-            <a href="https://tiktok.com/zencar_uz">
-              <i
-                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
-              ></i>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
             </a>
           </div>
           <p class="text-graylight">
             © 2025 Zencar. Barcha huquqlar himoyalangan.
           </p>
 
-          <p class="text-graylight opacity-50">
+          <p class="text-graylight/50">
             Вебсайт
-            <span class="cursor-pointer hover:text-main">
-              <a href="https:atakhanov.uz"> Atakhanov.uz</a></span
+            <a
+              href="https:atakhanov.uz"
+              class="hover:text-main transition-colors"
+            >
+              Atakhanov.uz</a
             >
             томонидан ишлаб чиқилган
           </p>
         </div>
 
-        <!-- - -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Контактлар</h4>
+          <ul>
+            <h4 class="text-white font-unbounded">Контактлар</h4>
             <li>
               <a
-                href="tel:+998990000000 "
-                class="text-graylight hover:text-main"
+                href="tel:+998990000000"
+                class="text-graylight hover:text-main transition-colors"
               >
-                +998 99 000 00 00</a
-              >
+                +998 99 000 00 00
+              </a>
             </li>
             <li>
-              <a href="zencar@zencar.uz" class="text-graylight hover:text-main"
-                >zencar@zencar.uz</a
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
               >
+                zencar@zencar.uz
+              </a>
             </li>
           </ul>
         </div>
-        <!-- - -->
 
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Меню</h4>
+          <ul>
+            <h4 class="text-white font-unbounded">Меню</h4>
             <li>
-              <a href="/index.html#main" class="text-graylight hover:text-main"
+              <a
+                href="/index.html#main"
+                class="text-graylight hover:text-main transition-colors"
                 >Асосий</a
               >
             </li>
             <li>
               <a
                 href="/index.html#services"
-                class="text-graylight hover:text-main"
+                class="text-graylight hover:text-main transition-colors"
                 >Хизматлар</a
               >
             </li>
             <li>
-              <a href="/price.html" class="text-graylight hover:text-main"
+              <a
+                href="/price.html"
+                class="text-graylight hover:text-main transition-colors"
                 >Нархлар</a
               >
             </li>
             <li>
               <a
                 href="/index.html#contact"
-                class="text-graylight hover:text-main"
+                class="text-graylight hover:text-main transition-colors"
                 >Контактлар</a
               >
             </li>
             <li>
               <a
                 href="/services/shop.html"
-                class="text-graylight hover:text-main"
+                class="text-graylight hover:text-main transition-colors"
                 >Дўкон ZC</a
               >
             </li>
           </ul>
         </div>
-        <!-- - -->
 
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h4 class="text-white">Бошқалар</h4>
+          <ul>
+            <h4 class="text-white font-unbounded">Бошқалар</h4>
             <li>
-              <a href="/policy.html" class="text-graylight hover:text-main"
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
                 >Махфийлик Сиёсати</a
               >
             </li>
             <li>
-              <a href="form.html" class="text-graylight hover:text-main">
-                Навбатга Ёзиш
-              </a>
+              <a
+                href="form.html"
+                class="text-graylight hover:text-main transition-colors"
+                >Навбатга Ёзиш</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </footer>
 
-    <!-- Footer ends -->
     <script src="/JS/bot.js"></script>
     <script src="/JS/form.js"></script>
   </body>

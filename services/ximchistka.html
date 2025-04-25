@@ -60,73 +60,11 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              main: "#fdc900",
-              graylight: "#838383",
-              primary: "#69b99d",
-              secondary: "#0f241d",
-              orangedark: "#23250e",
-              blue: "#2a63ff",
-              bluedark: "#1e3a8a",
-            },
-            keyframes: {
-              scroll: {
-                "0%": { transform: "translateX(0)" },
-                "100%": { transform: "translateX(-50%)" },
-              },
-            },
-            animation: {
-              scroll: "scroll 30s linear infinite",
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
 
     <style>
-      :root {
-        --font-heading: "Unbounded", sans-serif;
-        --font-body: "DM Sans", sans-serif;
-        --color-main: #fdc900;
-        --color-graylight: #838383;
-        --color-primary: #69b99d;
-        --color-secondary: #0f241d;
-        --color-orangedark: #23250e;
-        --color-blue: #2a63ff;
-        --color-bluedark: #1e3a8a;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      #main {
-        background-image: url(/images/car-stock.jfif);
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-      }
-
-      header,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-heading);
-      }
-
-      p {
-        font-family: var(--font-body);
-      }
-
+      /* Only keeping necessary custom styles that can't be handled by Tailwind */
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -136,41 +74,10 @@
         }
       }
 
-      /* Responsive adjustments */
+      /* Mobile Menu Improvements */
       @media (max-width: 768px) {
-        .container {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
-        #main h1 {
-          font-size: 2.5rem;
-          line-height: 1.2;
-        }
-
-        .services-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-
-        .contact-section {
-          padding: 2rem 1rem;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .header-container {
-          flex-direction: column;
-          gap: 1rem;
-        }
-
         .mobile-menu {
           width: 100%;
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
         }
       }
     </style>
