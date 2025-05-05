@@ -7,6 +7,14 @@
       Zencar Detailing - Professional Avtomobil Detailing Xizmatlari
     </title>
 
+    <!-- preload main bg -->
+    <link
+      rel="preload"
+      as="image"
+      href="./images/car-stock.webp"
+      type="image/webp"
+    />
+
     <!-- Primary Meta Tags -->
     <meta
       name="title"
@@ -110,12 +118,16 @@
 
     <!-- Font Awesome -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    /></noscript>
 
     <!-- Local Tailwind CSS -->
     <link href="/dist/styles.css" rel="stylesheet" />
@@ -376,12 +388,12 @@
         </div>
 
         <a
-          href="tel:+998901234567"
+          href="tel:+998335042808"
           class="hidden lg:block"
-          aria-label="Call us at +998 90 000 00 00"
+          aria-label="Call us at +998 33 504 28 08"
         >
           <button class="text-main font-bold">
-            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
+            <i class="fa-solid fa-phone-volume text-main"></i> +998 33 504 28 08
           </button>
         </a>
       </div>
@@ -452,7 +464,7 @@
           <h1 class="font-bold mb-5 text-7xl">
             ZENCAR <span class="text-main"> DETAILING </span>
           </h1>
-          <p class="text-graylight text-2xl font-normal mt-5 text-left">
+          <!-- <p class="text-graylight text-2xl font-normal mt-5 text-left">
             Биз шаффоф,<span class="text-white"> халол</span> ва
             <span class="text-white">олдиндан тўловсиз</span> ишлаймиз.
             Хизматларни юкламаймиз ва ҳар бир қадам учун
@@ -461,8 +473,12 @@
             этамиз. Хар бир босқичда жараённи ва қандай натижаларни кутиш
             кераклигини <span class="text-white"> тушунтирамиз</span>. Бизда
             доим <span class="text-white"> дўстона муҳит</span> ҳукм суради.
-          </p>
-          <div class="flex justify-center items-center gap-5 mt-10 font-normal">
+          </p> -->
+
+          <h3 class="text-white">Zencar – Сифат ва ишонч белгиси.</h3>
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-5 mt-10 font-normal"
+          >
             <a href="./form.html">
               <button
                 class="relative overflow-hidden h-12 px-10 rounded-xl bg-[#3d3a4e] text-white border-none cursor-pointer group shadow-2xl"
@@ -489,94 +505,98 @@
     <!-- Main Section Ends -->
 
     <!-- Animation -->
-    <section id="animation" role="region" aria-label="Partner companies">
-      <div class="container">
-        <div
-          class="overflow-hidden py-10 bg-black bg-opacity-70 backdrop-blur-lg"
-        >
-          <h2 class="text-main text-center">Биз Ишлайдиган Компаниялар</h2>
-          <div class="flex w-[200%] animate-scroll">
-            <!-- Logos block (1) -->
-            <div class="flex space-x-16 w-1/2 justify-around items-center">
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 1"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 2"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 3"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 4"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 5"
-                width="80"
-                height="80"
-              />
-            </div>
+    <section
+      id="animation"
+      role="region"
+      aria-label="Partner companies"
+      style="width: 100%"
+    >
+      <div
+        class="overflow-hidden py-10 bg-black bg-opacity-70 backdrop-blur-lg"
+      >
+        <h2 class="text-main text-center">Биз Ишлайдиган Компаниялар</h2>
+        <div class="flex w-[200%] animate-scroll">
+          <!-- Logos block (1) -->
+          <div class="flex space-x-16 w-1/2 justify-around items-center">
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 1"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 2"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 3"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 4"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 5"
+              width="80"
+              height="80"
+            />
+          </div>
 
-            <!-- Logos block (2) - repeat for seamless scroll -->
-            <div class="flex space-x-16 w-1/2 justify-around items-center">
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 1"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 2"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 3"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 4"
-                width="80"
-                height="80"
-              />
-              <img
-                src="/images/logo.webp"
-                class="h-20"
-                alt="Partner company logo 5"
-                width="80"
-                height="80"
-              />
-            </div>
+          <!-- Logos block (2) - repeat for seamless scroll -->
+          <div class="flex space-x-16 w-1/2 justify-around items-center">
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 1"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 2"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 3"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 4"
+              width="80"
+              height="80"
+            />
+            <img
+              src="/images/logo.webp"
+              class="h-20"
+              alt="Partner company logo 5"
+              width="80"
+              height="80"
+            />
           </div>
         </div>
       </div>
     </section>
+
     <!-- Animation Ends -->
 
     <!-- Services Section Starts -->
