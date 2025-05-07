@@ -7,8 +7,7 @@
     "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
   },
   "dependencies": {
-    "sweetalert2": "^11.19.1",
-    "tailwind-scrollbar": "^4.0.2"
+    "sweetalert2": "^11.19.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
