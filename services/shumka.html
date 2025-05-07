@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zencar - Professional car sound insulation services in Uzbekistan. Reduce noise and improve audio quality."
+    />
+    <meta
+      name="keywords"
+      content="car sound insulation, noise reduction, vibration damping, Uzbekistan, Zencar"
+    />
+    <meta
+      property="og:title"
+      content="Zencar - Professional Car Sound Insulation Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional car sound insulation services in Uzbekistan. Reduce noise and improve audio quality."
+    />
+    <meta property="og:image" content="/images/zencar-logo.png" />
+    <title>Zencar - Professional Car Sound Insulation Services</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/images/zencar-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #main {
+        background-image: url(/images/car-stock.jfif);
+        background-size: cover;
+        background-position: center;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Responsive Typography */
+      h1 {
+        font-size: clamp(1.75rem, 4.5vw, 3rem);
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      h3 {
+        font-size: clamp(1.125rem, 2.75vw, 1.75rem);
+      }
+
+      p {
+        font-size: clamp(0.875rem, 1.75vw, 1rem);
+      }
+
+      /* Responsive Spacing */
+      .container {
+        padding-left: clamp(1rem, 5vw, 2rem);
+        padding-right: clamp(1rem, 5vw, 2rem);
+      }
+
+      /* Responsive Grid */
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      }
+
+      /* Responsive Images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Mobile Menu Improvements */
+      @media (max-width: 768px) {
+        .mobile-menu {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Cards */
+      .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Fluid Container */
+      .fluid-container {
+        width: min(100% - 2rem, 1200px);
+        margin-inline: auto;
+      }
+
+      /* Responsive Buttons */
+      .btn {
+        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+      }
+
+      /* Responsive Navigation */
+      @media (max-width: 1024px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+        }
+      }
+
+      /* Responsive Pricing Tables */
+      .pricing-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      /* Responsive Hero Section */
+      .hero {
+        min-height: clamp(300px, 50vh, 600px);
+        padding: clamp(2rem, 5vw, 4rem);
+      }
+
+      /* Responsive Footer */
+      .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      /* New Responsive Styles */
+      @media (max-width: 768px) {
+        /* Adjust header for mobile */
+        header {
+          padding: 1rem;
+        }
+
+        /* Improve mobile menu button visibility */
+        #menuToggle {
+          padding: 0.5rem;
+        }
+
+        /* Adjust package cards for mobile */
+        .bg-orangedark,
+        .bg-bluedark {
+          padding: 1rem;
+        }
+
+        /* Improve text readability on mobile */
+        .text-6xl {
+          font-size: 2.25rem;
+        }
+
+        .text-4xl {
+          font-size: 1.5rem;
+        }
+
+        .text-3xl {
+          font-size: 1.375rem;
+        }
+
+        .text-2xl {
+          font-size: 1.25rem;
+        }
+
+        .text-xl {
+          font-size: 1.125rem;
+        }
+
+        .text-lg {
+          font-size: 1rem;
+        }
+
+        /* Adjust spacing for mobile */
+        .space-y-4 {
+          gap: 1rem;
+        }
+
+        /* Improve button sizes on mobile */
+        .rounded-3xl {
+          padding: 0.75rem 1.5rem;
+        }
+
+        /* Adjust individual package section for mobile */
+        .flex-col {
+          gap: 1rem;
+        }
+
+        /* Adjust footer spacing for mobile */
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        /* Improve social media icons spacing */
+        .flex.gap-4 {
+          gap: 1rem;
+        }
+      }
+
+      /* Tablet-specific adjustments */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Adjust container padding */
+        .container {
+          padding: 0 2rem;
+        }
+
+        /* Improve package card layouts */
+        .md\:flex-row {
+          flex-direction: column;
+        }
+
+        /* Adjust text sizes for better readability */
+        .text-6xl {
+          font-size: 2.75rem;
+        }
+
+        .text-4xl {
+          font-size: 2rem;
+        }
+
+        .text-3xl {
+          font-size: 1.75rem;
+        }
+
+        .text-2xl {
+          font-size: 1.5rem;
+        }
+
+        .text-xl {
+          font-size: 1.25rem;
+        }
+
+        .text-lg {
+          font-size: 1.125rem;
+        }
+
+        /* Improve spacing between elements */
+        .space-y-6 {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Large screen adjustments */
+      @media (min-width: 1025px) {
+        /* Ensure maximum width for content */
+        .max-w-6xl {
+          max-width: 72rem;
+        }
+
+        /* Improve spacing for large screens */
+        .gap-6 {
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Header starts -->
+    <header
+      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
+          <img
+            src="/images/zencar-secondary-logo.webp"
+            alt="Zencar Logo"
+            class="h-8 md:h-10"
+          />
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
+          aria-label="Main navigation"
+        >
+          <a
+            href="/index.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            aria-current="page"
+            >Asosiy</a
+          >
+          <a
+            href="/index.html#services"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Xizmatlar</a
+          >
+          <a
+            href="/services/price.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Narxlar</a
+          >
+          <a
+            href="/index.html#contact"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Kontaktlar</a
+          >
+          <a
+            href="/services/shop.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <button
+          class="lg:hidden text-primary text-2xl"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          id="menuToggle"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a
+          href="tel:+998901234567"
+          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+          aria-label="Call us at +998 90 000 00 00"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+998 90 000 00 00</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
+        aria-label="Mobile navigation"
+      >
+        <div class="container mx-auto px-4 py-8">
+          <nav class="flex flex-col gap-6 text-white text-xl">
+            <a href="#main" class="hover:text-main">Asosiy</a>
+            <a href="#services" class="hover:text-main">Xizmatlar</a>
+            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
+            <a href="#contact" class="hover:text-main">Kontaktlar</a>
+            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- main section starts -->
+    <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
+      <div class="container">
+        <h3 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+          Шумоизоляция
+        </h3>
+        <!-- Promotion Section -->
+        <div
+          class="bg-orangedark rounded-lg p-6 md:p-8 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-8"
+          lang="ru"
+        >
+          <!-- Left Content -->
+          <div class="md:w-1/2 mb-6 md:mb-0">
+            <span class="text-main mb-2 inline-block text-sm md:text-base"
+              >Шумоизоляция</span
+            >
+            <h1
+              class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2"
+            >
+              Комфорт и тишина в вашем автомобиле
+            </h1>
+            <div
+              class="text-main text-2xl md:text-3xl lg:text-5xl font-bold mb-6 md:mb-8"
+            >
+              ОТ 20.000 ₽
+            </div>
+            <a
+              href="/"
+              class="inline-block border border-main text-main px-20 py-2 my-5 rounded-3xl hover:bg-main/20 transition duration-300"
+            >
+              Batafsil
+            </a>
+
+            <ul class="space-y-3 text-white">
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Снижение шума от дороги и двигателя
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Улучшение звучания аудиосистемы
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Защита от вибраций и резонансов
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Теплоизоляция салона
+              </li>
+            </ul>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href="./form.html"
+                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none"
+              >
+                <span class="relative z-10 block px-10 py-3">
+                  Navbatga Yozilish
+                </span>
+                <span
+                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                ></span>
+              </a>
+
+              <a
+                href="tel:+998901234567"
+                class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+                aria-label="Call us at +998 90 000 00 00"
+              >
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>+998 90 000 00 00</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Car Image -->
+          <div class="md:w-1/2">
+            <div class="relative h-80 md:h-full rounded-lg overflow-hidden">
+              <img
+                src="/placeholder.svg?height=600&width=800"
+                alt="Шумоизоляция автомобиля"
+                class="w-full h-full object-cover object-center rounded-lg"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- main section ends -->
+
+    <!-- Benefits section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Преимущества <span class="text-main">шумоизоляции</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Benefit 1 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-volume-xmark"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">Снижение шума</h3>
+              <p class="text-gray-400">
+                Значительное снижение шума от дороги, двигателя и окружающей
+                среды, что делает поездки более комфортными.
+              </p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">Улучшение звука</h3>
+              <p class="text-gray-400">
+                Качество звучания аудиосистемы значительно улучшается благодаря
+                снижению резонансов и вибраций.
+              </p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-temperature-low"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">Теплоизоляция</h3>
+              <p class="text-gray-400">
+                Шумоизоляционные материалы также обеспечивают теплоизоляцию,
+                сохраняя тепло зимой и прохладу летом.
+              </p>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-car-battery"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Защита от вибраций
+              </h3>
+              <p class="text-gray-400">
+                Снижение вибраций кузова и панелей автомобиля, что увеличивает
+                срок службы элементов интерьера.
+              </p>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Снижение усталости
+              </h3>
+              <p class="text-gray-400">
+                Уменьшение шума и вибраций снижает утомляемость водителя и
+                пассажиров во время длительных поездок.
+              </p>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Повышение стоимости
+              </h3>
+              <p class="text-gray-400">
+                Качественная шумоизоляция повышает комфорт и, как следствие,
+                стоимость автомобиля при перепродаже.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits section ends -->
+
+    <!-- Packages section -->
+    <section class="py-12 md:py-16 bg-black">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Пакеты <span class="text-main">шумоизоляции</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Package 1 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-2">Базовый</h3>
+                <p class="text-main text-lg mb-4">Снижение шума на 30-40%</p>
+                <ul class="space-y-3 mb-8 text-gray-400">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Шумоизоляция дверей</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Шумоизоляция пола</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Базовые материалы</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Гарантия 1 год</span>
+                  </li>
+                </ul>
+                <div class="text-main text-3xl font-bold mb-6">от 20.000 ₽</div>
+                <a
+                  href="./form.html"
+                  class="inline-block w-full text-center border border-main text-main py-2 rounded-3xl hover:bg-main/20 transition duration-300"
+                >
+                  Выбрать
+                </a>
+              </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="bg-bluedark bg-opacity-50 rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-2">Стандарт</h3>
+                <p class="text-blue text-lg mb-4">Снижение шума на 50-60%</p>
+                <ul class="space-y-3 mb-8 text-gray-400">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Шумоизоляция дверей</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Шумоизоляция пола</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Шумоизоляция багажника</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Шумоизоляция колесных арок</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Материалы среднего класса</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-blue mr-2 mt-1"></i>
+                    <span>Гарантия 2 года</span>
+                  </li>
+                </ul>
+                <div class="text-blue text-3xl font-bold mb-6">от 40.000 ₽</div>
+                <a
+                  href="./form.html"
+                  class="inline-block w-full text-center border border-blue text-blue py-2 rounded-3xl hover:bg-blue/20 transition duration-300"
+                >
+                  Выбрать
+                </a>
+              </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-2">Премиум</h3>
+                <p class="text-main text-lg mb-4">Снижение шума на 70-80%</p>
+                <ul class="space-y-3 mb-8 text-gray-400">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Полная шумоизоляция салона</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Шумоизоляция крыши</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Шумоизоляция капота</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Шумоизоляция моторного щита</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Премиальные материалы</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check text-main mr-2 mt-1"></i>
+                    <span>Гарантия 3 года</span>
+                  </li>
+                </ul>
+                <div class="text-main text-3xl font-bold mb-6">от 60.000 ₽</div>
+                <a
+                  href="./form.html"
+                  class="inline-block w-full text-center border border-main text-main py-2 rounded-3xl hover:bg-main/20 transition duration-300"
+                >
+                  Выбрать
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Packages section ends -->
+
+    <!-- Materials section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Материалы <span class="text-main">шумоизоляции</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Material 1 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6"
+            >
+              <div class="md:w-1/3">
+                <div class="rounded-lg overflow-hidden h-40 md:h-full">
+                  <img
+                    src="/placeholder.svg?height=300&width=300"
+                    alt="Вибропоглощающие материалы"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div class="md:w-2/3">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Вибропоглощающие материалы
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Снижают вибрации металлических панелей автомобиля, устраняя
+                  резонансы и дребезжание. Наносятся на двери, пол, крышу и
+                  другие металлические поверхности.
+                </p>
+                <p class="text-main">Эффективность: снижение вибраций до 90%</p>
+              </div>
+            </div>
+
+            <!-- Material 2 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6"
+            >
+              <div class="md:w-1/3">
+                <div class="rounded-lg overflow-hidden h-40 md:h-full">
+                  <img
+                    src="/placeholder.svg?height=300&width=300"
+                    alt="Звукопоглощающие материалы"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div class="md:w-2/3">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Звукопоглощающие материалы
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Поглощают звуковые волны, предотвращая их отражение внутри
+                  салона. Используются в качестве второго слоя после
+                  вибропоглощающих материалов.
+                </p>
+                <p class="text-main">Эффективность: поглощение звука до 70%</p>
+              </div>
+            </div>
+
+            <!-- Material 3 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6"
+            >
+              <div class="md:w-1/3">
+                <div class="rounded-lg overflow-hidden h-40 md:h-full">
+                  <img
+                    src="/placeholder.svg?height=300&width=300"
+                    alt="Шумоизоляционные мембраны"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div class="md:w-2/3">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Шумоизоляционные мембраны
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Тонкие, но плотные материалы, которые блокируют проникновение
+                  звука. Устанавливаются между слоями вибро- и звукопоглощающих
+                  материалов.
+                </p>
+                <p class="text-main">Эффективность: блокировка звука до 85%</p>
+              </div>
+            </div>
+
+            <!-- Material 4 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6"
+            >
+              <div class="md:w-1/3">
+                <div class="rounded-lg overflow-hidden h-40 md:h-full">
+                  <img
+                    src="/placeholder.svg?height=300&width=300"
+                    alt="Теплоизоляционные материалы"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div class="md:w-2/3">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Теплоизоляционные материалы
+                </h3>
+                <p class="text-gray-400 mb-4">
+                  Защищают салон от перепадов температуры, сохраняя тепло зимой
+                  и прохладу летом. Часто используются в комбинации с другими
+                  шумоизоляционными материалами.
+                </p>
+                <p class="text-main">
+                  Эффективность: снижение теплопередачи до 60%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Materials section ends -->
+
+    <!-- Pricing section -->
+    <section class="py-12 md:py-16 bg-black">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Цены на <span class="text-main">шумоизоляцию</span>
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="text-left p-4 bg-orangedark text-white">
+                    Тип автомобиля
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Базовый
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Стандарт
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Премиум
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Седан</td>
+                  <td class="p-4 text-center text-main">20.000 ₽</td>
+                  <td class="p-4 text-center text-main">40.000 ₽</td>
+                  <td class="p-4 text-center text-main">60.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Хэтчбек</td>
+                  <td class="p-4 text-center text-main">22.000 ₽</td>
+                  <td class="p-4 text-center text-main">42.000 ₽</td>
+                  <td class="p-4 text-center text-main">62.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Кроссовер</td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">45.000 ₽</td>
+                  <td class="p-4 text-center text-main">65.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Внедорожник</td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                  <td class="p-4 text-center text-main">70.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Минивэн</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">55.000 ₽</td>
+                  <td class="p-4 text-center text-main">75.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Individual zones pricing -->
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold text-white mb-6">
+              Шумоизоляция отдельных зон
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-orangedark rounded-lg p-6">
+                <h4 class="text-xl font-bold text-white mb-4">
+                  Стандартные материалы
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Двери (4 шт.)</span>
+                    <span class="text-main">15.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Пол</span>
+                    <span class="text-main">12.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Крыша</span>
+                    <span class="text-main">10.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Багажник</span>
+                    <span class="text-main">8.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Капот</span>
+                    <span class="text-main">7.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Колесные арки (2 шт.)</span>
+                    <span class="text-main">6.000 ₽</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-bluedark bg-opacity-50 rounded-lg p-6">
+                <h4 class="text-xl font-bold text-white mb-4">
+                  Премиум материалы
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Двери (4 шт.)</span>
+                    <span class="text-blue">25.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Пол</span>
+                    <span class="text-blue">20.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Крыша</span>
+                    <span class="text-blue">18.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Багажник</span>
+                    <span class="text-blue">15.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Капот</span>
+                    <span class="text-blue">12.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Колесные арки (2 шт.)</span>
+                    <span class="text-blue">10.000 ₽</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing section ends -->
+
+    <!-- Process section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Процесс <span class="text-main">работы</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-orangedark rounded-lg p-6 relative">
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-main flex items-center justify-center text-black text-xl font-bold"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4 mt-4">
+                Диагностика
+              </h3>
+              <p class="text-gray-400">
+                Определяем проблемные зоны автомобиля, измеряем уровень шума и
+                вибраций, подбираем оптимальные материалы.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-orangedark rounded-lg p-6 relative">
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-main flex items-center justify-center text-black text-xl font-bold"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4 mt-4">Демонтаж</h3>
+              <p class="text-gray-400">
+                Аккуратно разбираем салон автомобиля, снимаем обшивку дверей,
+                сидения и другие элементы для доступа к поверхностям.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-orangedark rounded-lg p-6 relative">
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-main flex items-center justify-center text-black text-xl font-bold"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4 mt-4">Установка</h3>
+              <p class="text-gray-400">
+                Профессионально наносим шумоизоляционные материалы в несколько
+                слоев, обеспечивая максимальную эффективность.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-orangedark rounded-lg p-6 relative">
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-main flex items-center justify-center text-black text-xl font-bold"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4 mt-4">Сборка</h3>
+              <p class="text-gray-400">
+                Собираем салон автомобиля, устанавливаем все элементы на место и
+                проводим финальную проверку качества работы.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a
+              href="./form.html"
+              class="group relative overflow-hidden inline-block rounded-xl bg-[#3d3a4e] text-white border-none"
+            >
+              <span class="relative z-10 block px-10 py-3">
+                Записаться на шумоизоляцию
+              </span>
+              <span
+                class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Process section ends -->
+
+    <!-- FAQ section -->
+    <section class="py-12 md:py-16 bg-black">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Часто задаваемые <span class="text-main">вопросы</span>
+          </h2>
+
+          <div class="space-y-6">
+            <!-- FAQ Item 1 -->
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Сколько времени занимает шумоизоляция автомобиля?
+              </h3>
+              <p class="text-gray-400">
+                Время выполнения работ зависит от выбранного пакета и типа
+                автомобиля. Базовая шумоизоляция занимает 1-2 дня, стандартная —
+                2-3 дня, премиум — 3-4 дня. Шумоизоляция отдельных зон может
+                быть выполнена за несколько часов.
+              </p>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Насколько эффективна шумоизоляция?
+              </h3>
+              <p class="text-gray-400">
+                Эффективность шумоизоляции зависит от выбранных материалов и
+                обрабатываемых зон. Базовый пакет снижает шум на 30-40%,
+                стандартный — на 50-60%, премиум — на 70-80%. Полностью
+                избавиться от шума невозможно, но качественная шумоизоляция
+                значительно повышает комфорт в салоне.
+              </p>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Увеличивает ли шумоизоляция вес автомобиля?
+              </h3>
+              <p class="text-gray-400">
+                Да, шумоизоляция добавляет вес автомобилю. Базовый пакет
+                добавляет примерно 5-10 кг, стандартный — 10-15 кг, премиум —
+                15-25 кг. Однако это незначительно влияет на динамику и расход
+                топлива современных автомобилей.
+              </p>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Какой срок службы у шумоизоляции?
+              </h3>
+              <p class="text-gray-400">
+                При использовании качественных материалов и правильной установке
+                шумоизоляция служит весь срок эксплуатации автомобиля. Мы даем
+                гарантию от 1 до 3 лет в зависимости от выбранного пакета, но
+                фактический срок службы значительно дольше.
+              </p>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Можно ли сделать шумоизоляцию частично?
+              </h3>
+              <p class="text-gray-400">
+                Да, мы предлагаем шумоизоляцию отдельных зон автомобиля.
+                Наиболее эффективно обрабатывать двери, пол и колесные арки, так
+                как через них проникает большая часть шума. Однако для
+                максимального эффекта рекомендуется комплексная шумоизоляция.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ section ends -->
+
+    <!-- Footer starts -->
+    <footer class="py-12 md:py-20 bg-black">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+      >
+        <!-- Company Info -->
+        <div class="flex flex-col gap-5">
+          <a href="/" aria-label="Go to homepage">
+            <img
+              src="/images/zencar-logo.png"
+              alt="Zencar Logo"
+              class="w-[50px]"
+              width="50"
+              height="50"
+            />
+          </a>
+
+          <div class="flex gap-4" aria-label="Social media links">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Follow us on Telegram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
+            </a>
+            <a
+              href="https://instagram.com/zencar_uz"
+              aria-label="Follow us on Instagram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
+            </a>
+            <a
+              href="https://youtube.com/zencar_uz"
+              aria-label="Subscribe to our YouTube channel"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
+            </a>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              aria-label="Follow us on TikTok"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
+            </a>
+          </div>
+
+          <p class="text-graylight">
+            © 2025 Zencar. Barcha huquqlar himoyalangan.
+          </p>
+
+          <p class="text-graylight/50">
+            Websayt
+            <a
+              href="https://atakhanov.uz"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Atakhanov.uz
+            </a>
+            tomonidan ishlab chiqilgan
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Kontaktlar</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="tel:+998990000000"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                +998 99 000 00 00
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                zencar@zencar.uz
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Menu</h2>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Asosiy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#services"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Xizmatlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/price.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Narxlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#contact"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Kontaktlar
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/shop.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Do'kon ZC
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Others -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Boshqalar</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Maxfiylik Siyosati
+              </a>
+            </li>
+            <li>
+              <a
+                href="/form.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Navbatga Yozilish
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- JavaScript -->
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
