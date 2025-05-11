@@ -5,38 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Zencar - Professional car detailing services in Uzbekistan. Polishing, ceramic coating, and more."
+      content="Zencar - Professional ceramic coating services in Uzbekistan. Long-lasting protection for your vehicle."
     />
     <meta
       name="keywords"
-      content="car detailing, car polishing, ceramic coating, Uzbekistan, Zencar"
+      content="ceramic coating, car protection, paint protection, Uzbekistan, Zencar"
     />
     <meta
       property="og:title"
-      content="Zencar - Professional Car Detailing Services"
+      content="Zencar - Professional Ceramic Coating Services"
     />
     <meta
       property="og:description"
-      content="Professional car detailing services in Uzbekistan. Polishing, ceramic coating, and more."
+      content="Professional ceramic coating services in Uzbekistan. Long-lasting protection for your vehicle."
     />
     <meta property="og:image" content="/images/zencar-logo.png" />
-    <title>Zencar - Professional Car Detailing Services</title>
-
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/images/zencar-logo.png" as="image" />
-    <link rel="preload" href="/images/car-stock.jfif" as="image" />
-    <link rel="preload" href="/images/zencar-secondary-logo.png" as="image" />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      as="style"
-    />
-
+    <title>Zencar - Professional Ceramic Coating Services</title>
     <!-- Favicon -->
     <link
       rel="shortcut icon"
@@ -64,25 +48,258 @@
     <link href="/dist/styles.css" rel="stylesheet" />
 
     <style>
-      /* Only keeping necessary custom styles that can't be handled by Tailwind */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #main {
+        background-image: url(/images/car-stock.jfif);
+        background-size: cover;
+        background-position: center;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-        .animate-scroll {
-          animation: none;
-        }
+      }
+
+      /* Responsive Typography */
+      h1 {
+        font-size: clamp(1.75rem, 4.5vw, 3rem);
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      h3 {
+        font-size: clamp(1.125rem, 2.75vw, 1.75rem);
+      }
+
+      p {
+        font-size: clamp(0.875rem, 1.75vw, 1rem);
+      }
+
+      /* Responsive Spacing */
+      .container {
+        padding-left: clamp(1rem, 5vw, 2rem);
+        padding-right: clamp(1rem, 5vw, 2rem);
+      }
+
+      /* Responsive Grid */
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      }
+
+      /* Responsive Images */
+      img {
+        max-width: 100%;
+        height: auto;
       }
 
       /* Mobile Menu Improvements */
       @media (max-width: 768px) {
         .mobile-menu {
-          width: 100%;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Cards */
+      .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Fluid Container */
+      .fluid-container {
+        width: min(100% - 2rem, 1200px);
+        margin-inline: auto;
+      }
+
+      /* Responsive Buttons */
+      .btn {
+        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+      }
+
+      /* Responsive Navigation */
+      @media (max-width: 1024px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+        }
+      }
+
+      /* Responsive Pricing Tables */
+      .pricing-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      /* Responsive Hero Section */
+      .hero {
+        min-height: clamp(300px, 50vh, 600px);
+        padding: clamp(2rem, 5vw, 4rem);
+      }
+
+      /* Responsive Footer */
+      .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      /* New Responsive Styles */
+      @media (max-width: 768px) {
+        /* Adjust header for mobile */
+        header {
+          padding: 1rem;
+        }
+
+        /* Improve mobile menu button visibility */
+        #menuToggle {
+          padding: 0.5rem;
+        }
+
+        /* Adjust package cards for mobile */
+        .bg-orangedark,
+        .bg-bluedark {
+          padding: 1rem;
+        }
+
+        /* Improve text readability on mobile */
+        .text-6xl {
+          font-size: 2.25rem;
+        }
+
+        .text-4xl {
+          font-size: 1.5rem;
+        }
+
+        .text-3xl {
+          font-size: 1.375rem;
+        }
+
+        .text-2xl {
+          font-size: 1.25rem;
+        }
+
+        .text-xl {
+          font-size: 1.125rem;
+        }
+
+        .text-lg {
+          font-size: 1rem;
+        }
+
+        /* Adjust spacing for mobile */
+        .space-y-4 {
+          gap: 1rem;
+        }
+
+        /* Improve button sizes on mobile */
+        .rounded-3xl {
+          padding: 0.75rem 1.5rem;
+        }
+
+        /* Adjust individual package section for mobile */
+        .flex-col {
+          gap: 1rem;
+        }
+
+        /* Adjust footer spacing for mobile */
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        /* Improve social media icons spacing */
+        .flex.gap-4 {
+          gap: 1rem;
+        }
+      }
+
+      /* Tablet-specific adjustments */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Adjust container padding */
+        .container {
+          padding: 0 2rem;
+        }
+
+        /* Improve package card layouts */
+        .md\:flex-row {
+          flex-direction: column;
+        }
+
+        /* Adjust text sizes for better readability */
+        .text-6xl {
+          font-size: 2.75rem;
+        }
+
+        .text-4xl {
+          font-size: 2rem;
+        }
+
+        .text-3xl {
+          font-size: 1.75rem;
+        }
+
+        .text-2xl {
+          font-size: 1.5rem;
+        }
+
+        .text-xl {
+          font-size: 1.25rem;
+        }
+
+        .text-lg {
+          font-size: 1.125rem;
+        }
+
+        /* Improve spacing between elements */
+        .space-y-6 {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Large screen adjustments */
+      @media (min-width: 1025px) {
+        /* Ensure maximum width for content */
+        .max-w-6xl {
+          max-width: 72rem;
+        }
+
+        /* Improve spacing for large screens */
+        .gap-6 {
+          gap: 2rem;
         }
       }
     </style>
   </head>
   <body class="bg-black">
+    <!-- Header starts -->
     <header
       class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
     >
@@ -167,195 +384,9 @@
         </div>
       </div>
     </header>
-    <!-- - -->
-    <section>
-      <div class="container mx-auto px-4 py-12 max-w-7xl">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <!-- Left side content -->
-          <div class="space-y-8">
-            <h1 class="text-5xl font-bold tracking-wider text-white">
-              Химчистка
-            </h1>
+    <!-- Header Ends -->
 
-            <p class="text-xl leading-relaxed text-white">
-              Агар сиз салонни детейлинг қилиш ҳақида ўйлаяпсангиз, демак, оддий
-              ювиш натижаси сизга етарли эмас. Автомобилингизга нима кераклигини
-              тушуниш учун салон ҳолатини баҳолаш муҳим.
-            </p>
-
-            <p class="text-graylight text-lg leading-relaxed">
-              Баъзан ажойиб натижа учун фақатгина детейлинг-тозалаш етарли
-              бўлади, чуқур химиявий тозалаш эса фақат айрим қисмлар учун керак
-              бўлади. Биз сизга энг мақбул ечимни таклиф қиламиз!
-            </p>
-
-            <div
-              class="flex flex-col sm:flex-row justify-start items-center gap-5 mt-10 font-normal"
-            >
-              <a
-                href="/form.html"
-                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none w-full sm:w-auto"
-              >
-                <span class="relative z-10 block px-10 py-3">
-                  Навбатга ёзилиш
-                </span>
-                <span
-                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
-                ></span>
-              </a>
-
-              <a
-                href="tel:++998335042808"
-                class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity w-full sm:w-auto justify-center"
-                aria-label="Call us at +998 33 504 28 08"
-              >
-                <i class="fa-solid fa-phone-volume"></i>
-                <span>+998 33 504 28 08</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Right side images -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="space-y-4">
-              <img
-                src="/images/ximchistka-1.webp"
-                alt="Light colored car interior material"
-                class="w-full h-auto rounded-lg object-cover aspect-square"
-              />
-            </div>
-            <div class="space-y-4">
-              <img
-                src="/images/ximchistka-2.webp"
-                alt="Tan leather car seats"
-                class="w-full h-auto rounded-lg object-cover aspect-[4/5]"
-              />
-            </div>
-            <div class="md:col-span-2">
-              <img
-                src="/images/ximchistka-3.webp"
-                alt="Gray car seats"
-                class="w-full h-auto rounded-lg object-cover aspect-[2/1]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- - -->
-
-    <!-- - -->
-    <section>
-      <div class="container mx-auto px-4 py-12 max-w-4xl">
-        <div class="space-y-6">
-          <!-- Pricing Table -->
-          <div class="space-y-0">
-            <!-- Full interior cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Салонни тўлиқ кимёвий тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">
-                  от 25.000 ₽
-                </p>
-              </div>
-            </div>
-
-            <!-- Leather cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Терини тўлиқ тозалаш + крем
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">
-                  10.000 ₽
-                </p>
-              </div>
-            </div>
-
-            <!-- Detailing cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">Детейлинг уборка</h3>
-                <p class="text-accent text-xl font-medium text-main">
-                  от 3.000 ₽
-                </p>
-              </div>
-            </div>
-
-            <!-- Single seat cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  1та ўриндиқни кимёвий тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">2.500 ₽</p>
-              </div>
-            </div>
-
-            <!-- Back seat cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Олдинги ўриндиқни кимёвий тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">5.000 ₽</p>
-              </div>
-            </div>
-
-            <!-- Ceiling cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Том қисмини кимёвий тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">5.000 ₽</p>
-              </div>
-            </div>
-
-            <!-- Full floor cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Полни тўлиқ кимёвий тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">
-                  10.000 ₽
-                </p>
-              </div>
-            </div>
-
-            <!-- Driver floor cleaning -->
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Ҳайдовчи томонидаги полни тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">2.700 ₽</p>
-              </div>
-            </div>
-
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">
-                  Юкхона қисмини тозалаш
-                </h3>
-                <p class="text-accent text-xl font-medium text-main">3.000 ₽</p>
-              </div>
-            </div>
-
-            <div class="py-4 border-b border-accent/30">
-              <div class="flex justify-between items-center">
-                <h3 class="text-xl font-medium text-white">Озонация салона</h3>
-                <p class="text-accent text-xl font-medium text-main">2.000 ₽</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- - -->
+    <!-- 404 not found section -->
 
     <!-- Footer starts -->
     <footer class="py-12 md:py-20 bg -black">
@@ -525,6 +556,6 @@
     <!-- Footer ends -->
 
     <!-- JavaScript -->
-    <script src="/JS/script.js" defer></script>
+    <script src="/JS/script.js"></script>
   </body>
 </html>

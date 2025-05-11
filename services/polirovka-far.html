@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zencar - Professional headlight polishing and restoration services in Uzbekistan. Restore clarity and improve visibility."
+    />
+    <meta
+      name="keywords"
+      content="headlight polishing, headlight restoration, car detailing, Uzbekistan, Zencar"
+    />
+    <meta
+      property="og:title"
+      content="Zencar - Professional Headlight Polishing Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional headlight polishing and restoration services in Uzbekistan. Restore clarity and improve visibility."
+    />
+    <meta property="og:image" content="/images/zencar-logo.png" />
+    <title>Zencar - Professional Detailing Center</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/images/zencar-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #main {
+        background-image: url(/images/car-stock.jfif);
+        background-size: cover;
+        background-position: center;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Responsive Typography */
+      h1 {
+        font-size: clamp(1.75rem, 4.5vw, 3rem);
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      h3 {
+        font-size: clamp(1.125rem, 2.75vw, 1.75rem);
+      }
+
+      p {
+        font-size: clamp(0.875rem, 1.75vw, 1rem);
+      }
+
+      /* Responsive Spacing */
+      .container {
+        padding-left: clamp(1rem, 5vw, 2rem);
+        padding-right: clamp(1rem, 5vw, 2rem);
+      }
+
+      /* Responsive Grid */
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      }
+
+      /* Responsive Images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Mobile Menu Improvements */
+      @media (max-width: 768px) {
+        .mobile-menu {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Cards */
+      .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Fluid Container */
+      .fluid-container {
+        width: min(100% - 2rem, 1200px);
+        margin-inline: auto;
+      }
+
+      /* Responsive Buttons */
+      .btn {
+        padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+      }
+
+      /* Responsive Navigation */
+      @media (max-width: 1024px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+        }
+      }
+
+      /* Responsive Pricing Tables */
+      .pricing-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      /* Responsive Hero Section */
+      .hero {
+        min-height: clamp(300px, 50vh, 600px);
+        padding: clamp(2rem, 5vw, 4rem);
+      }
+
+      /* Responsive Footer */
+      .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      /* New Responsive Styles */
+      @media (max-width: 768px) {
+        /* Adjust header for mobile */
+        header {
+          padding: 1rem;
+        }
+
+        /* Improve mobile menu button visibility */
+        #menuToggle {
+          padding: 0.5rem;
+        }
+
+        /* Adjust package cards for mobile */
+        .bg-orangedark,
+        .bg-bluedark {
+          padding: 1rem;
+        }
+
+        /* Improve text readability on mobile */
+        .text-6xl {
+          font-size: 2.25rem;
+        }
+
+        .text-4xl {
+          font-size: 1.5rem;
+        }
+
+        .text-3xl {
+          font-size: 1.375rem;
+        }
+
+        .text-2xl {
+          font-size: 1.25rem;
+        }
+
+        .text-xl {
+          font-size: 1.125rem;
+        }
+
+        .text-lg {
+          font-size: 1rem;
+        }
+
+        /* Adjust spacing for mobile */
+        .space-y-4 {
+          gap: 1rem;
+        }
+
+        /* Improve button sizes on mobile */
+        .rounded-3xl {
+          padding: 0.75rem 1.5rem;
+        }
+
+        /* Adjust individual package section for mobile */
+        .flex-col {
+          gap: 1rem;
+        }
+
+        /* Adjust footer spacing for mobile */
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        /* Improve social media icons spacing */
+        .flex.gap-4 {
+          gap: 1rem;
+        }
+      }
+
+      /* Tablet-specific adjustments */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Adjust container padding */
+        .container {
+          padding: 0 2rem;
+        }
+
+        /* Improve package card layouts */
+        .md\:flex-row {
+          flex-direction: column;
+        }
+
+        /* Adjust text sizes for better readability */
+        .text-6xl {
+          font-size: 2.75rem;
+        }
+
+        .text-4xl {
+          font-size: 2rem;
+        }
+
+        .text-3xl {
+          font-size: 1.75rem;
+        }
+
+        .text-2xl {
+          font-size: 1.5rem;
+        }
+
+        .text-xl {
+          font-size: 1.25rem;
+        }
+
+        .text-lg {
+          font-size: 1.125rem;
+        }
+
+        /* Improve spacing between elements */
+        .space-y-6 {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Large screen adjustments */
+      @media (min-width: 1025px) {
+        /* Ensure maximum width for content */
+        .max-w-6xl {
+          max-width: 72rem;
+        }
+
+        /* Improve spacing for large screens */
+        .gap-6 {
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Header starts -->
+    <header
+      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
+          <img
+            src="/images/zencar-secondary-logo.webp"
+            alt="Zencar Logo"
+            class="h-8 md:h-10"
+          />
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
+          aria-label="Main navigation"
+        >
+          <a
+            href="/index.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            aria-current="page"
+            >Асосий</a
+          >
+          <a
+            href="/index.html#services"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Хизматлар</a
+          >
+          <a
+            href="/services/price.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Нархлар
+          </a>
+          <a
+            href="/index.html#contact"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Контактлар</a
+          >
+          <a
+            href="/services/shop.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <button
+          class="lg:hidden text-primary text-2xl"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          id="menuToggle"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a
+          href="tel:
+          +998335042808
+          "
+          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+          aria-label="Call us at 
+          +998 33 504 28 08
+          "
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span> +998 33 504 28 08 </span>
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
+        aria-label="Mobile navigation"
+      >
+        <div class="container mx-auto px-4 py-8">
+          <nav class="flex flex-col gap-6 text-white text-xl">
+            <a href="#main" class="hover:text-main">Asosiy</a>
+            <a href="#services" class="hover:text-main">Xizmatlar</a>
+            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
+            <a href="#contact" class="hover:text-main">Kontaktlar</a>
+            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- main section starts -->
+    <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
+      <div class="container">
+        <h3 class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+          Полировка фар
+        </h3>
+        <!-- Promotion Section -->
+        <div
+          class="bg-orangedark rounded-lg p-6 md:p-8 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-8"
+          lang="ru"
+        >
+          <!-- Left Content -->
+          <div class="md:w-1/2 mb-6 md:mb-0">
+            <span class="text-main mb-2 inline-block text-sm md:text-base"
+              >Полировка фар</span
+            >
+            <h1
+              class="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-2"
+            >
+              Завод ҳолатидагидай тиклаймиз.
+            </h1>
+            <div
+              class="text-main text-2xl md:text-3xl lg:text-5xl font-bold mb-6 md:mb-8"
+            >
+              ОТ 5.000 ₽
+            </div>
+            <a
+              href="/"
+              class="inline-block border border-main text-main px-20 py-2 my-5 rounded-3xl hover:bg-main/20 transition duration-300"
+            >
+              Batafsil
+            </a>
+
+            <ul class="space-y-3 text-white">
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Фаралар шаффофлигини тиклаш.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Тунги вақтда кўриш имкониятини яхшилаш.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Қайта хиралашишдан ҳимоя қилувчи қоплама.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-main w-6"></i>
+                Автомобилнинг ташқи кўриниши яхшиланиши.
+              </li>
+            </ul>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href="/form.html"
+                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none"
+              >
+                <span class="relative z-10 block px-10 py-3">
+                  Навбатга ёзилиш
+                </span>
+                <span
+                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                ></span>
+              </a>
+
+              <a
+                href="tel:+998901234567"
+                class="inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+                aria-label="Call us at +998 90 000 00 00"
+              >
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>+998 90 000 00 00</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Headlight Image -->
+          <div class="md:w-1/2">
+            <div class="relative h-80 md:h-full rounded-lg overflow-hidden">
+              <img
+                src="/placeholder.svg?height=600&width=800"
+                alt="Полированные фары автомобиля"
+                class="w-full h-full object-cover object-center rounded-lg"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- main section ends -->
+
+    <!-- Benefits section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Фараларни полировка қилиш
+            <span class="text-main">афзалликлари </span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Benefit 1 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Кўриш имкониятини яхшилаш.
+              </h3>
+              <p class="text-gray-400">
+                Фараларни полировка қилиш шаффофликни тиклайди ва ёруғлик
+                ярлигини оширади, бу эса тунги вақтда кўриш имкониятини
+                сезиларли даражада яхшилайди.
+              </p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-shield-alt"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Зарарланишдан ҳимоя.
+              </h3>
+              <p class="text-gray-400">
+                Полировкадан кейин биз қайта хиралашишни олдини олувчи ва
+                УВ-ўтказишдан ҳимоя қиладиган қоплама қўллаймиз.
+              </p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Ташқи кўринишни яхшилаш.
+              </h3>
+              <p class="text-gray-400">
+                Шаффоф фаралар автомобилнинг ташқи кўринишини сезиларли даражада
+                яхшилайди, уни янада жозибали ва парваришланган қилади.
+              </p>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-money-bill-wave"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Алмаштиришда тежамкорлик.
+              </h3>
+              <p class="text-gray-400">
+                Фараларни полировка қилиш янги фараларга алмаштиришдан анча
+                арзонроқ, шу билан бирга натижа деярли янги фараларга ўхшаш
+                бўлади.
+              </p>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">Тезкор жараён.</h3>
+              <p class="text-gray-400">
+                Фараларни полировка қилиш фақат 1-2 соатни олади ва сиз дарҳол
+                янгиланган фаралар билан автомобилдан фойдаланишингиз мумкин.
+              </p>
+            </div>
+
+            <!-- Benefit 6 -->
+            <div
+              class="bg-orangedark rounded-lg p-6 border border-opacity-20 border-main"
+            >
+              <div class="text-main text-4xl mb-4">
+                <i class="fa-solid fa-check-circle"></i>
+              </div>
+              <h3 class="text-white text-xl font-bold mb-3">
+                Техник кўрикдан ўтиш.
+              </h3>
+              <p class="text-gray-400">
+                Шаффоф фаралар техник кўрикдан муваффақиятли ўтишга ёрдам
+                беради, чунки хира фаралар рад этишга сабаб бўлиши мумкин.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits section ends -->
+
+    <!-- Service types section -->
+    <section class="py-12 md:py-16 bg-black">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Фараларни полировка <span class="text-main"> қилиш турлари.</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Service Type 1 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Стандарт полировка.
+                </h3>
+                <p class="text-gray-400 mb-6">
+                  Ёпишган хиралик ва кичик чўқилар бўлган фаралар учун мос
+                  келади. Унда полировка ва ҳимоя қопламасини қўллаш киритилади.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-main text-2xl font-bold">от 5.000 ₽</span>
+                  <span class="text-white">Вақт: 1-1.5 Соат</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Type 2 -->
+            <div class="bg-orangedark bg rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Чуқур полировка.
+                </h3>
+                <p class="text-gray-400 mb-6">
+                  Кучли хиралашган фаралар ва чуқур чўқилари бўлган фаралар учун
+                  мос келади. Унда кўп босқичли полировка ва премиум ҳимоя
+                  қопламасини қўллаш киритилади.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-main text-2xl font-bold">от 8.000 ₽</span>
+                  <span class="text-white">Вақт: 1-1.5 Соат</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Type 3 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Полировка + керамик қоплама.
+                </h3>
+                <p class="text-gray-400 mb-6">
+                  Фараларни тўлиқ полировка қилиш ва кейинчалик керамик қоплама
+                  қўллаш, бу УВ-ўтказишдан узоқ муддатли ҳимоя ва қайта
+                  хиралашишдан ҳимояни таъминлайди.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-main text-2xl font-bold">от 10.000 ₽</span>
+                  <span class="text-white">Вақт: 1-1.5 Соат</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Type 4 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Полировка + ҳимоя плёнкаси.
+                </h3>
+                <p class="text-gray-400 mb-6">
+                  Полировкадан кейин фараларга махсус ҳимоя плёнкаси
+                  қўлланилади, бу механик зарарланишлар ва ташқи омилларнинг
+                  таъсирини олдини олади.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-main text-2xl font-bold">от 12.000 ₽</span>
+                  <span class="text-white">Вақт: 1-1.5 Соат</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Service types section ends -->
+
+    <!-- Pricing section -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            Фараларни полировка қилиш <span class="text-main">нархлари.</span>
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="text-left p-4 bg-orangedark text-white">
+                    Автомобил тури.
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Стандарт
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Чуқур
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Керамика билан
+                  </th>
+                  <th class="text-center p-4 bg-orangedark text-white">
+                    Плёнка билан
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Седан</td>
+                  <td class="p-4 text-center text-main">5.000 ₽</td>
+                  <td class="p-4 text-center text-main">8.000 ₽</td>
+                  <td class="p-4 text-center text-main">10.000 ₽</td>
+                  <td class="p-4 text-center text-main">12.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Кроссовер</td>
+                  <td class="p-4 text-center text-main">6.000 ₽</td>
+                  <td class="p-4 text-center text-main">9.000 ₽</td>
+                  <td class="p-4 text-center text-main">11.000 ₽</td>
+                  <td class="p-4 text-center text-main">13.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Внедорожник</td>
+                  <td class="p-4 text-center text-main">7.000 ₽</td>
+                  <td class="p-4 text-center text-main">10.000 ₽</td>
+                  <td class="p-4 text-center text-main">12.000 ₽</td>
+                  <td class="p-4 text-center text-main">14.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-4 text-white">Минивэн</td>
+                  <td class="p-4 text-center text-main">7.000 ₽</td>
+                  <td class="p-4 text-center text-main">10.000 ₽</td>
+                  <td class="p-4 text-center text-main">12.000 ₽</td>
+                  <td class="p-4 text-center text-main">14.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Additional services pricing -->
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold text-white mb-6">
+              Қўшимча хизматлар
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-orangedark rounded-lg p-6">
+                <h4 class="text-xl font-bold text-white mb-4">
+                  Орқа фонарларни полировка қилиш.
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Стандарт полировка</span>
+                    <span class="text-main">4.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Чуқур полировка</span>
+                    <span class="text-main">6.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Керамик қоплама билан.</span>
+                    <span class="text-main">8.000 ₽</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-orangedark rounded-lg p-6">
+                <h4 class="text-xl font-bold text-white mb-4">
+                  Бошқа оптик элементлар.
+                </h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between">
+                    <span class="text-gray-300"
+                      >Туманга қарши фаралар (жуфт)</span
+                    >
+                    <span class="text-main">3.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300">Поворотниклар (жуфт)</span>
+                    <span class="text-main">2.000 ₽</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-300"
+                      >Кундузги ҳаракатланиш чироқлари (жуфт)</span
+                    >
+                    <span class="text-main">3.000 ₽</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing section ends -->
+
+    <!-- Before/After section -->
+    <section class="py-12 md:py-16 bg-black">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-12">
+            До и <span class="text-main">После</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Before/After Example 1 -->
+            <div class="bg-orangedark rounded-lg overflow-hidden">
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Кучли хиралашиш.
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <p class="text-center text-gray-400 mb-2">До</p>
+                    <img
+                      src="/images/fari-do.webp"
+                      alt="Мутные фары до полировки"
+                      class="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-center text-gray-400 mb-2">После</p>
+                    <img
+                      src="/images/fari-posle.webp"
+                      alt="Прозрачные фары после полировки"
+                      class="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Before/After section ends -->
+
+    <!-- Footer starts -->
+    <footer class="py-12 md:py-20 bg -black">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+      >
+        <!-- Company Info -->
+        <div class="flex flex-col gap-5">
+          <a href="/" aria-label="Go to homepage">
+            <img
+              src="/images/zencar-logo.png"
+              alt="Zencar Logo"
+              class="w-[50px]"
+              width="50"
+              height="50"
+            />
+          </a>
+
+          <div class="flex gap-4" aria-label="Social media links">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Follow us on Telegram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
+            </a>
+            <a
+              href="https://instagram.com/zencar_uz"
+              aria-label="Follow us on Instagram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
+            </a>
+            <a
+              href="https://youtube.com/zencar_uz"
+              aria-label="Subscribe to our YouTube channel"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
+            </a>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              aria-label="Follow us on TikTok"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
+            </a>
+          </div>
+
+          <p class="text-graylight">
+            © 2025 Zencar.uz Барча ҳуқуқлар ҳимояланган.
+          </p>
+
+          <p class="text-graylight">
+            Вебсайт
+            <a
+              href="https://t.me/atakhanov"
+              aria-label="Contact the developer"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              M.Atakhanov
+            </a>
+            томонидан ишлаб чиқилган
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Контактлар</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="tel:
+                +998335042808
+                "
+                class="text-graylight hover:text-main transition-colors"
+              >
+                +998 33 504 28 08
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                zencar@zencar.uz
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Меню</h2>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Асосий
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#services"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Хизматлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/price.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Нархлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#contact"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Контактлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/shop.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Дўкон ZC
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Others -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Бошқалар</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Махфийлик Сиёсати
+              </a>
+            </li>
+            <li>
+              <a
+                href="/form.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Навбатга Ёзилиш
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- JavaScript -->
+    <script src="/JS/script.js"></script>
+  </body>
+</html>

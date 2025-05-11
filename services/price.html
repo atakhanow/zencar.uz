@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zencar - Professional car detailing services pricing in Uzbekistan. Transparent pricing for all our services."
+    />
+    <meta
+      name="keywords"
+      content="car detailing prices, polishing cost, ceramic coating price, tinting cost, Uzbekistan, Zencar"
+    />
+    <meta
+      property="og:title"
+      content="Zencar - Professional Car Detailing Services Pricing"
+    />
+    <meta
+      property="og:description"
+      content="Transparent pricing for all our professional car detailing services in Uzbekistan."
+    />
+    <meta property="og:image" content="/images/zencar-logo.png" />
+    <title>Zencar - Professional Car Detailing Services Pricing</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/images/zencar-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="/images/zencar-logo.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Local Tailwind CSS -->
+    <link href="/dist/styles.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      header,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Unbounded", sans-serif;
+      }
+
+      p {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Responsive Typography */
+      h1 {
+        font-size: clamp(1.75rem, 4.5vw, 3rem);
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      h3 {
+        font-size: clamp(1.125rem, 2.75vw, 1.75rem);
+      }
+
+      p {
+        font-size: clamp(0.875rem, 1.75vw, 1rem);
+      }
+
+      /* Responsive Spacing */
+      .container {
+        padding-left: clamp(1rem, 5vw, 2rem);
+        padding-right: clamp(1rem, 5vw, 2rem);
+      }
+
+      /* Mobile Menu Improvements */
+      @media (max-width: 768px) {
+        .mobile-menu {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+      }
+
+      /* Sticky Table Headers */
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      /* Price Table Hover Effects */
+      .price-row:hover {
+        background-color: rgba(253, 201, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      /* Service Category Tabs */
+      .service-tab {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .service-tab.active {
+        border-bottom: 3px solid #fdc900;
+        color: #fdc900;
+      }
+
+      /* Responsive Tables */
+      @media (max-width: 768px) {
+        .responsive-table {
+          display: block;
+          width: 100%;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Header starts -->
+    <header
+      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
+          <img
+            src="/images/zencar-secondary-logo.webp"
+            alt="Zencar Logo"
+            class="h-8 md:h-10"
+          />
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
+          aria-label="Main navigation"
+        >
+          <a
+            href="/index.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            aria-current="page"
+            >Асосий</a
+          >
+          <a
+            href="/index.html#services"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Хизматлар</a
+          >
+          <a
+            href="/services/price.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Нархлар
+          </a>
+          <a
+            href="/index.html#contact"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Контактлар</a
+          >
+          <a
+            href="/services/shop.html"
+            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            >Do'kon ZC</a
+          >
+        </nav>
+
+        <button
+          class="lg:hidden text-primary text-2xl"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          id="menuToggle"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a
+          href="tel:
+        +998335042808
+        "
+          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+          aria-label="Call us at 
+        +998 33 504 28 08
+        "
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span> +998 33 504 28 08 </span>
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
+        aria-label="Mobile navigation"
+      >
+        <div class="container mx-auto px-4 py-8">
+          <nav class="flex flex-col gap-6 text-white text-xl">
+            <a href="#main" class="hover:text-main">Asosiy</a>
+            <a href="#services" class="hover:text-main">Xizmatlar</a>
+            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
+            <a href="#contact" class="hover:text-main">Kontaktlar</a>
+            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+          >
+            Прайс-лист на <span class="text-main">услуги</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            Мы предлагаем прозрачное ценообразование без скрытых платежей. Все
+            цены указаны в рублях и могут варьироваться в зависимости от размера
+            и состояния вашего автомобиля.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#polishing"
+              class="inline-block border p-6 border-main text-main py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Полировка
+            </a>
+            <a
+              href="#tinting"
+              class="inline-block border p-6 border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Тонировка
+            </a>
+            <a
+              href="#wrapping"
+              class="inline-block border p-6 border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Оклейка
+            </a>
+            <a
+              href="#soundproof"
+              class="inline-block border p-6 border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Шумоизоляция
+            </a>
+            <a
+              href="#sunprotect"
+              class="inline-block border p-6 border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Солнцезащита
+            </a>
+            <a
+              href="#cleaning"
+              class="inline-block border p-6 border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Химчистка
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Class Legend -->
+    <section class="py-8 bg-orangedark">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-white mb-6 text-center">
+            Классы автомобилей
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-bold text-main mb-2">Класс 1</h3>
+              <p class="text-gray-300">
+                Малые автомобили: VW Golf, BMW 1er, Kia Rio, Hyundai Solaris
+              </p>
+            </div>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-bold text-main mb-2">Класс 2</h3>
+              <p class="text-gray-300">
+                Средние автомобили: BMW 3, Kia K5, Audi A5, Toyota Camry
+              </p>
+            </div>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-bold text-main mb-2">Класс 3</h3>
+              <p class="text-gray-300">
+                Бизнес-класс: Mercedes S-class, BMW X5, Audi Q7
+              </p>
+            </div>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-bold text-main mb-2">Класс 4</h3>
+              <p class="text-gray-300">
+                Премиум и крупные: BMW X7, Toyota Land Cruiser 200, Lexus LX
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polishing Section -->
+    <section id="polishing" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Полировка и <span class="text-main">керамика</span>
+          </h2>
+
+          <div class="overflow-x-auto responsive-table mb-12">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-orangedark">
+                  <th class="p-4 text-left text-white">Услуга</th>
+                  <th class="p-4 text-center text-white">Класс 1</th>
+                  <th class="p-4 text-center text-white">Класс 2</th>
+                  <th class="p-4 text-center text-white">Класс 3</th>
+                  <th class="p-4 text-center text-white">Класс 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">
+                    Лёгкая полировка + Керамика QM Light
+                  </td>
+                  <td class="p-4 text-center text-main">20.000 ₽</td>
+                  <td class="p-4 text-center text-main">22.000 ₽</td>
+                  <td class="p-4 text-center text-main">24.000 ₽</td>
+                  <td class="p-4 text-center text-main">26.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">
+                    Глубокая полировка + Керамика QM Light
+                  </td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">32.000 ₽</td>
+                  <td class="p-4 text-center text-main">34.000 ₽</td>
+                  <td class="p-4 text-center text-main">36.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">
+                    Лёгкая полировка + Керамика QM One
+                  </td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">27.000 ₽</td>
+                  <td class="p-4 text-center text-main">29.000 ₽</td>
+                  <td class="p-4 text-center text-main">31.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">
+                    Глубокая полировка + Керамика QM One
+                  </td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">37.000 ₽</td>
+                  <td class="p-4 text-center text-main">39.000 ₽</td>
+                  <td class="p-4 text-center text-main">41.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Дополнительные услуги
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-orangedark rounded-lg p-6">
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white"
+                    >Полировка под ручками со снятием + оклейка</span
+                  >
+                  <span class="text-main font-bold">5.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white"
+                    >Снятие / установка шильдиков + полировка</span
+                  >
+                  <span class="text-main font-bold">от 3.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Полировка дверных проёмов</span>
+                  <span class="text-main font-bold">8.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-orangedark rounded-lg p-6">
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white"
+                    >Удаление налёта со стёкол + антидождь (полусфера)</span
+                  >
+                  <span class="text-main font-bold">3.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white"
+                    >Удаление налёта со стёкол + антидождь (все стёкла)</span
+                  >
+                  <span class="text-main font-bold">6.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Полировка фар (пара)</span>
+                  <span class="text-main font-bold">4.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/polirovka.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее о полировке
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tinting Section -->
+    <section id="tinting" class="py-16 bg-black/50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Тонировка <span class="text-main">стёкол</span>
+          </h2>
+
+          <div class="overflow-x-auto responsive-table mb-12">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-orangedark">
+                  <th class="p-4 text-left text-white">Тип автомобиля</th>
+                  <th class="p-4 text-center text-white">Стандарт</th>
+                  <th class="p-4 text-center text-white">Премиум</th>
+                  <th class="p-4 text-center text-white">Керамика</th>
+                  <th class="p-4 text-center text-white">Атермальная</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Седан</td>
+                  <td class="p-4 text-center text-main">20.000 ₽</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                  <td class="p-4 text-center text-main">60.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Хэтчбек</td>
+                  <td class="p-4 text-center text-main">22.000 ₽</td>
+                  <td class="p-4 text-center text-main">37.000 ₽</td>
+                  <td class="p-4 text-center text-main">52.000 ₽</td>
+                  <td class="p-4 text-center text-main">62.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Кроссовер</td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">40.000 ₽</td>
+                  <td class="p-4 text-center text-main">55.000 ₽</td>
+                  <td class="p-4 text-center text-main">65.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Внедорожник</td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">45.000 ₽</td>
+                  <td class="p-4 text-center text-main">60.000 ₽</td>
+                  <td class="p-4 text-center text-main">70.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Минивэн</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                  <td class="p-4 text-center text-main">65.000 ₽</td>
+                  <td class="p-4 text-center text-main">75.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Тонировка отдельных стёкол
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-orangedark rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">
+                Стандартная плёнка
+              </h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Лобовое стекло</span>
+                  <span class="text-main font-bold">10.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Заднее стекло</span>
+                  <span class="text-main font-bold">7.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Боковое стекло (1 шт.)</span>
+                  <span class="text-main font-bold">3.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Задние боковые (пара)</span>
+                  <span class="text-main font-bold">5.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-orangedark rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">Премиум плёнка</h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Лобовое стекло</span>
+                  <span class="text-main font-bold">15.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Заднее стекло</span>
+                  <span class="text-main font-bold">10.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Боковое стекло (1 шт.)</span>
+                  <span class="text-main font-bold">5.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Задние боковые (пара)</span>
+                  <span class="text-main font-bold">8.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/tonirovka.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее о тонировке
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wrapping Section -->
+    <section id="wrapping" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Оклейка <span class="text-main">защитной плёнкой</span>
+          </h2>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          >
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-2xl font-bold text-white mb-4">Пакет ЛАЙТ</h3>
+              <p class="text-gray-300 mb-6">49.000 - 59.000 ₽</p>
+              <ul class="space-y-2 text-white">
+                <li><i class="fa-solid fa-check text-main mr-2"></i>Фары</li>
+                <li><i class="fa-solid fa-check text-main mr-2"></i>Капот</li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Передняя часть
+                  крыши
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Стойки вдоль
+                  лобового
+                </li>
+                <li><i class="fa-solid fa-check text-main mr-2"></i>Зеркала</li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Под ручками
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-bluedark bg-opacity-50 rounded-lg p-6">
+              <h3 class="text-2xl font-bold text-white mb-4">Пакет СТАНДАРД</h3>
+              <p class="text-gray-300 mb-6">99.000 - 114.000 ₽</p>
+              <ul class="space-y-2 text-white">
+                <li><i class="fa-solid fa-check text-blue mr-2"></i>Фары</li>
+                <li><i class="fa-solid fa-check text-blue mr-2"></i>Капот</li>
+                <li>
+                  <i class="fa-solid fa-check text-blue mr-2"></i>Передняя часть
+                  крыши
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-blue mr-2"></i>Стойки вдоль
+                  лобового
+                </li>
+                <li><i class="fa-solid fa-check text-blue mr-2"></i>Зеркала</li>
+                <li>
+                  <i class="fa-solid fa-check text-blue mr-2"></i>Под ручками
+                </li>
+                <li><i class="fa-solid fa-plus text-blue mr-2"></i>Бампер</li>
+                <li><i class="fa-solid fa-plus text-blue mr-2"></i>Крылья</li>
+              </ul>
+            </div>
+
+            <div class="bg-orangedark rounded-lg p-6">
+              <h3 class="text-2xl font-bold text-white mb-4">Полная оклейка</h3>
+              <p class="text-gray-300 mb-6">от 240.000 ₽</p>
+              <ul class="space-y-2 text-white">
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Все наружные
+                  элементы в цвет кузова
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Передние и
+                  задние фары
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Внутренние
+                  части порогов
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Стойки вдоль
+                  лобового
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-main mr-2"></i>Глянцевые
+                  вставки между дверьми
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Индивидуальная оклейка
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-orangedark rounded-lg p-6">
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Бампер</span>
+                  <span class="text-main font-bold">30.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Капот</span>
+                  <span class="text-main font-bold">25.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Крылья (2 шт.)</span>
+                  <span class="text-main font-bold">20.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Внутр. пороги (4 шт.)</span>
+                  <span class="text-main font-bold">10.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Расширители крыльев (2 шт.)</span>
+                  <span class="text-main font-bold">8.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-orangedark rounded-lg p-6">
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Фары (2 шт.)</span>
+                  <span class="text-main font-bold">6.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Полоса на крышу</span>
+                  <span class="text-main font-bold">6.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Стойки вдоль лобового</span>
+                  <span class="text-main font-bold">6.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Зеркала (2 шт.)</span>
+                  <span class="text-main font-bold">6.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Под ручками (4 шт.)</span>
+                  <span class="text-main font-bold">4.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/okleika.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее об оклейке
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sound Insulation Section -->
+    <section id="soundproof" class="py-16 bg-black/50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Шумоизоляция <span class="text-main">автомобиля</span>
+          </h2>
+
+          <div class="overflow-x-auto responsive-table mb-12">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-orangedark">
+                  <th class="p-4 text-left text-white">Тип автомобиля</th>
+                  <th class="p-4 text-center text-white">Базовый</th>
+                  <th class="p-4 text-center text-white">Стандарт</th>
+                  <th class="p-4 text-center text-white">Премиум</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Седан</td>
+                  <td class="p-4 text-center text-main">20.000 ₽</td>
+                  <td class="p-4 text-center text-main">40.000 ₽</td>
+                  <td class="p-4 text-center text-main">60.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Хэтчбек</td>
+                  <td class="p-4 text-center text-main">22.000 ₽</td>
+                  <td class="p-4 text-center text-main">42.000 ₽</td>
+                  <td class="p-4 text-center text-main">62.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Кроссовер</td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">45.000 ₽</td>
+                  <td class="p-4 text-center text-main">65.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Внедорожник</td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                  <td class="p-4 text-center text-main">70.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Минивэн</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">55.000 ₽</td>
+                  <td class="p-4 text-center text-main">75.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Шумоизоляция отдельных зон
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-orangedark rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">
+                Стандартные материалы
+              </h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Двери (4 шт.)</span>
+                  <span class="text-main font-bold">15.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Пол</span>
+                  <span class="text-main font-bold">12.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Крыша</span>
+                  <span class="text-main font-bold">10.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Багажник</span>
+                  <span class="text-main font-bold">8.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Капот</span>
+                  <span class="text-main font-bold">7.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-bluedark bg-opacity-50 rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">
+                Премиум материалы
+              </h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Двери (4 шт.)</span>
+                  <span class="text-blue font-bold">25.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Пол</span>
+                  <span class="text-blue font-bold">20.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Крыша</span>
+                  <span class="text-blue font-bold">18.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Багажник</span>
+                  <span class="text-blue font-bold">15.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Капот</span>
+                  <span class="text-blue font-bold">12.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/shumka.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее о шумоизоляции
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sun Protection Section -->
+    <section id="sunprotect" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Солнцезащитная <span class="text-main">плёнка</span>
+          </h2>
+
+          <div class="overflow-x-auto responsive-table mb-12">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-orangedark">
+                  <th class="p-4 text-left text-white">Тип автомобиля</th>
+                  <th class="p-4 text-center text-white">Стандарт</th>
+                  <th class="p-4 text-center text-white">Премиум</th>
+                  <th class="p-4 text-center text-white">Керамика</th>
+                  <th class="p-4 text-center text-white">Нанокерамика</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Седан</td>
+                  <td class="p-4 text-center text-main">15.000 ₽</td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">45.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Хэтчбек</td>
+                  <td class="p-4 text-center text-main">17.000 ₽</td>
+                  <td class="p-4 text-center text-main">27.000 ₽</td>
+                  <td class="p-4 text-center text-main">37.000 ₽</td>
+                  <td class="p-4 text-center text-main">47.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Кроссовер</td>
+                  <td class="p-4 text-center text-main">20.000 ₽</td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">40.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Внедорожник</td>
+                  <td class="p-4 text-center text-main">25.000 ₽</td>
+                  <td class="p-4 text-center text-main">35.000 ₽</td>
+                  <td class="p-4 text-center text-main">45.000 ₽</td>
+                  <td class="p-4 text-center text-main">55.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Минивэн</td>
+                  <td class="p-4 text-center text-main">30.000 ₽</td>
+                  <td class="p-4 text-center text-main">40.000 ₽</td>
+                  <td class="p-4 text-center text-main">50.000 ₽</td>
+                  <td class="p-4 text-center text-main">60.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Установка на отдельные стёкла
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-orangedark rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">
+                Стандартная пленка
+              </h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Лобовое стекло</span>
+                  <span class="text-main font-bold">8.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Заднее стекло</span>
+                  <span class="text-main font-bold">5.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Боковое стекло (1 шт.)</span>
+                  <span class="text-main font-bold">2.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Задние боковые (пара)</span>
+                  <span class="text-main font-bold">3.500 ₽</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-bluedark bg-opacity-50 rounded-lg p-6">
+              <h4 class="text-xl font-bold text-white mb-4">Премиум пленка</h4>
+              <ul class="space-y-4">
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Лобовое стекло</span>
+                  <span class="text-blue font-bold">12.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Заднее стекло</span>
+                  <span class="text-blue font-bold">8.000 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Боковое стекло (1 шт.)</span>
+                  <span class="text-blue font-bold">3.500 ₽</span>
+                </li>
+                <li
+                  class="flex justify-between items-center border-b border-gray-700 pb-2"
+                >
+                  <span class="text-white">Задние боковые (пара)</span>
+                  <span class="text-blue font-bold">6.000 ₽</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/solnse.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее о солнцезащитной плёнке
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interior Cleaning Section -->
+    <section id="cleaning" class="py-16 bg-black/50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+            Химчистка <span class="text-main">салона</span>
+          </h2>
+
+          <div class="overflow-x-auto responsive-table mb-12">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-orangedark">
+                  <th class="p-4 text-left text-white">Услуга</th>
+                  <th class="p-4 text-center text-white">Стоимость</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Полная химчистка салона</td>
+                  <td class="p-4 text-center text-main">от 25.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Чистка всей кожи + крем</td>
+                  <td class="p-4 text-center text-main">10.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Детейлинг уборка</td>
+                  <td class="p-4 text-center text-main">от 3.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка 1 сиденье</td>
+                  <td class="p-4 text-center text-main">2.500 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка заднее сиденье</td>
+                  <td class="p-4 text-center text-main">5.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка потолок</td>
+                  <td class="p-4 text-center text-main">5.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка весь пол</td>
+                  <td class="p-4 text-center text-main">10.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка водительский пол</td>
+                  <td class="p-4 text-center text-main">2.700 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Химчистка багажник</td>
+                  <td class="p-4 text-center text-main">3.000 ₽</td>
+                </tr>
+                <tr class="border-b border-gray-800 price-row">
+                  <td class="p-4 text-white">Озонация салона</td>
+                  <td class="p-4 text-center text-main">2.000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/services/ximchistka.html"
+              class="inline-block border border-main text-main px-8 py-3 rounded-lg hover:bg-main/20 transition duration-300"
+            >
+              Подробнее о химчистке
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-orangedark rounded-lg p-8 md:p-12">
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+              Готовы улучшить свой автомобиль?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+              Запишитесь на консультацию или услугу прямо сейчас и получите
+              профессиональный сервис от Zencar
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="/form.html"
+                class="group relative overflow-hidden rounded-xl bg-[#3d3a4e] text-white border-none"
+              >
+                <span class="relative z-10 block px-10 py-3">
+                  Записаться на услугу
+                </span>
+                <span
+                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                ></span>
+              </a>
+              <a
+                href="tel:+998901234567"
+                class="inline-flex items-center justify-center gap-2 text-main font-bold hover:opacity-80 transition-opacity border border-main rounded-xl px-10 py-3"
+              >
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>+998 90 000 00 00</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer starts -->
+    <footer class="py-12 md:py-20 bg -black">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+      >
+        <!-- Company Info -->
+        <div class="flex flex-col gap-5">
+          <a href="/" aria-label="Go to homepage">
+            <img
+              src="/images/zencar-logo.png"
+              alt="Zencar Logo"
+              class="w-[50px]"
+              width="50"
+              height="50"
+            />
+          </a>
+
+          <div class="flex gap-4" aria-label="Social media links">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Follow us on Telegram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-telegram fa-xl"></i>
+            </a>
+            <a
+              href="https://instagram.com/zencar_uz"
+              aria-label="Follow us on Instagram"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-square-instagram fa-xl"></i>
+            </a>
+            <a
+              href="https://youtube.com/zencar_uz"
+              aria-label="Subscribe to our YouTube channel"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
+            </a>
+            <a
+              href="https://tiktok.com/zencar_uz"
+              aria-label="Follow us on TikTok"
+              class="text-graylight hover:text-main transition-colors"
+            >
+              <i class="fa-brands fa-tiktok fa-xl"></i>
+            </a>
+          </div>
+
+          <p class="text-graylight">
+            © 2025 Zencar.uz Барча ҳуқуқлар ҳимояланган.
+          </p>
+
+          <p class="text-graylight">
+            Вебсайт
+            <a
+              href="https://t.me/atakhanov"
+              aria-label="Contact the developer"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              M.Atakhanov
+            </a>
+            томонидан ишлаб чиқилган
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Контактлар</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="tel:
+                +998335042808
+                "
+                class="text-graylight hover:text-main transition-colors"
+              >
+                +998 33 504 28 08
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:zencar@zencar.uz"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                zencar@zencar.uz
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Меню</h2>
+          <nav aria-label="Footer navigation">
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Асосий
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#services"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Хизматлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/price.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Нархлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/index.html#contact"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Контактлар
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services/shop.html"
+                  class="text-graylight hover:text-main transition-colors"
+                >
+                  Дўкон ZC
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Others -->
+        <div class="flex flex-col gap-5">
+          <h2 class="text-white text-xl font-bold">Бошқалар</h2>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Махфийлик Сиёсати
+              </a>
+            </li>
+            <li>
+              <a
+                href="/form.html"
+                class="text-graylight hover:text-main transition-colors"
+              >
+                Навбатга Ёзилиш
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- JavaScript -->
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
