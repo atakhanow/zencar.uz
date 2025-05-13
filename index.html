@@ -171,121 +171,43 @@
 
       header {
         position: fixed;
+        width: 100%;
+        top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
         z-index: 50;
         backdrop-filter: blur(20px);
-        padding: var(--space-2xs);
         transition: all 0.3s ease-in-out;
-        border-top: 1px solid rgba(253, 201, 0, 0.1);
-        border-radius: 1rem 1rem 0 0;
       }
 
       @media (min-width: 768px) {
         header {
           top: 0;
-          bottom: auto;
-          left: 2.5rem;
-          right: 2.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 5rem);
           margin: 1.25rem auto;
           border-radius: 0.75rem;
-          border-top: none;
-          backdrop-filter: blur(20px);
         }
       }
 
       .mobile-menu {
         position: fixed;
-        bottom: -100%;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(10px);
-        padding: var(--space-2xs);
-        transition: bottom 0.3s ease-in-out;
-        z-index: 40;
-      }
-
-      .mobile-menu.active {
-        bottom: 0;
-      }
-
-      .mobile-menu-overlay {
-        position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 39;
-        display: none;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 5rem 1.5rem 1.5rem;
+        transition: transform 0.3s ease-in-out;
+        z-index: 40;
+        transform: translateY(-100%);
+        overflow-y: auto;
       }
 
-      .mobile-menu-overlay.active {
-        display: block;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding-left: var(--space-2xs);
-          padding-right: var(--space-2xs);
-        }
-
-        header {
-          left: 0;
-          right: 0;
-          margin: 0;
-          padding: var(--space-2xs);
-        }
-
-        #main {
-          padding: var(--space-3) var(--space-2xs);
-        }
-
-        #main h1 {
-          font-size: var(--text-3xl);
-          line-height: 1.2;
-        }
-
-        #main p {
-          font-size: var(--text-base);
-          line-height: 1.5;
-        }
-
-        .services-grid {
-          grid-template-columns: 1fr;
-          gap: var(--space-2xs);
-        }
-
-        .contact-section {
-          padding: var(--space-3) var(--space-2xs);
-        }
-
-        footer {
-          padding: var(--space-3) var(--space-2xs);
-        }
-
-        footer .container {
-          flex-direction: column;
-          gap: var(--space-3);
-        }
-      }
-
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .container {
-          max-width: 90%;
-        }
-
-        .services-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (min-width: 1025px) {
-        .container {
-          max-width: 1200px;
-        }
+      .mobile-menu.active {
+        transform: translateY(0);
       }
 
       header,
@@ -303,168 +225,143 @@
       }
     </style>
   </head>
-  <body>
+  <body class="bg-black text-white">
     <!-- Skip link for screen readers -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header starts -->
-    <header role="banner">
-      <div
-        class="container p-4 mx-auto flex justify-between items-center sm:justify-between sm:gap-6"
-      >
-        <a href="/" class="hidden sm:block" aria-label="Zencar Home">
+    <header class="bg-blur bg-opacity-70 backdrop-blur-lg p-4 md:p-5">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center" aria-label="Zencar Home">
           <img
             src="/images/zencar-secondary-logo.webp"
             alt="Zencar Logo"
-            class="h-10 sm:h-12 md:h-14"
-            width="140"
-            height="56"
+            class="h-8 md:h-10"
+            width="auto"
+            height="40"
           />
         </a>
+
         <nav
-          class="hidden lg:flex items-center gap-10 text-white"
-          role="navigation"
+          class="hidden lg:flex items-center gap-4 md:gap-10 text-white"
           aria-label="Main navigation"
         >
           <a
-            href="#main"
-            class="hover:text-main transition-all duration-300"
+            href="/"
+            class="hover:text-main transition-all duration-300 text-base"
             aria-current="page"
             >Асосий</a
           >
           <a
             href="#services"
-            class="hover:text-main transition-all duration-300"
+            class="hover:text-main transition-all duration-300 text-base"
             >Хизматлар</a
           >
           <a
             href="/services/price.html"
-            class="hover:text-main transition-all duration-300"
-            >Нархлар</a
-          >
-          <a href="#contact" class="hover:text-main transition-all duration-300"
+            class="hover:text-main transition-all duration-300 text-base"
+            >Нархлар
+          </a>
+          <a
+            href="#contact"
+            class="hover:text-main transition-all duration-300 text-base"
             >Контактлар</a
           >
-          <a href="#shop" class="hover:text-main transition-all duration-300"
-            >Дўкон ZC</a
+          <a
+            href="/404.html"
+            class="hover:text-main transition-all duration-300 text-base"
+            >Do'kon ZC</a
           >
+
+          <a href="tel:+998335042808">
+            <button class="text-main font-bold" aria-label="Call us">
+              <i class="fa-solid fa-phone-volume text-main"></i> +998 33 504 28
+              08
+            </button>
+          </a>
         </nav>
 
-        <div
-          class="lg:hidden cursor-pointer text-2xl text-graylight rounded-xl p-2 flex justify-center items-center gap-6 w-full"
-          role="navigation"
-          aria-label="Mobile navigation"
-        >
+        <div class="flex items-center gap-4">
           <a
-            href="https://www.instagram.com/zencar.uz/"
-            target="_blank"
-            aria-label="Instagram"
-            ><i class="fa-brands fa-instagram fa-lg active:text-white"></i
-          ></a>
-          <a href="https://t.me/zencaruz" target="_blank" aria-label="Telegram"
-            ><i class="fa-brands fa-telegram fa-lg active:text-white"></i
-          ></a>
-          <button
-            id="menu-button"
-            class="flex items-center gap-2 text-white bg-main rounded-full p-5 border-none"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
+            href="tel:+998335042808"
+            class="hidden md:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+            aria-label="Call us at +998 33 504 28 08"
           >
-            <i class="fa-solid fa-bars fa-lg"></i>
-          </button>
-          <a
-            href="https://youtube.com/@zencar.uz"
-            target="_blank"
-            aria-label="YouTube"
-            ><i class="fa-brands fa-youtube fa-lg active:text-white"></i
-          ></a>
-          <a
-            href="tel:+998901234567"
-            class="text-graylight font-bold"
-            aria-label="Call us"
-            ><i class="fa-solid fa-phone-volume"></i
-          ></a>
-        </div>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span class="hidden lg:inline">+998 33 504 28 08</span>
+          </a>
 
-        <a
-          href="tel:+998335042808"
-          class="hidden lg:block"
-          aria-label="Call us at +998 33 504 28 08"
-        >
-          <button class="text-main font-bold">
-            <i class="fa-solid fa-phone-volume text-main"></i> +998 33 504 28 08
+          <button
+            class="lg:hidden text-main text-2xl bg-white/5 rounded-md"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            id="menuToggle"
+          >
+            <i class="fa-solid fa-bars"></i>
           </button>
-        </a>
+        </div>
       </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div
-      class="mobile-menu-overlay"
-      id="menu-overlay"
-      role="presentation"
-    ></div>
-    <div
-      class="mobile-menu"
-      id="mobile-menu"
-      role="navigation"
-      aria-label="Mobile menu"
-    >
-      <div class="container mx-auto">
-        <div class="flex flex-col gap-6 text-white">
-          <a
-            href="#main"
-            class="text-xl hover:text-main transition-all duration-300"
-            >Асосий</a
-          >
-          <a
-            href="#services"
-            class="text-xl hover:text-main transition-all duration-300"
-            >Хизматлар</a
-          >
-          <a
-            href="/services/price.html"
-            class="text-xl hover:text-main transition-all duration-300"
-            >Нархлар</a
-          >
-          <a
-            href="#contact"
-            class="text-xl hover:text-main transition-all duration-300"
-            >Контактлар</a
-          >
-          <a
-            href="#shop"
-            class="text-xl hover:text-main transition-all duration-300"
-            >Дўкон ZC</a
-          >
-          <a href="tel:+998901234567" class="text-xl text-main font-bold">
-            <i class="fa-solid fa-phone-volume text-main"></i> +998 90 000 00 00
-          </a>
-        </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-8 text-white text-xl mt-8">
+        <a
+          href="tel:+998335042808"
+          class="flex items-center gap-2 text-main font-bold"
+          aria-label="Call us at +998 33 504 28 08"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+998 33 504 28 08</span>
+        </a>
+
+        <a href="#main" class="hover:text-main transition-all duration-300"
+          >Асосий</a
+        >
+        <a href="#services" class="hover:text-main transition-all duration-300"
+          >Хизматлар</a
+        >
+        <a
+          href="/services/price.html"
+          class="hover:text-main transition-all duration-300"
+          >Нархлар</a
+        >
+        <a href="#contact" class="hover:text-main transition-all duration-300"
+          >Контактлар</a
+        >
+        <a href="/404.html" class="hover:text-main transition-all duration-300"
+          >Дўкон ZC</a
+        >
       </div>
     </div>
 
-    <!-- Main Section Starts -->
-    <section
-      id="main"
-      style="
-        background-image: url(./images/car-stock.webp);
-        background-size: cover;
-        background-position: center;
-      "
-      class="min-h-screen flex items-center"
-      role="main"
-      aria-label="Main content"
-    >
-      <div class="container mx-auto">
-        <div
-          class="flex flex-col text-white text-center md:text-left w-full md:w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-center md:items-start px-4 md:px-8"
-        >
-          <h1 class="font-bold mb-5 text-7xl">
-            ZENCAR <span class="text-main"> DETAILING </span>
-          </h1>
-          <!-- <p class="text-graylight text-2xl font-normal mt-5 text-left">
+    <main class="pt-20 md:pt-24">
+      <div id="main-content" class="sr-only">
+        <!-- Main content starts here -->
+      </div>
+
+      <!-- Main Section Starts -->
+      <section
+        id="main"
+        style="
+          background-image: url(./images/car-stock.webp);
+          background-size: cover;
+          background-position: center;
+        "
+        class="min-h-screen flex items-center"
+        role="main"
+        aria-label="Main content"
+      >
+        <div class="container mx-auto">
+          <div
+            class="flex flex-col text-white text-center md:text-left w-full md:w-[684px] lg:w-[800px] xl:w-[1000px] justify-center items-center md:items-start px-4 md:px-8"
+          >
+            <h1
+              class="font-bold mb-5 text-5xl sm:text-4xl md:text-8xl lg:text-9xl"
+            >
+              ZENCAR <span class="text-main"> DETAILING </span>
+            </h1>
+            <!-- <p class="text-graylight text-2xl font-normal mt-5 text-left">
             Биз шаффоф,<span class="text-white"> халол</span> ва
             <span class="text-white">олдиндан тўловсиз</span> ишлаймиз.
             Хизматларни юкламаймиз ва ҳар бир қадам учун
@@ -475,159 +372,166 @@
             доим <span class="text-white"> дўстона муҳит</span> ҳукм суради.
           </p> -->
 
-          <h3 class="text-white">Zencar – Сифат ва ишонч белгиси.</h3>
-          <div
-            class="flex flex-col md:flex-row justify-center items-center gap-5 mt-10 font-normal"
-          >
-            <a href="./form.html">
-              <button
-                class="relative overflow-hidden h-12 px-10 rounded-xl bg-[#3d3a4e] text-white border-none cursor-pointer group shadow-2xl"
-                aria-label="Sign up for an appointment"
-              >
-                <span class="relative z-10">Навбатга Ёзилиш</span>
-                <span
-                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
-                ></span>
-              </button>
-            </a>
+            <h3 class="text-white">Zencar – Сифат ва ишонч белгиси.</h3>
+            <div
+              class="flex flex-col md:flex-row justify-center items-center gap-5 mt-10 font-normal"
+            >
+              <a href="./form.html">
+                <button
+                  class="relative overflow-hidden h-12 px-10 rounded-xl bg-[#3d3a4e] text-white border-none cursor-pointer group shadow-2xl"
+                  aria-label="Sign up for an appointment"
+                >
+                  <span class="relative z-10">Навбатга Ёзилиш</span>
+                  <span
+                    class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                  ></span>
+                </button>
+              </a>
 
-            <a href="tel:+998335042808">
-              <button class="text-main font-bold" aria-label="Call us">
-                <i class="fa-solid fa-phone-volume text-main"></i> +998 33 504
-                28 08
-              </button>
-            </a>
+              <a href="tel:+998335042808">
+                <button class="text-main font-bold" aria-label="Call us">
+                  <i class="fa-solid fa-phone-volume text-main"></i> +998 33 504
+                  28 08
+                </button>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- Main Section Ends -->
 
-    <!-- Main Section Ends -->
-
-    <!-- Animation -->
-    <section
-      id="animation"
-      role="region"
-      aria-label="Partner companies"
-      style="width: 100%"
-    >
-      <div
-        class="overflow-hidden py-10 bg-black bg-opacity-70 backdrop-blur-lg"
+      <!-- Animation -->
+      <section
+        id="animation"
+        role="region"
+        aria-label="Partner companies"
+        class="w-full"
       >
-        <h2 class="text-main text-center">Биз Ишлайдиган Компаниялар</h2>
-        <div class="flex w-[200%] animate-scroll">
-          <!-- Logos block (1) -->
-          <div class="flex space-x-16 w-1/2 justify-around items-center">
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 1"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 2"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 3"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 4"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 5"
-              width="80"
-              height="80"
-            />
-          </div>
+        <div
+          class="overflow-hidden py-8 md:py-10 bg-black bg-opacity-70 backdrop-blur-lg"
+        >
+          <h2 class="text-main text-center text-xl md:text-2xl mb-6">
+            Биз Ишлайдиган Компаниялар
+          </h2>
+          <div class="flex w-[200%] animate-scroll">
+            <!-- Logos block (1) -->
+            <div
+              class="flex space-x-8 md:space-x-16 w-1/2 justify-around items-center"
+            >
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 1"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 2"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 3"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 4"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 5"
+                width="80"
+                height="80"
+              />
+            </div>
 
-          <!-- Logos block (2) - repeat for seamless scroll -->
-          <div class="flex space-x-16 w-1/2 justify-around items-center">
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 1"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 2"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 3"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 4"
-              width="80"
-              height="80"
-            />
-            <img
-              src="/images/logo.webp"
-              class="h-20"
-              alt="Partner company logo 5"
-              width="80"
-              height="80"
-            />
+            <!-- Logos block (2) - repeat for seamless scroll -->
+            <div
+              class="flex space-x-8 md:space-x-16 w-1/2 justify-around items-center"
+            >
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 1"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 2"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 3"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 4"
+                width="80"
+                height="80"
+              />
+              <img
+                src="/images/logo.webp"
+                class="h-12 md:h-20"
+                alt="Partner company logo 5"
+                width="80"
+                height="80"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- Animation Ends -->
 
-    <!-- Animation Ends -->
-
-    <!-- Services Section Starts -->
-    <section
-      id="services"
-      class="bg-black py-10 md:py-20"
-      role="region"
-      aria-label="Our services"
-    >
-      <div class="container mx-auto">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="sr-only">Our Services</h2>
+      <!-- Services Section Starts -->
+      <section
+        id="services"
+        class="bg-black py-10 md:py-20"
+        role="region"
+        aria-label="Our services"
+      >
+        <div class="container mx-auto px-4 md:px-8">
+          <h2 class="text-main text-center text-2xl md:text-3xl mb-10">
+            Хизматлар
+          </h2>
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 services-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           >
             <!-- Card 1 -->
             <a href="/services/polirovka.html" class="group">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
                 role="article"
               >
-                <h3 class="text-white text-2xl font-bold mb-4">
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
                   ПОЛИРОВКА & КЕРАМИКА
                 </h3>
-                <p class="text-gray-400 mb-16">
+                <p class="text-gray-400 mb-auto">
                   ЛКП қалиҥлигини назорат қиламиз.
                 </p>
-                <div class="flex items-center justify-between">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
+                  </p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -644,19 +548,22 @@
                 </div>
               </div>
             </a>
+
             <!-- Card 2 -->
             <a href="/services/keramika.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">КЕРАМИКА</h2>
-                  <p class="text-gray-400 mb-4">Керамика билан ҳимоялаймиз.</p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">25.000 ₽ дан</p>
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  КЕРАМИКА
+                </h3>
+                <p class="text-gray-400 mb-auto">Керамика билан ҳимоялаймиз.</p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    25.000 ₽ дан
+                  </p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -672,21 +579,24 @@
                 </div>
               </div>
             </a>
+
             <!-- Card 3 -->
             <a href="/services/ximchistka.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">ХИМЧИСТКА</h2>
-                  <p class="text-gray-400 mb-4">
-                    Ҳар қандай ифлосликларни ювамиз.
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  ХИМЧИСТКА
+                </h3>
+                <p class="text-gray-400 mb-auto">
+                  Ҳар қандай ифлосликларни ювамиз.
+                </p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
                   </p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -702,51 +612,55 @@
                 </div>
               </div>
             </a>
+
             <!-- Card 4 -->
-            <a href="/services/polirovka-far.html">
-              <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
-              >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">
-                    ФАР ПОЛИРОВКА
-                  </h2>
-                  <p class="text-gray-400 mb-4">Завод ҳолатига қайтарамиз.</p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
-                  <svg
-                    class="w-12 h-6 text-main"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </a>
-            <!-- Card 5 -->
             <a href="/services/detailing-moyka.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">
-                    ДЕТЕЙЛИНГ МОЙКА
-                  </h2>
-                  <p class="text-gray-400 mb-4">Тўғри технология билан ювиш.</p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  ДЕТЕЙЛИНГ МОЙКА
+                </h3>
+                <p class="text-gray-400 mb-auto">
+                  Тўғри технология билан ювиш.
+                </p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
+                  </p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="/services/okleika.html">
+              <div
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
+              >
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  ОКЛЕЙКА
+                </h3>
+                <p class="text-gray-400 mb-auto">5 йил кафолат берамиз.</p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
+                  </p>
+                  <svg
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -766,18 +680,20 @@
             <!-- Card 6 -->
             <a href="/services/tonirovka.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">ТОНИРОВКА</h2>
-                  <p class="text-gray-400 mb-4">
-                    Премиум плёнкалар кафолат билан.
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  ТОНИРОВКА
+                </h3>
+                <p class="text-gray-400 mb-auto">
+                  Премиум плёнкалар кафолат билан.
+                </p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
                   </p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -797,20 +713,20 @@
             <!-- Card 7 -->
             <a href="/services/shumka.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">
-                    Шумоизоляция
-                  </h2>
-                  <p class="text-gray-400 mb-4">
-                    Автомобилингизда жимлик ва тинчлик.
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  Шумоизоляция
+                </h3>
+                <p class="text-gray-400 mb-auto">
+                  Автомобилингизда жимлик ва тинчлик.
+                </p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    25.000 ₽ дан
                   </p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">25.000 ₽ дан</p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -828,18 +744,20 @@
             </a>
 
             <!-- Card 8 -->
-            <a href="/services/okleika.html">
+            <a href="/404.html">
               <div
-                class="bg-orangedark rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 flex flex-col justify-between h-full"
+                class="bg-orangedark rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <div>
-                  <h2 class="text-white text-2xl font-bold mb-4">ОКЛЕЙКА</h2>
-                  <p class="text-gray-400 mb-4">5 йил кафолат берамиз.</p>
-                </div>
-                <div class="flex items-center justify-between mt-auto">
-                  <p class="text-main text-xl font-medium">20.000 ₽ дан</p>
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  ФАР ПОЛИРОВКА
+                </h3>
+                <p class="text-gray-400 mb-auto">Завод ҳолатига қайтарамиз.</p>
+                <div class="flex items-center justify-between mt-6">
+                  <p class="text-main text-lg md:text-xl font-medium">
+                    20.000 ₽ дан
+                  </p>
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -855,16 +773,19 @@
                 </div>
               </div>
             </a>
+
             <!-- Card 9 - Different color -->
             <a href="/services/price.html">
               <div
-                class="bg-[#3e340c] rounded-lg p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300"
+                class="bg-[#3e340c] rounded-lg p-6 md:p-8 border border-opacity-20 border-main hover:scale-105 transition-transform duration-300 h-full flex flex-col"
               >
-                <h2 class="text-white text-2xl font-bold mb-4">УМУМИЙ ПРАЙС</h2>
-                <p class="text-gray-400 mb-16">&nbsp;</p>
-                <div class="flex items-center justify-end">
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
+                  УМУМИЙ ПРАЙС
+                </h3>
+                <p class="text-gray-400 mb-auto">&nbsp;</p>
+                <div class="flex items-center justify-end mt-6">
                   <svg
-                    class="w-12 h-6 text-main"
+                    class="w-8 md:w-12 h-6 text-main"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -882,95 +803,99 @@
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- Services Section Ends -->
 
-    <!-- Services Section Ends -->
-
-    <!-- Contact section Starts -->
-    <section
-      id="contact"
-      class="bg-black py-10 md:py-20"
-      role="region"
-      aria-label="Contact information"
-    >
-      <div class="container mx-auto">
-        <div
-          class="w-full max-w-4xl bg-[#23250e] rounded-lg p-4 md:p-8 lg:p-12 relative items-center mx-auto contact-section"
-        >
+      <!-- Contact section Starts -->
+      <section
+        id="contact"
+        class="bg-black py-10 md:py-20"
+        role="region"
+        aria-label="Contact information"
+      >
+        <div class="container mx-auto px-4 md:px-8">
           <div
-            class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-24"
+            class="w-full max-w-4xl bg-[#23250e] rounded-lg p-6 md:p-8 lg:p-12 relative mx-auto"
           >
-            <div>
-              <h2
-                class="text-4xl md:text-5xl font-light text-gray-300 tracking-wide"
-              >
-                Zencar Detailing
-              </h2>
-              <h3 class="text-3xl md:text-4xl font-medium text-[#fdc900] mt-1">
-                Шават
-              </h3>
-            </div>
-
-            <a href="tel:+998901234567">
-              <button
-                class="relative overflow-hidden h-12 px-10 rounded-xl bg-[#3d3a4e] text-white border-none cursor-pointer group shadow-2xl"
-                aria-label="Contact us"
-              >
-                <span class="relative z-10">Бог'ланиш</span>
-                <span
-                  class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
-                ></span>
-              </button>
-            </a>
-          </div>
-
-          <div class="mt-auto">
-            <div class="text-[#fdc900] text-2xl md:text-3xl font-medium mb-8">
-              <a
-                href="tel: +998335042808"
-                aria-label="Call us at  +998 33 504 28 08"
-              >
-                +998 33 504 28 08</a
-              >
-            </div>
-
             <div
-              class="flex flex-col md:flex-row justify-between text-gray-200"
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16 lg:mb-24 gap-6"
             >
               <div>
-                <p>Шават,</p>
-                <p>Туркистон Кўчаси, 2 уй</p>
+                <h2
+                  class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-300 tracking-wide"
+                >
+                  Zencar Detailing
+                </h2>
+                <h3
+                  class="text-2xl md:text-3xl lg:text-4xl font-medium text-[#fdc900] mt-1"
+                >
+                  Шават
+                </h3>
               </div>
 
-              <div class="mt-4 md:mt-0 text-right">
-                <p>Хар Куни</p>
-                <p>10:00 дан 22:00</p>
+              <a href="tel:+998901234567">
+                <button
+                  class="relative overflow-hidden h-12 px-6 sm:px-10 rounded-xl bg-[#3d3a4e] text-white border-none cursor-pointer group shadow-2xl w-full sm:w-auto"
+                  aria-label="Contact us"
+                >
+                  <span class="relative z-10">Бог'ланиш</span>
+                  <span
+                    class="absolute inset-0 scale-x-0 origin-left transition-transform duration-[475ms] ease-in-out rounded-xl bg-gradient-to-r from-[#b18e00] to-[#fdc900] group-hover:scale-x-100 z-0"
+                  ></span>
+                </button>
+              </a>
+            </div>
+
+            <div class="mt-auto">
+              <div
+                class="text-[#fdc900] text-xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8"
+              >
+                <a
+                  href="tel:+998335042808"
+                  aria-label="Call us at +998 33 504 28 08"
+                >
+                  +998 33 504 28 08
+                </a>
+              </div>
+
+              <div
+                class="flex flex-col md:flex-row justify-between text-gray-200 gap-4"
+              >
+                <div>
+                  <p>Шават,</p>
+                  <p>Туркистон Кўчаси, 2 уй</p>
+                </div>
+
+                <div class="mt-4 md:mt-0 text-left md:text-right">
+                  <p>Хар Куни</p>
+                  <p>10:00 дан 22:00</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Contact section ends -->
+      </section>
+      <!-- Contact section ends -->
 
-    <!-- Map section starts -->
-    <section>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14915.858468090039!2d60.27642133239861!3d41.68018188221214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41de490028cd5ddd%3A0x312e71e78aa77e1d!2sZencar%20Detailing!5e1!3m2!1suz!2s!4v1746788583419!5m2!1suz!2s"
-        height="400px"
-        width="100%"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </section>
-    <!-- Map section ends -->
+      <!-- Map section starts -->
+      <section>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14915.858468090039!2d60.27642133239861!3d41.68018188221214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41de490028cd5ddd%3A0x312e71e78aa77e1d!2sZencar%20Detailing!5e1!3m2!1suz!2s!4v1746788583419!5m2!1suz!2s"
+          height="400"
+          style="width: 100%; border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Zencar Detailing location map"
+        ></iframe>
+      </section>
+      <!-- Map section ends -->
+    </main>
 
     <!-- Footer starts -->
     <footer class="py-10 md:py-20 bg-black" role="contentinfo">
       <div
-        class="container mx-auto flex flex-col md:flex-row gap-8 md:gap-5 justify-around items-start px-4 md:px-0"
+        class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-8 md:gap-5 justify-around items-start"
       >
         <div class="flex flex-col gap-5">
           <a href="/" aria-label="Zencar Home">
@@ -983,118 +908,141 @@
             />
           </a>
 
-          <div class="flex gap-2">
+          <div class="flex gap-4">
             <a href="https://t.me/zencar_uz" aria-label="Telegram">
               <i
-                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
             <a href="https://instagram.com/zencar_uz" aria-label="Instagram">
               <i
-                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
 
-            <a href="https://youtube.com/zencar_uz" aria-label="YouTube">
+            <a href="https://www.youtube.com/@Zencar_uz" aria-label="YouTube">
               <i
-                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
 
             <a href="https://tiktok.com/zencar_uz" aria-label="TikTok">
               <i
-                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
           </div>
           <p class="text-graylight">
-            © 2025 Zencar. Barcha huquqlar himoyalangan.
+            © 2025 Zencar.uz Барча ҳуқуқлар ҳимояланган.
           </p>
 
           <p class="text-graylight">
             Вебсайт
-            <span class="cursor-pointer hover:text-main">
-              <a href="https://t.me/atakhanov">Mirkamol Ataxonov</a></span
+            <a
+              href="https://t.me/atakhanov"
+              aria-label="Contact the developer"
+              class="hover:text-main transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              M.Atakhanov
+            </a>
             томонидан ишлаб чиқилган
           </p>
         </div>
 
-        <!-- - -->
+        <!-- Contact Section -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h3 class="text-white">Контактлар</h3>
+          <h3 class="text-white text-lg md:text-xl">Контактлар</h3>
+          <ul class="space-y-2">
             <li>
               <a
                 href="tel:+998335042808"
-                class="text-graylight hover:text-main"
-                aria-label="Call us at +998 99 000 00 00"
+                class="text-graylight hover:text-main transition-colors"
+                aria-label="Call us at +998 33 504 28 08"
               >
-                +998 33 504 28 08</a
-              >
+                +998 33 504 28 08
+              </a>
             </li>
             <li>
               <a
                 href="mailto:zencar@zencar.uz"
-                class="text-graylight hover:text-main"
-                >zencar@zencar.uz</a
+                class="text-graylight hover:text-main transition-colors"
               >
+                zencar@zencar.uz
+              </a>
             </li>
           </ul>
         </div>
-        <!-- - -->
 
+        <!-- Menu Section -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h3 class="text-white">Меню</h3>
+          <h3 class="text-white text-lg md:text-xl">Меню</h3>
+          <ul class="space-y-2">
             <li>
-              <a href="#main" class="text-graylight hover:text-main">Асосий</a>
+              <a
+                href="#main"
+                class="text-graylight hover:text-main transition-colors"
+                >Асосий</a
+              >
             </li>
             <li>
-              <a href="#services" class="text-graylight hover:text-main"
+              <a
+                href="#services"
+                class="text-graylight hover:text-main transition-colors"
                 >Хизматлар</a
               >
             </li>
             <li>
-              <a href="#prices" class="text-graylight hover:text-main"
+              <a
+                href="/services/price.html"
+                class="text-graylight hover:text-main transition-colors"
                 >Нархлар</a
               >
             </li>
             <li>
-              <a href="#contact" class="text-graylight hover:text-main"
+              <a
+                href="#contact"
+                class="text-graylight hover:text-main transition-colors"
                 >Контактлар</a
               >
             </li>
             <li>
-              <a href="#shop" class="text-graylight hover:text-main"
+              <a
+                href="/404.html"
+                class="text-graylight hover:text-main transition-colors"
                 >Дўкон ZC</a
               >
             </li>
           </ul>
         </div>
-        <!-- - -->
 
+        <!-- Other Section -->
         <div class="flex flex-col gap-5">
-          <ul class="cursor-pointer">
-            <h3 class="text-white">Бошқалар</h3>
+          <h3 class="text-white text-lg md:text-xl">Бошқалар</h3>
+          <ul class="space-y-2">
             <li>
-              <a href="/policy.html" class="text-graylight hover:text-main"
+              <a
+                href="/policy.html"
+                class="text-graylight hover:text-main transition-colors"
                 >Махфийлик Сиёсати</a
               >
             </li>
             <li>
-              <a href="form.html" class="text-graylight hover:text-main">
-                Навбатга Ёзиш
-              </a>
+              <a
+                href="form.html"
+                class="text-graylight hover:text-main transition-colors"
+                >Навбатга Ёзиш</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </footer>
-
     <!-- Footer ends -->
 
     <!-- js -->
-    <script src="./JS/script.js"></script>
+    <script src="/JS/script.js"></script>
   </body>
 </html>
+`
