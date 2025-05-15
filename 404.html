@@ -303,15 +303,15 @@
   </head>
   <body>
     <!-- header -->
-    <header
-      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
-    >
+    <header class="bg-blur bg-opacity-70 backdrop-blur-lg p-4 md:p-5">
       <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center" aria-label="Zencar Home">
           <img
             src="/images/zencar-secondary-logo.webp"
             alt="Zencar Logo"
             class="h-8 md:h-10"
+            width="auto"
+            height="40"
           />
         </a>
 
@@ -321,72 +321,109 @@
         >
           <a
             href="/"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            aria-current="page"
+            class="hover:text-main transition-all duration-300 text-base"
             >Асосий</a
           >
           <a
-            href="#services"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            href="/#services"
+            class="hover:text-main transition-all duration-300 text-base"
             >Хизматлар</a
           >
           <a
             href="/services/price.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            class="hover:text-main transition-all duration-300 text-base"
             >Нархлар
           </a>
           <a
-            href="#contact"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            href="/#contact"
+            class="hover:text-main transition-all duration-300 text-base"
             >Контактлар</a
           >
           <a
             href="/404.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
+            class="hover:text-main transition-all duration-300 text-base"
             >Do'kon ZC</a
           >
         </nav>
 
-        <button
-          class="lg:hidden text-primary text-2xl"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          id="menuToggle"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <div class="flex items-center gap-4">
+          <a
+            href="tel:+998335042808"
+            class="hidden md:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
+            aria-label="Call us at +998 33 504 28 08"
+          >
+            <i class="fa-solid fa-phone-volume"></i>
+            <span class="hidden lg:inline">+998 33 504 28 08</span>
+          </a>
 
-        <a
-          href="tel:
-      +998335042808
-      "
-          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
-          aria-label="Call us at 
-      +998 33 504 28 08
-      "
-        >
-          <i class="fa-solid fa-phone-volume"></i>
-          <span> +998 33 504 28 08 </span>
-        </a>
-      </div>
-
-      <!-- Mobile menu -->
-      <div
-        id="mobileMenu"
-        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
-        aria-label="Mobile navigation"
-      >
-        <div class="container mx-auto px-4 py-8">
-          <nav class="flex flex-col gap-6 text-white text-xl">
-            <a href="#main" class="hover:text-main">Asosiy</a>
-            <a href="#services" class="hover:text-main">Xizmatlar</a>
-            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
-            <a href="#contact" class="hover:text-main">Kontaktlar</a>
-            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
-          </nav>
+          <button
+            class="lg:hidden text-main text-2xl bg-white/5 rounded-md"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            id="menuToggle"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </div>
     </header>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-8 text-white text-xl mt-8">
+        <a
+          href="tel:+998335042808"
+          class="flex items-center gap-2 text-main font-bold"
+          aria-label="Call us at +998 33 504 28 08"
+        >
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+998 33 504 28 08</span>
+        </a>
+
+        <a href="/" class="hover:text-main transition-all duration-300"
+          >Асосий</a
+        >
+        <a href="/#services" class="hover:text-main transition-all duration-300"
+          >Хизматлар</a
+        >
+        <a
+          href="/services/price.html"
+          class="hover:text-main transition-all duration-300"
+          >Нархлар</a
+        >
+        <a href="/#contact" class="hover:text-main transition-all duration-300"
+          >Контактлар</a
+        >
+        <a href="/404.html" class="hover:text-main transition-all duration-300"
+          >Дўкон ZC</a
+        >
+
+        <div class="flex gap-6 mt-4">
+          <a
+            href="https://t.me/zencar_uz"
+            class="text-graylight hover:text-main text-2xl"
+            aria-label="Telegram"
+          >
+            <i class="fa-brands fa-telegram"></i>
+          </a>
+          <a
+            href="https://instagram.com/zencar_uz"
+            class="text-graylight hover:text-main text-2xl"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@Zencar_uz"
+            class="text-graylight hover:text-main text-2xl"
+            aria-label="YouTube"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- main -->
     <main>
       <section
@@ -436,27 +473,37 @@
             />
           </a>
 
-          <div class="flex gap-2">
-            <a href="https://t.me/zencar_uz" aria-label="Telegram">
+          <div class="flex gap-4">
+            <a
+              href="https://t.me/zencar_uz"
+              aria-label="Telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i
-                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main"
-              ></i>
-            </a>
-            <a href="https://instagram.com/zencar_uz" aria-label="Instagram">
-              <i
-                class="fa-brands fa-square-instagram fa-xl text-graylight hover:text-main"
-              ></i>
-            </a>
-
-            <a href="https://www.youtube.com/@Zencar_uz" aria-label="YouTube">
-              <i
-                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-telegram fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
 
-            <a href="https://tiktok.com/zencar_uz" aria-label="TikTok">
+            <a
+              href="https://instagram.com/zencar_uz/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i
-                class="fa-brands fa-tiktok fa-xl text-graylight hover:text-main"
+                class="fa-brands fa-instagram fa-xl text-graylight hover:text-main transition-colors"
+              >
+              </i>
+            </a>
+
+            <a
+              href="https://youtube.com/@Zencar_uz"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                class="fa-brands fa-youtube fa-xl text-graylight hover:text-main transition-colors"
               ></i>
             </a>
           </div>
@@ -550,5 +597,6 @@
         </div>
       </div>
     </footer>
+    <script src="/JS/script.js"></script>
   </body>
 </html>

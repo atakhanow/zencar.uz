@@ -63,9 +63,79 @@
           transform: translateX(0);
         }
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Skip link for screen readers */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #fdc900;
+        color: #000;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Focus styles */
+      :focus-visible {
+        outline: 3px solid #fdc900;
+        outline-offset: 2px;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 5rem);
+          margin: 1.25rem auto;
+          border-radius: 0.75rem;
+        }
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 5rem 1.5rem 1.5rem;
+        transition: transform 0.3s ease-in-out;
+        z-index: 40;
+        transform: translateY(-100%);
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="bg-black">
+    <!-- Skip link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header starts -->
     <header
       class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
@@ -1171,5 +1241,40 @@
 
     <!-- JavaScript -->
     <script src="/JS/script.js"></script>
+    <script>
+      // Mobile menu functionality
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const body = document.body;
+
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("active");
+        body.style.overflow = isExpanded ? "auto" : "hidden";
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          mobileMenu.classList.contains("active") &&
+          !mobileMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)
+        ) {
+          mobileMenu.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          body.style.overflow = "auto";
+        }
+      });
+
+      // Close mobile menu when pressing Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+          mobileMenu.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          body.style.overflow = "auto";
+        }
+      });
+    </script>
   </body>
 </html>

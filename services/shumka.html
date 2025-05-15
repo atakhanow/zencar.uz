@@ -52,6 +52,69 @@
         scroll-behavior: smooth;
       }
 
+      /* Skip link for screen readers */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #fdc900;
+        color: #000;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Focus styles */
+      :focus-visible {
+        outline: 3px solid #fdc900;
+        outline-offset: 2px;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 5rem);
+          margin: 1.25rem auto;
+          border-radius: 0.75rem;
+        }
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 5rem 1.5rem 1.5rem;
+        transition: transform 0.3s ease-in-out;
+        z-index: 40;
+        transform: translateY(-100%);
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        transform: translateY(0);
+      }
+
       #main {
         background-image: url(/images/car-stock.jfif);
         background-size: cover;
@@ -298,17 +361,20 @@
       }
     </style>
   </head>
-  <body class="bg-black">
+  <body class="bg-black text-white">
+    <!-- Skip link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header starts -->
-    <header
-      class="fixed left-10 right-10 mx-auto bg-trl ansparentsticky z-50 p-5 bg-opacity-70 backdrop-blur-lg transition duration-300 ease-in-out my-5 mx-20 rounded-xl"
-    >
+    <header class="bg-blur bg-opacity-70 backdrop-blur-lg p-4 md:p-5">
       <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center" aria-label="Zencar Home">
           <img
             src="/images/zencar-secondary-logo.webp"
             alt="Zencar Logo"
             class="h-8 md:h-10"
+            width="auto"
+            height="40"
           />
         </a>
 
@@ -317,76 +383,84 @@
           aria-label="Main navigation"
         >
           <a
-            href="/index.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            aria-current="page"
-            >Асосий</a
+            href="/"
+            class="hover:text-yellow-400 transition-colors duration-300"
+            >Bosh sahifa</a
           >
           <a
-            href="/index.html#services"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Хизматлар</a
+            href="/services"
+            class="hover:text-yellow-400 transition-colors duration-300"
+            >Xizmatlar</a
           >
           <a
-            href="/services/price.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Нархлар
-          </a>
-          <a
-            href="/index.html#contact"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Контактлар</a
+            href="/price"
+            class="hover:text-yellow-400 transition-colors duration-300"
+            >Narxlar</a
           >
           <a
-            href="/services/shop.html"
-            class="hover:text-main transition-all duration-300 text-sm md:text-base"
-            >Do'kon ZC</a
+            href="/shop"
+            class="hover:text-yellow-400 transition-colors duration-300"
+            >Do'kon</a
+          >
+          <a
+            href="/form"
+            class="hover:text-yellow-400 transition-colors duration-300"
+            >Buyurtma</a
           >
         </nav>
 
+        <!-- Mobile menu button -->
         <button
-          class="lg:hidden text-primary text-2xl"
+          id="menuToggle"
+          class="lg:hidden text-white p-2"
           aria-label="Toggle menu"
           aria-expanded="false"
-          id="menuToggle"
+          aria-controls="mobileMenu"
         >
-          <i class="fa-solid fa-bars"></i>
+          <i class="fas fa-bars text-2xl"></i>
         </button>
-
-        <a
-          href="tel:
-          +998335042808
-          "
-          class="hidden lg:inline-flex items-center gap-2 text-main font-bold hover:opacity-80 transition-opacity"
-          aria-label="Call us at 
-          +998 33 504 28 08
-          "
-        >
-          <i class="fa-solid fa-phone-volume"></i>
-          <span> +998 33 504 28 08 </span>
-        </a>
-      </div>
-
-      <!-- Mobile menu -->
-      <div
-        id="mobileMenu"
-        class="hidden lg:hidden fixed inset-0 bg-black/95 z-50"
-        aria-label="Mobile navigation"
-      >
-        <div class="container mx-auto px-4 py-8">
-          <nav class="flex flex-col gap-6 text-white text-xl">
-            <a href="#main" class="hover:text-main">Asosiy</a>
-            <a href="#services" class="hover:text-main">Xizmatlar</a>
-            <a href="/services/price.html" class="hover:text-main">Narxlar</a>
-            <a href="#contact" class="hover:text-main">Kontaktlar</a>
-            <a href="#shop" class="hover:text-main">Do'kon ZC</a>
-          </nav>
-        </div>
       </div>
     </header>
-    <!-- Header Ends -->
 
-    <!-- main section starts -->
+    <!-- Mobile menu -->
+    <div
+      id="mobileMenu"
+      class="mobile-menu"
+      aria-label="Mobile navigation"
+      role="navigation"
+    >
+      <div class="container mx-auto">
+        <nav class="flex flex-col gap-6 text-white">
+          <a
+            href="/"
+            class="text-2xl hover:text-yellow-400 transition-colors duration-300"
+            >Bosh sahifa</a
+          >
+          <a
+            href="/services"
+            class="text-2xl hover:text-yellow-400 transition-colors duration-300"
+            >Xizmatlar</a
+          >
+          <a
+            href="/price"
+            class="text-2xl hover:text-yellow-400 transition-colors duration-300"
+            >Narxlar</a
+          >
+          <a
+            href="/shop"
+            class="text-2xl hover:text-yellow-400 transition-colors duration-300"
+            >Do'kon</a
+          >
+          <a
+            href="/form"
+            class="text-2xl hover:text-yellow-400 transition-colors duration-300"
+            >Buyurtma</a
+          >
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main content starts -->
     <section class="py-8 md:py-10 px-4 md:px-6 lg:px-20">
       <div class="container">
         <h3
@@ -1308,5 +1382,40 @@
 
     <!-- JavaScript -->
     <script src="/JS/script.js"></script>
+    <script>
+      // Mobile menu functionality
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const body = document.body;
+
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("active");
+        body.style.overflow = isExpanded ? "auto" : "hidden";
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          mobileMenu.classList.contains("active") &&
+          !mobileMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)
+        ) {
+          mobileMenu.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          body.style.overflow = "auto";
+        }
+      });
+
+      // Close mobile menu when pressing Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+          mobileMenu.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          body.style.overflow = "auto";
+        }
+      });
+    </script>
   </body>
 </html>
